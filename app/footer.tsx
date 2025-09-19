@@ -2,9 +2,9 @@ import Logo from "@/app/_components/Logo";
 import Navigation from "./_components/Navigation";
 import Link from "next/link";
 import Image from "next/image";
-import facebook from "@/app/_assets/SocialMediaSVG/icon-facebook.svg";
-import instagram from "@/app/_assets/SocialMediaSVG/icon-instagram.svg";
-import twitter from "@/app/_assets/SocialMediaSVG/icon-twitter.svg";
+import facebook from "@/app/_assets/SocialMedia/icon-facebook.svg";
+import instagram from "@/app/_assets/SocialMedia/icon-instagram.svg";
+import twitter from "@/app/_assets/SocialMedia/icon-twitter.svg";
 
 function Footer() {
   return (
