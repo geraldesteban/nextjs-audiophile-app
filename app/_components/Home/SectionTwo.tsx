@@ -28,10 +28,7 @@ function SectionTwo() {
   ];
 
   return (
-    <div
-      className="flex justify-between gap-5 px-32 pt-[500px] pb-52 max-lg:px-10 max-xl:pt-[300px] max-xl:pb-32 max-md:pt-[250px]
-    max-sm:pt-[500px] max-sm:justify-center max-sm:gap-32 max-sm:flex-wrap"
-    >
+    <div className="flex justify-between gap-5 px-32 pt-72 pb-48 max-xl:px-16 max-lg:pt-52 max-lg:px-10 max-xl:pb-32 max-sm:justify-center max-sm:gap-32 max-sm:flex-wrap">
       {itemLists.map((item) => (
         <div
           className="relative bg-[#F1F1F1] w-[350px] h-[200px] rounded-xl max-md:w-[200px] max-md:h-[150px] max-sm:w-[100%] max-sm:h-[400px]"

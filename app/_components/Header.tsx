@@ -6,14 +6,14 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="border-b border-[#979797] bg-black">
-      <div className="flex justify-between items-center px-32 py-10 max-lg:px-10">
+    <header className="bg-black border-b border-gray-500">
+      <div className="flex justify-between items-center px-32 py-10 max-xl:px-16 max-lg:px-10">
         <div className="flex items-center">
           <Image
             src={menu}
             quality={100}
             alt="Menu"
-            className="z-10 hidden mr-10 max-lg:block"
+            className="hidden mr-10 max-lg:block"
           />
           <Logo />
         </div>

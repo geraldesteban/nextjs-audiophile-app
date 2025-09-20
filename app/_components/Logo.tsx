@@ -4,7 +4,7 @@ import logo from "@/public/logo.svg";
 
 function Logo() {
   return (
-    <Link href="/" className="z-10">
+    <Link href="/">
       <Image src={logo} quality={100} alt="Audiophile logo" />
     </Link>
   );

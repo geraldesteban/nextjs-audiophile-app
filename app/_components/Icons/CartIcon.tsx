@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Logo() {
   return (
-    <Link href="/" className="z-10 max-sm:ml-10">
+    <Link href="/" className="max-sm:ml-10">
       <Image src={cart} quality={100} alt="Cart icon" />
     </Link>
   );

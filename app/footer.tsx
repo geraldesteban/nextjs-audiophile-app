@@ -10,7 +10,7 @@ function Footer() {
   return (
     <>
       <SectionFour />
-      <div className="bg-[#101010] pt-20 pb-10 px-32 max-lg:p-10">
+      <div className="bg-[#101010] pt-20 pb-10 px-32 max-xl:px-16 max-lg:p-10">
         <div className="flex justify-between items-center mb-10 max-lg:block">
           <div className="max-sm:flex max-sm:place-content-center">
             <Logo />
@@ -21,13 +21,13 @@ function Footer() {
                 <Link href="/">HOME</Link>
               </li>
               <li className="mb-5 hover:text-[#D87D4A]">
-                <Link href="/">HEADPHONES</Link>
+                <Link href="/headphones">HEADPHONES</Link>
               </li>
               <li className="mb-5 hover:text-[#D87D4A]">
-                <Link href="/">SPEAKERS</Link>
+                <Link href="/speakers">SPEAKERS</Link>
               </li>
               <li className="mb-5 hover:text-[#D87D4A]">
-                <Link href="/">EARPHONES</Link>
+                <Link href="/earphones">EARPHONES</Link>
               </li>
             </ul>
           </nav>

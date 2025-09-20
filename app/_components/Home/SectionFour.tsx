@@ -8,7 +8,7 @@ import bestGearMobile from "@/app/_assets/SectionFour/mobile/image-best-gear.jpg
 
 function SectionFour() {
   return (
-    <div className="flex justify-between items-center px-32 pb-32 max-lg:block max-lg:px-10 max-sm:pb-20">
+    <div className="flex justify-between items-center px-32 pb-32 max-xl:px-16 max-lg:block max-lg:px-10 max-sm:pb-20">
       <div className="max-xl:text-center">
         <Image
           src={bestGearTablet}

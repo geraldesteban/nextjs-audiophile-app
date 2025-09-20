@@ -14,7 +14,7 @@ import earphoneYX1Mobile from "@/app/_assets/SectionThree/mobile/image-earphones
 
 function SectionThree() {
   return (
-    <div className="relative px-32 pb-32 flex justify-around flex-col gap-10 max-lg:px-10 max-md:pb-20">
+    <div className="relative px-32 pb-32 flex justify-around flex-col gap-10 max-xl:px-16 max-lg:px-10 max-md:pb-20">
       {/* ZX9 Speaker */}
       <div
         className="bg-[#D87D4A] flex justify-around gap-5 pt-32 rounded-xl
@@ -109,7 +109,7 @@ function SectionThree() {
             className="rounded-xl w-full hidden max-sm:block"
           />
         </div>
-        <div className="flex-1 bg-[#F1F1F1] max-sm:flex-none max-sm:h-[250px]">
+        <div className="flex-1 bg-[#F1F1F1] rounded-xl max-sm:flex-none max-sm:h-[250px]">
           <div className="h-full flex flex-col justify-center mx-32 max-xl:mx-10 max-md:mx-5 max-sm:mx-10">
             <h2 className="text-black text-[28px] font-bold mb-10">
               YX1 EARPHONES
