@@ -6,15 +6,21 @@ import YX1Tablet from "@/app/_assets/Earphones/tablet/image-product-YX1.jpg";
 /* mobile */
 import YX1Mobile from "@/app/_assets/Earphones/mobile/image-product-YX1.jpg";
 import Image from "next/image";
+import ModalCart from "./ModalCart";
 
 function ProductDetails() {
   return (
-    <div className="py-20">
-      <Link href="/" className="ml-32 max-xl:ml-16 max-lg:ml-10">
+    <div className="py-20 max-lg:py-10">
+      {/* Cart */}
+      <ModalCart />
+      <Link
+        href="/headphones"
+        className="text-[15px] text-gray-500 font-medium ml-32 max-xl:ml-16 max-lg:ml-10"
+      >
         Go Back
       </Link>
       <div
-        className={`flex justify-between items-center px-32 pt-32 gap-10 max-xl:px-16 max-lg:px-10 max-lg:flex-col max-lg:pt-20`}
+        className={`flex justify-between items-center px-32 pt-32 gap-10 max-xl:px-16 max-lg:px-10 max-lg:flex-row max-lg:pt-20 max-sm:pt-10 max-sm:flex-col`}
       >
         <Image
           src={YX1}
@@ -34,7 +40,7 @@ function ProductDetails() {
           alt="YX1 WIRELESS"
           className="rounded-xl hidden max-sm:block"
         />
-        <div className="max-lg:text-center">
+        <div className="max-lg:text-left">
           <h2 className={`text-[#D87D4A] text-[14px] tracking-[8px] mb-5`}>
             NEW PRODUCT
           </h2>
@@ -43,7 +49,7 @@ function ProductDetails() {
             <br />
             EARPHONES
           </h2>
-          <p className="text-gray-500 text-[15px] w-[360px] mb-10 max-lg:w-[60.5%] max-lg:mx-auto">
+          <p className="text-gray-500 text-[15px] w-[360px] mb-10 max-lg:w-[100%]">
             Tailor your listening experience with bespoke dynamic drivers from
             the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound
             even in noisy environments with its active noise cancellation
@@ -62,6 +68,58 @@ function ProductDetails() {
             >
               ADD TO CART
             </Link>
+          </div>
+        </div>
+      </div>
+      {/* features */}
+      <div className="flex justify-around gap-96 mt-52 px-32 max-xl:px-16 max-lg:flex-col max-lg:gap-36 max-lg:px-10 max-sm:mt-24">
+        <div className="flex-1">
+          <h2 className="text-[32px] font-bold mb-10">FEATURES</h2>
+          <p className="text-[15px] text-gray-500 mb-10">
+            Featuring a genuine leather head strap and premium earcups, these
+            headphones deliver superior comfort for those who like to enjoy
+            endless listening. It includes intuitive controls designed for any
+            situation. Whether you’re taking a business call or just in your own
+            personal space, the auto on/off and pause features ensure that
+            you’ll never miss a beat.
+          </p>
+          <p className="text-[15px] text-gray-500">
+            The advanced Active Noise Cancellation with built-in equalizer allow
+            you to experience your audio world on your terms. It lets you enjoy
+            your audio in peace, but quickly interact with your surroundings
+            when you need to. Combined with Bluetooth 5. 0 compliant
+            connectivity and 17 hour battery life, the XX99 Mark II headphones
+            gives you superior sound, cutting-edge technology, and a modern
+            design aesthetic.
+          </p>
+        </div>
+        <div className="flex-1 max-lg:flex max-lg:gap-72 max-md:gap-48 max-sm:flex-col max-sm:gap-0">
+          <h2 className="text-[32px] font-bold mb-10 whitespace-nowrap">
+            IN THE BOX
+          </h2>
+          <div>
+            <ul>
+              <li className="whitespace-nowrap">
+                <span className="text-[#D87D4A]">1x</span>
+                <span className="ml-5">Headphone Unit</span>
+              </li>
+              <li className="whitespace-nowrap">
+                <span className="text-[#D87D4A]">2x</span>
+                <span className="ml-5">Replacement Earcups</span>
+              </li>
+              <li className="whitespace-nowrap">
+                <span className="text-[#D87D4A]">1x</span>
+                <span className="ml-5">User Manual</span>
+              </li>
+              <li className="whitespace-nowrap">
+                <span className="text-[#D87D4A]">1x</span>
+                <span className="ml-5">3.5mm 5m Audio Cable</span>
+              </li>
+              <li className="whitespace-nowrap">
+                <span className="text-[#D87D4A]">1x</span>
+                <span className="ml-5">Travel Bag</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
