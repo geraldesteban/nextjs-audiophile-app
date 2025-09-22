@@ -97,7 +97,7 @@ function Page() {
             </p>
             <Link
               href="/headphones/productdetails"
-              className="text-white font-bold bg-[#D87D4A] px-7 py-3 hover:brightness-130"
+              className="text-white font-bold bg-[#D87D4A] px-7 py-3 lg:hover:brightness-130"
             >
               SEE PRODUCT
             </Link>

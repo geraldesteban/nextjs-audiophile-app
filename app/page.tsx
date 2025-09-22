@@ -5,13 +5,9 @@ import heroMobile from "@/public/image-hero-mobile.jpg";
 import Link from "next/link";
 import SectionTwo from "./_components/Home/SectionTwo";
 import SectionThree from "./_components/Home/SectionThree";
-import { getAllHeadphones } from "./_lib/actions/getAllHeadphones";
 
 /* Home page*/
 async function Page() {
-  const allHeadphones = await getAllHeadphones();
-  console.log(allHeadphones);
-
   return (
     <div>
       <main className="relative pb-[960px]">
@@ -52,7 +48,7 @@ async function Page() {
           </p>
           <Link
             href="/"
-            className="text-white font-bold bg-[#D87D4A] px-7 py-3 hover:brightness-130"
+            className="text-white font-bold bg-[#D87D4A] px-7 py-3 lg:hover:brightness-130"
           >
             SEE PRODUCT
           </Link>

@@ -46,7 +46,7 @@ function SectionTwo() {
                 {item.heading}
               </h2>
               <Link href="/" className="flex items-center mb-5">
-                <span className="text-gray-500 font-bold tracking-widest mr-3 hover:text-[#D87D4A]">
+                <span className="text-gray-500 font-bold tracking-widest mr-3 lg:hover:text-[#D87D4A]">
                   SHOP
                 </span>
                 <Image

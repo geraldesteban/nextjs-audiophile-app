@@ -61,7 +61,7 @@ function SectionThree() {
           </p>
           <Link
             href="/"
-            className="text-white bg-black px-7 py-3 hover:bg-[#4C4C4C]"
+            className="text-white bg-black px-7 py-3 hover:bg-[#4C4C4C] max-lg:hover:bg-black"
           >
             SEE PRODUCT
           </Link>
@@ -75,7 +75,7 @@ function SectionThree() {
           </h2>
           <Link
             href="/"
-            className="text-black font-bold border border-black px-7 py-3 hover:bg-black hover:text-white"
+            className="text-black font-bold border border-black px-7 py-3 lg:hover:bg-black lg:hover:text-white"
           >
             SEE PRODUCT
           </Link>
@@ -117,7 +117,7 @@ function SectionThree() {
             <div className="mb-5">
               <Link
                 href="/"
-                className="text-black font-bold border border-black px-7 py-3 hover:bg-black hover:text-white"
+                className="text-black font-bold border border-black px-7 py-3 lg:hover:bg-black lg:hover:text-white"
               >
                 SEE PRODUCT
               </Link>
