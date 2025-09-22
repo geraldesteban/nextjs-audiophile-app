@@ -12,18 +12,21 @@ function SectionTwo() {
       heading: "HEADPHONES",
       span: "SHOP",
       icon: iconRight,
+      to: "headphones",
     },
     {
       image: speaker,
       heading: "SPEAKERS",
       span: "SHOP",
       icon: iconRight,
+      to: "speakers",
     },
     {
       image: earphone,
       heading: "EARPHONES",
       span: "SHOP",
       icon: iconRight,
+      to: "earphones",
     },
   ];
 
@@ -45,7 +48,7 @@ function SectionTwo() {
               <h2 className="text-black text-[18px] font-bold tracking-widest mb-5">
                 {item.heading}
               </h2>
-              <Link href="/" className="flex items-center mb-5">
+              <Link href={`/${item.to}`} className="flex items-center mb-5">
                 <span className="text-gray-500 font-bold tracking-widest mr-3 lg:hover:text-[#D87D4A]">
                   SHOP
                 </span>
