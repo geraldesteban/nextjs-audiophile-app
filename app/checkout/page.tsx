@@ -1,12 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import CheckoutModal from "../_components/CheckoutModal";
+import Checkout from "../_components/Checkout";
+import Modal from "@/app/_components/Modal";
+import { useState } from "react";
 
 function Page() {
+  const [activeCheckout, setActiveCheckout] = useState(false);
+
   return (
     <div className="py-20 max-lg:py-10">
       {/* Checkout */}
-      <CheckoutModal />
+      <Modal
+        isOpen={activeCheckout}
+        onClose={() => setActiveCheckout(!activeCheckout)}
+        style={"flex justify-center items-center"}
+      >
+        <Checkout />
+      </Modal>
       <Link
         href="/headphones/productdetails"
         className="text-[15px] text-gray-500 font-medium ml-32 max-xl:ml-16 max-lg:ml-10"
@@ -221,7 +233,10 @@ function Page() {
           </div>
           {/* Checkout button */}
           <Link href="/checkout">
-            <button className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer">
+            <button
+              className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer"
+              onClick={() => setActiveCheckout(!activeCheckout)}
+            >
               CONTINUE & PAY
             </button>
           </Link>

@@ -1,13 +1,20 @@
 import Image from "next/image";
 import cart from "@/public/icon-cart.svg";
-import Link from "next/link";
 
-function Logo() {
+interface CartIconProps {
+  activeCart: boolean;
+  setActiveCart: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function CartIcon({ activeCart, setActiveCart }: CartIconProps) {
   return (
-    <Link href="/" className="max-sm:ml-10">
+    <button
+      className="max-sm:ml-10 cursor-pointer"
+      onClick={() => setActiveCart(!activeCart)}
+    >
       <Image src={cart} quality={100} alt="Cart icon" />
-    </Link>
+    </button>
   );
 }
 
-export default Logo;
+export default CartIcon;

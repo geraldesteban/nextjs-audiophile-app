@@ -6,13 +6,10 @@ import YX1Tablet from "@/app/_assets/Earphones/tablet/image-product-YX1.jpg";
 /* mobile */
 import YX1Mobile from "@/app/_assets/Earphones/mobile/image-product-YX1.jpg";
 import Image from "next/image";
-import ModalCart from "./ModalCart";
 
 function ProductDetails() {
   return (
     <div className="py-20 max-lg:py-10">
-      {/* Cart */}
-      <ModalCart />
       <Link
         href="/headphones"
         className="text-[15px] text-gray-500 font-medium ml-32 max-xl:ml-16 max-lg:ml-10"

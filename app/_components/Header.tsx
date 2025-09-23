@@ -7,9 +7,11 @@ import menu from "@/app/_assets/Icons/icon-hamburger.svg";
 import Image from "next/image";
 import SectionTwo from "./Home/SectionTwo";
 import { useState } from "react";
+import Cart from "./Cart";
 
 function Header() {
   const [active, setActive] = useState(false);
+  const [activeCart, setActiveCart] = useState(false);
 
   return (
     <div className="relative">
@@ -30,9 +32,11 @@ function Header() {
             <Logo />
           </div>
           <Navigation />
-          <CartIcon />
+          <CartIcon activeCart={activeCart} setActiveCart={setActiveCart} />
         </div>
       </header>
+      {/* Modal Cart */}
+      <Cart activeCart={activeCart} setActiveCart={setActiveCart} />
       <div
         className={`absolute left-0 bg-white w-full rounded-bl-xl rounded-br-xl z-20 hidden ${
           active ? "" : "max-lg:block"
