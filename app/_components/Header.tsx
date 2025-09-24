@@ -7,14 +7,14 @@ import menu from "@/app/_assets/Icons/icon-hamburger.svg";
 import Image from "next/image";
 import SectionTwo from "./Home/SectionTwo";
 import { useState } from "react";
-import Cart from "./Cart";
+import Cart from "@/app/_components/Cart";
 
 function Header() {
   const [active, setActive] = useState(false);
   const [activeCart, setActiveCart] = useState(false);
 
   return (
-    <div className="relative">
+    <div className="fixed w-full z-50">
       <header className="bg-black border-b border-gray-500">
         <div className="flex justify-between items-center px-32 py-10 max-xl:px-16 max-lg:px-10">
           <div className="flex items-center">
@@ -38,8 +38,10 @@ function Header() {
       {/* Modal Cart */}
       <Cart activeCart={activeCart} setActiveCart={setActiveCart} />
       <div
-        className={`absolute left-0 bg-white w-full rounded-bl-xl rounded-br-xl z-20 hidden ${
-          active ? "" : "max-lg:block"
+        className={`bg-white rounded-bl-xl rounded-br-xl shadow-xl transition-all duration-1000 hidden max-lg:block ${
+          active
+            ? "max-lg:w-full max-lg:opacity-100"
+            : "max-lg:w-[1px] max-lg:opacity-0"
         }`}
       >
         <SectionTwo />
