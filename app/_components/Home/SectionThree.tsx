@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 /* Desktop */
@@ -16,11 +19,15 @@ function SectionThree() {
   return (
     <div className="relative px-32 pb-32 flex justify-around flex-col gap-10 max-xl:px-16 max-lg:px-10 max-md:pb-20">
       {/* ZX9 Speaker */}
-      <div
+      <motion.div
         className="bg-[#D87D4A] flex justify-around gap-5 pt-32 rounded-xl
         bg-no-repeat bg-[length:80%] bg-[-70%_10%]
         max-lg:block max-lg:text-center max-lg:pt-10 max-lg:pb-20
         max-lg:bg-[length:120%] max-lg:bg-[50%_115%]"
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ duration: 1 }}
         style={{
           backgroundImage: `url(${patterCircles.src})`,
         }}
@@ -66,9 +73,15 @@ function SectionThree() {
             SEE PRODUCT
           </Link>
         </div>
-      </div>
+      </motion.div>
       {/* ZX7 Speaker */}
-      <div className="relative rounded-xl">
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ duration: 1 }}
+        className="relative rounded-xl"
+      >
         <div className="absolute inset-0 flex flex-col justify-center items-start left-20 max-md:left-10">
           <h2 className="text-black text-[28px] font-bold mb-10">
             ZX7 SPEAKER
@@ -92,10 +105,16 @@ function SectionThree() {
           alt="ZX7 Speaker"
           className="rounded-xl w-full h-full hidden max-sm:block"
         />
-      </div>
+      </motion.div>
       {/* YX1 EARPHONES */}
       <div className="flex gap-10 max-lg:gap-5 max-sm:flex-col">
-        <div className="flex-1">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 1 }}
+          className="flex-1"
+        >
           <Image
             src={earphoneYX1}
             quality={100}
@@ -108,8 +127,14 @@ function SectionThree() {
             alt="ZX7 Speaker"
             className="rounded-xl w-full hidden max-sm:block"
           />
-        </div>
-        <div className="flex-1 bg-[#F1F1F1] rounded-xl max-sm:flex-none max-sm:h-[250px]">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 1 }}
+          className="flex-1 bg-[#F1F1F1] rounded-xl max-sm:flex-none max-sm:h-[250px]"
+        >
           <div className="h-full flex flex-col justify-center mx-32 max-xl:mx-10 max-md:mx-5 max-sm:mx-10">
             <h2 className="text-black text-[28px] font-bold mb-10">
               YX1 EARPHONES
@@ -123,7 +148,7 @@ function SectionThree() {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
