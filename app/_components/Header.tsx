@@ -1,13 +1,13 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
+import menu from "@/app/_assets/Icons/icon-hamburger.svg";
 import Logo from "@/app/_components/Logo";
 import Navigation from "@/app/_components/Navigation";
 import CartIcon from "@/app/_components/Icons/CartIcon";
-import menu from "@/app/_assets/Icons/icon-hamburger.svg";
-import Image from "next/image";
-import SectionTwo from "./Home/SectionTwo";
-import { useState } from "react";
 import Cart from "@/app/_components/Cart";
+import HomeNavigation from "./Home/HomeNavigation";
 
 function Header() {
   const [active, setActive] = useState(false);
@@ -44,7 +44,7 @@ function Header() {
             : "max-lg:w-[1px] max-lg:opacity-0"
         }`}
       >
-        <SectionTwo />
+        <HomeNavigation />
       </div>
     </div>
   );

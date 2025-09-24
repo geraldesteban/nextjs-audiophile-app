@@ -1,10 +1,12 @@
+import Link from "next/link";
 import Image from "next/image";
 import heroDesktop from "@/public/image-hero.jpg";
 import heroTablet from "@/public/image-hero-tablet.jpg";
 import heroMobile from "@/public/image-hero-mobile.jpg";
-import Link from "next/link";
-import SectionTwo from "./_components/Home/SectionTwo";
-import SectionThree from "./_components/Home/SectionThree";
+
+import HomeNavigation from "@/app/_components/Home/HomeNavigation";
+import HomeGallery from "@/app/_components/Home/HomeGallery";
+import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 
 /* Home page*/
 async function Page() {
@@ -54,10 +56,12 @@ async function Page() {
           </Link>
         </div>
       </main>
-      {/* Section Two */}
-      <SectionTwo />
-      {/* Section Three */}
-      <SectionThree />
+      {/* Home navigation */}
+      <HomeNavigation />
+      {/* Home gallery */}
+      <HomeGallery />
+      {/* Home audio gear */}
+      <HomeAudioGear />
     </div>
   );
 }

@@ -1,7 +1,8 @@
-import Gallery from "@/app/_components/Gallery";
-import SectionTwo from "@/app/_components/Home/SectionTwo";
 import ProductDetails from "@/app/_components/ProductDetails";
+import Gallery from "@/app/_components/Gallery";
 import YouMayAlsoLike from "@/app/_components/YouMayAlsoLike";
+import HomeNavigation from "@/app/_components/Home/HomeNavigation";
+import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 
 function Page() {
   return (
@@ -9,7 +10,8 @@ function Page() {
       <ProductDetails />
       <Gallery />
       <YouMayAlsoLike />
-      <SectionTwo />
+      <HomeNavigation />
+      <HomeAudioGear />
     </div>
   );
 }
