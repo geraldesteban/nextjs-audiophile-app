@@ -15,7 +15,7 @@ function Page() {
       <Modal
         isOpen={activeCheckout}
         onClose={() => setActiveCheckout(!activeCheckout)}
-        style={"flex justify-center items-center"}
+        style={"flex justify-center items-center max-md:block"}
       >
         <Checkout />
       </Modal>
@@ -232,14 +232,12 @@ function Page() {
             <p className="text-[18px] font-bold">$ 5,446</p>
           </div>
           {/* Checkout button */}
-          <Link href="/checkout">
-            <button
-              className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer"
-              onClick={() => setActiveCheckout(!activeCheckout)}
-            >
-              CONTINUE & PAY
-            </button>
-          </Link>
+          <button
+            className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer"
+            onClick={() => setActiveCheckout(!activeCheckout)}
+          >
+            CONTINUE & PAY
+          </button>
         </div>
       </div>
     </div>
