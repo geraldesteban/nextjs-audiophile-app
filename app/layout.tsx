@@ -5,7 +5,7 @@ const manrope = Manrope({
 });
 import Header from "@/app/_components/Header";
 import "@/app/_styles/globals.css";
-import Footer from "./footer";
+import Footer from "@/app/footer";
 
 export const metadata = {
   title: {
