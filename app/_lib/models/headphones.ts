@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const headphoneSchema = new mongoose.Schema(
+const headphonesSchema = new mongoose.Schema(
   {
     id: { type: Number, required: true, unique: true },
     slug: { type: String, required: true, unique: true },
@@ -20,6 +20,6 @@ const headphoneSchema = new mongoose.Schema(
 );
 
 const Headphones =
-  mongoose.models.Headphones || mongoose.model("Headphones", headphoneSchema);
+  mongoose.models.Headphones || mongoose.model("Headphones", headphonesSchema);
 
 export default Headphones;
