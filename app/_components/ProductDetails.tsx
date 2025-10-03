@@ -1,11 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 /* desktop */
 import YX1 from "@/app/_assets/Earphones/desktop/image-product-YX1.jpg";
 /* tablet */
 import YX1Tablet from "@/app/_assets/Earphones/tablet/image-product-YX1.jpg";
 /* mobile */
 import YX1Mobile from "@/app/_assets/Earphones/mobile/image-product-YX1.jpg";
-import Image from "next/image";
 
 function ProductDetails() {
   return (

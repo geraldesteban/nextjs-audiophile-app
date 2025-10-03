@@ -7,7 +7,7 @@ import Logo from "@/app/_components/Logo";
 import Navigation from "@/app/_components/Navigation";
 import CartIcon from "@/app/_components/Icons/CartIcon";
 import Cart from "@/app/_components/Cart";
-import HomeNavigation from "./Home/HomeNavigation";
+import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 
 function Header() {
   const [active, setActive] = useState(false);
