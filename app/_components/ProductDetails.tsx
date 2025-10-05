@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 /* desktop */
@@ -6,16 +8,19 @@ import YX1 from "@/app/_assets/Earphones/desktop/image-product-YX1.jpg";
 import YX1Tablet from "@/app/_assets/Earphones/tablet/image-product-YX1.jpg";
 /* mobile */
 import YX1Mobile from "@/app/_assets/Earphones/mobile/image-product-YX1.jpg";
+import useMoveBack from "@/app/hooks/useMoveback";
 
 function ProductDetails() {
+  const moveBack = useMoveBack();
+
   return (
-    <div className="py-20 max-lg:py-10">
-      <Link
-        href="/headphones"
-        className="text-[15px] text-gray-500 font-medium ml-32 max-xl:ml-16 max-lg:ml-10"
+    <div className="pt-40 pb-20 max-lg:py-10">
+      <button
+        className="text-[15px] text-gray-500 font-medium ml-32 max-xl:ml-16 max-lg:ml-10 cursor-pointer"
+        onClick={moveBack}
       >
         Go Back
-      </Link>
+      </button>
       <div
         className={`flex justify-between items-center px-32 pt-32 gap-10 max-xl:px-16 max-lg:px-10 max-lg:flex-row max-lg:pt-20 max-sm:pt-10 max-sm:flex-col`}
       >
