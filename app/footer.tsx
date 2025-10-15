@@ -1,4 +1,4 @@
-import Logo from "@/app/_components/Logo";
+import Logo from "@/app/_components/Navigation/Logo";
 import Link from "next/link";
 import Image from "next/image";
 import facebook from "@/app/_assets/SocialMedia/icon-facebook.svg";
