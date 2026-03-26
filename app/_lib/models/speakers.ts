@@ -16,10 +16,10 @@ const speakersSchema = new mongoose.Schema(
     gallery: { type: Object },
     others: { type: Array, default: [] },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Speakers =
-  mongoose.models.Speakers || mongoose.model("Earphones", speakersSchema);
+  mongoose.models.Speakers || mongoose.model("Speakers", speakersSchema);
 
 export default Speakers;

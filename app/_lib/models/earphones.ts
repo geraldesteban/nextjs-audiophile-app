@@ -16,7 +16,7 @@ const earphonesSchema = new mongoose.Schema(
     gallery: { type: Object },
     others: { type: Array, default: [] },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Earphones =

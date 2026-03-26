@@ -1,33 +1,19 @@
-// Importing mongoose library along with Connection type from it
-import mongoose, { Connection } from "mongoose";
+import mongoose from "mongoose";
 
-// Declaring a variable to store the cached database connection
-let cachedConnection: Connection | null = null;
+const uri = process.env.MONGODB_URI as string;
 
-// Function to establish a connection to MongoDB
-async function mongodb() {
-  // If a cached connection exists, return it
-  if (cachedConnection) {
-    console.log("Using cached db connection");
-    return cachedConnection;
-  }
-
-  if (!process.env.MONGODB_URI) throw new Error("MONGODB_URI is not defined");
-
-  try {
-    // If no cached connection exists, establish a new connection to MongoDB
-    const cnx = await mongoose.connect(process.env.MONGODB_URI!);
-    // Cache the connection for future use
-    cachedConnection = cnx.connection;
-    // Log message indicating a new MongoDB connection is established
-    console.log("New mongodb connection established");
-    // Return the newly established connection
-    return cachedConnection;
-  } catch (error) {
-    // If an error occurs during connection, log the error and throw it
-    console.log(error);
-    throw error;
-  }
+if (!uri) {
+  throw new Error("MONGODB_URI is missing");
 }
 
-export default mongodb;
+let isConnected = false;
+
+export async function connectDB() {
+  if (isConnected) return;
+
+  const mongodb = await mongoose.connect(uri);
+
+  isConnected = mongodb.connections[0].readyState === 1;
+
+  return mongodb;
+}
