@@ -1,12 +1,15 @@
-import Speakers from "@/app/_components/Products/Speakers";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
+import { getSpeakers } from "@/app/_lib/services/getSpeakers";
+import SpeakersClient from "@/app/_components/Products/SpeakersClient";
 
 export const metadata = {
   title: "Speakers",
 };
 
-function Page() {
+async function Page() {
+  const speakers = await getSpeakers();
+
   return (
     <div>
       <div className="bg-black py-32 max-lg:py-20 max-sm:py-10">
@@ -14,7 +17,7 @@ function Page() {
           SPEAKERS
         </h2>
       </div>
-      <Speakers />
+      <SpeakersClient speakers={speakers} />
       <HomeNavigation />
       <HomeAudioGear />
     </div>

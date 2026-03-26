@@ -1,4 +1,6 @@
-import Headphones from "@/app/_components/Products/Headphones";
+import { getHeadphones } from "../_lib/services/getHeadphones";
+
+import HeadphonesClient from "@/app/_components/Products/HeadphonesClient";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 
@@ -6,7 +8,9 @@ export const metadata = {
   title: "Headphones",
 };
 
-function Page() {
+async function Page() {
+  const headphones = await getHeadphones();
+
   return (
     <div>
       <div className="bg-black py-32 max-xl:px-16 max-lg:py-20 max-sm:py-10">
@@ -14,7 +18,7 @@ function Page() {
           HEADPHONES
         </h2>
       </div>
-      <Headphones />
+      <HeadphonesClient headphones={headphones} />
       <HomeNavigation />
       <HomeAudioGear />
     </div>
