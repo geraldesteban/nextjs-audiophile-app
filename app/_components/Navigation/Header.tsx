@@ -41,7 +41,7 @@ function Header() {
         className={`bg-white rounded-bl-xl rounded-br-xl shadow-xl transition-all duration-1000 hidden max-lg:block ${
           active
             ? "max-lg:w-full max-lg:opacity-100"
-            : "max-lg:w-[1px] max-lg:opacity-0"
+            : "max-lg:w-px max-lg:opacity-0"
         }`}
       >
         <HomeNavigation />

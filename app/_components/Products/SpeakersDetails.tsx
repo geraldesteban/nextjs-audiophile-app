@@ -63,7 +63,7 @@ function SpeakersDetails({ speakers }: SpeakersProps) {
                   <br />
                   {/* EARPHONES */}
                 </h2>
-                <p className="text-gray-500 text-[15px] w-[360px] mb-10 max-lg:w-[100%]">
+                <p className="text-gray-500 text-[15px] w-90 mb-10 max-lg:w-full">
                   {speakers.description}
                 </p>
                 <p className="text-[18px] font-bold mb-10">

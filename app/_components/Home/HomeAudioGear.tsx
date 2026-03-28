@@ -55,7 +55,7 @@ function HomeAudioGear() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1 }}
-          className="text-gray-500 text-[15px] w-[445px] max-lg:w-[560px] max-lg:mx-auto max-sm:w-[100%]"
+          className="text-gray-500 text-[15px] w-111.5 max-lg:w-140 max-lg:mx-auto max-sm:w-full"
         >
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.

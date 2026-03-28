@@ -15,7 +15,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
       style={""}
     >
       <div className="relative max-md:mx-5">
-        <div className="absolute top-40 bg-white right-30 p-10 rounded-xl shadow-xl w-[500px] max-xl:right-15 max-lg:right-10 max-md:right-0 max-md:w-full">
+        <div className="absolute top-40 bg-white right-30 p-10 rounded-xl shadow-xl w-125 max-xl:right-15 max-lg:right-10 max-md:right-0 max-md:w-full">
           <div className="flex justify-between items-center mb-10">
             {/* Header */}
             <h2 className="text-[18px] font-bold">
@@ -29,7 +29,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
           <div className="flex justify-between items-center mb-10">
             <div className="flex items-center">
               <div className="relative">
-                <Image src="" alt="Added Cart" />
+                {/* <Image src="" alt="Added Cart" /> */}
               </div>
               <div>
                 <h2 className="text-[15px] font-bold">XX99 MK II</h2>
@@ -46,7 +46,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
           <div className="flex justify-between items-center mb-10">
             <div className="flex items-center">
               <div className="relative">
-                <Image src="" alt="Added Cart" />
+                {/* <Image src="" alt="Added Cart" /> */}
               </div>
               <div>
                 <h2 className="text-[15px] font-bold">XX99 MK II</h2>
@@ -63,7 +63,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
           <div className="flex justify-between items-center mb-10">
             <div className="flex items-center">
               <div className="relative">
-                <Image src="" alt="Added Cart" />
+                {/* <Image src="" alt="Added Cart" /> */}
               </div>
               <div>
                 <h2 className="text-[15px] font-bold">XX99 MK II</h2>

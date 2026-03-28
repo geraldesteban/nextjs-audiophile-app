@@ -21,9 +21,9 @@ function HomeGallery() {
       {/* ZX9 Speaker */}
       <motion.div
         className="bg-[#D87D4A] flex justify-around gap-5 pt-32 rounded-xl
-        bg-no-repeat bg-[length:80%] bg-[-70%_10%]
+        bg-no-repeat bg-size-[80%] bg-position-[-70%_10%]
         max-lg:block max-lg:text-center max-lg:pt-10 max-lg:pb-20
-        max-lg:bg-[length:120%] max-lg:bg-[50%_115%]"
+        max-lg:bg-size-[120%] max-lg:bg-position-[50%_115%]"
         initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: false, amount: 0.5 }}
@@ -62,12 +62,12 @@ function HomeGallery() {
             <br />
             SPEAKER
           </h2>
-          <p className="text-[#F1F1F1] w-[360px] mb-10 max-lg:mx-auto max-sm:w-[100%]">
+          <p className="text-[#F1F1F1] w-90 mb-10 max-lg:mx-auto max-sm:w-full">
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
           <Link
-            href="/"
+            href="/speakers/zx9-speaker"
             className="text-white bg-black px-7 py-3 hover:bg-[#4C4C4C] max-lg:hover:bg-black"
           >
             SEE PRODUCT
@@ -87,7 +87,7 @@ function HomeGallery() {
             ZX7 SPEAKER
           </h2>
           <Link
-            href="/"
+            href="/speakers/zx7-speaker"
             className="text-black font-bold border border-black px-7 py-3 lg:hover:bg-black lg:hover:text-white"
           >
             SEE PRODUCT
@@ -118,13 +118,13 @@ function HomeGallery() {
           <Image
             src={earphoneYX1}
             quality={100}
-            alt="ZX7 Speaker"
+            alt="YX1 SPEAKER"
             className="rounded-xl w-full max-sm:hidden"
           />
           <Image
             src={earphoneYX1Mobile}
             quality={100}
-            alt="ZX7 Speaker"
+            alt="YX1 SPEAKER"
             className="rounded-xl w-full hidden max-sm:block"
           />
         </motion.div>
@@ -133,7 +133,7 @@ function HomeGallery() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1 }}
-          className="flex-1 bg-[#F1F1F1] rounded-xl max-sm:flex-none max-sm:h-[250px]"
+          className="flex-1 bg-[#F1F1F1] rounded-xl max-sm:flex-none max-sm:h-62.5"
         >
           <div className="h-full flex flex-col justify-center mx-32 max-xl:mx-10 max-md:mx-5 max-sm:mx-10">
             <h2 className="text-black text-[28px] font-bold mb-10">
@@ -141,7 +141,7 @@ function HomeGallery() {
             </h2>
             <div className="mb-5">
               <Link
-                href="/"
+                href="/earphones/yx1-earphones"
                 className="text-black font-bold border border-black px-7 py-3 lg:hover:bg-black lg:hover:text-white"
               >
                 SEE PRODUCT

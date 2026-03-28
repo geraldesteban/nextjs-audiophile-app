@@ -57,7 +57,7 @@ function SpeakersClient({ speakers }: SpeakersProps) {
               <br />
               HEADPHONES
             </h2>
-            <p className="text-gray-500 text-[15px] w-[360px] mb-10 max-lg:w-[60.5%] max-lg:mx-auto">
+            <p className="text-gray-500 text-[15px] w-90 mb-10 max-lg:w-[60.5%] max-lg:mx-auto">
               {speaker.description}
             </p>
             <Link

@@ -162,14 +162,14 @@ function Page() {
           </form>
         </div>
         {/* Summary */}
-        <div className="p-10 rounded-xl shadow-xl w-[500px] self-start max-lg:w-full">
+        <div className="p-10 rounded-xl shadow-xl w-125 self-start max-lg:w-full">
           {/* Header */}
           <h2 className="text-[18px] font-bold mb-10">Summary</h2>
           {/* Added Carts */}
           <div className="flex justify-between items-center mb-10">
             <div className="flex items-center">
               <div className="relative">
-                <Image src="" alt="Added Cart" />
+                {/* <Image src="" alt="Added Cart" /> */}
               </div>
               <div>
                 <h2 className="text-[15px] font-bold">XX99 MK II</h2>
@@ -183,7 +183,7 @@ function Page() {
           <div className="flex justify-between items-center mb-10">
             <div className="flex items-center">
               <div className="relative">
-                <Image src="" alt="Added Cart" />
+                {/* <Image src="" alt="Added Cart" /> */}
               </div>
               <div>
                 <h2 className="text-[15px] font-bold">XX99 MK II</h2>
@@ -197,7 +197,7 @@ function Page() {
           <div className="flex justify-between items-center mb-10">
             <div className="flex items-center">
               <div className="relative">
-                <Image src="" alt="Added Cart" />
+                {/* <Image src="" alt="Added Cart" /> */}
               </div>
               <div>
                 <h2 className="text-[15px] font-bold">XX99 MK II</h2>

@@ -6,6 +6,18 @@ import YouMayAlsoLike from "@/app/_components/YouMayAlsoLike";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { productName: string };
+}) {
+  const { productName } = await params;
+
+  return {
+    title: `${productName}`,
+  };
+}
+
 async function Page() {
   const speakers = await getSpeakers();
 

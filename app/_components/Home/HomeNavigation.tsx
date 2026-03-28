@@ -41,7 +41,7 @@ function HomeNavigation() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1 }}
-          className="relative bg-[#F1F1F1] w-[350px] h-[200px] rounded-xl max-md:w-[200px] max-md:h-[150px] max-sm:w-[100%] max-sm:h-[400px]"
+          className="relative bg-[#F1F1F1] w-87.5 h-50 rounded-xl max-md:w-50 max-md:h-37.5 max-sm:w-full max-sm:h-100"
           key={item.heading}
         >
           <Image

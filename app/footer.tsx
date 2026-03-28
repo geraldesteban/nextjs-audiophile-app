@@ -13,7 +13,7 @@ function Footer() {
           <Logo />
         </div>
         <nav className="max-lg:mt-10">
-          <ul className="text-white text-[13px] font-bold tracking-widest flex items-center gap-10 max-xl:-tracking-wider max-xl:gap-5 max-sm:block max-sm:text-center">
+          <ul className="text-white text-[13px] font-bold tracking-widest flex items-center gap-10 max-xl:gap-5 max-sm:block max-sm:text-center">
             <li className="mb-5 lg:hover:text-[#D87D4A]">
               <Link href="/">HOME</Link>
             </li>
@@ -29,7 +29,7 @@ function Footer() {
           </ul>
         </nav>
       </div>
-      <p className="text-gray-500 text-[15px] w-[530px] mb-20 max-lg:w-[680px] max-md:w-[530px] max-sm:text-center max-sm:w-[100%]">
+      <p className="text-gray-500 text-[15px] w-132.5 mb-20 max-lg:w-170 max-md:w-132.5 max-sm:text-center max-sm:w-full">
         Audiophile is an all in one stop to fulfill your audio needs. We&apos;re
         a small team of music lovers and sound specialists who are devoted to
         helping you get the most out of personal audio. Come and visit our demo
@@ -37,9 +37,9 @@ function Footer() {
       </p>
       <div className="flex items-center justify-between max-sm:block max-sm:justify-center">
         <p className="text-gray-500 text-[15px] font-bold text-center">
-          Copyright 2025. All Rights Reserved
+          Copyright 2026. All Rights Reserved
         </p>
-        <div className="flex justify-end items-center gap-10 max-lg:gap-5 max-sm:justify-center max-sm:mt-10">
+        <div className="flex justify-end items-center gap-5 max-lg:gap-5 max-sm:justify-center max-sm:mt-10">
           <Link href="/">
             <Image
               src={facebook}
@@ -50,17 +50,17 @@ function Footer() {
           </Link>
           <Link href="/">
             <Image
-              src={instagram}
+              src={twitter}
               quality={100}
-              alt="Instagram"
+              alt="Twitter"
               className="text-[#D87D4A]"
             />
           </Link>
           <Link href="/">
             <Image
-              src={twitter}
+              src={instagram}
               quality={100}
-              alt="Twitter"
+              alt="Instagram"
               className="text-[#D87D4A]"
             />
           </Link>

@@ -12,7 +12,7 @@ import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 async function Page() {
   return (
     <div>
-      <main className="relative pb-[960px]">
+      <main className="relative pb-240">
         <Image
           src={heroDesktop}
           alt="Hero background"
@@ -44,12 +44,12 @@ async function Page() {
             <br />
             HEADPHONES
           </h2>
-          <p className="text-[#F1F1F1] text-[15px] w-[360px] mb-10 max-lg:mx-auto max-sm:w-[100%]">
+          <p className="text-[#F1F1F1] text-[15px] w-90 mb-10 max-lg:mx-auto max-sm:w-full">
             Experience natural, life like audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
           <Link
-            href="/"
+            href="/headphones/xx99-mark-two-headphones"
             className="text-white font-bold bg-[#D87D4A] px-7 py-3 lg:hover:brightness-130"
           >
             SEE PRODUCT

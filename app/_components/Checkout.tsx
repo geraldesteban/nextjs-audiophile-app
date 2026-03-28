@@ -5,7 +5,7 @@ import ConfirmIcon from "@/app/_assets/Icons/icon-order-confirmation.svg";
 function Checkout() {
   return (
     <div className="relative max-md:mx-5">
-      <div className="bg-white shadow-xl p-10 rounded-xl w-[500px] max-md:mx-auto max-md:w-full max-md:absolute max-md:top-40">
+      <div className="bg-white shadow-xl p-10 rounded-xl w-125 max-md:mx-auto max-md:w-full max-md:absolute max-md:top-40">
         <Image src={ConfirmIcon} alt="Confirm Icon" className="mb-5" />
         <h2 className="text-[32px] font-bold mb-5">
           THANK YOU
