@@ -1,4 +1,4 @@
-export type Speaker = {
+export type Products = {
   id: number;
   slug: string;
   name: string;
@@ -33,6 +33,6 @@ export type Speaker = {
   updatedAt?: Date;
 };
 
-export type SpeakersProps = {
-  speakers: Speaker[];
+export type ProductsProps = {
+  products: Products[];
 };

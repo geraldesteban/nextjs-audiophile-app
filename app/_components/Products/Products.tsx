@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-import { EarphonesProps } from "@/app/types/earphones";
+import { ProductsProps } from "@/app/types/products";
 
-function EarphonesClient({ earphones }: EarphonesProps) {
+function Products({ products }: ProductsProps) {
   return (
     <>
-      {earphones.map((earphones, i) => (
+      {products.map((product, i) => (
         <motion.div
           className={`flex justify-between items-center px-32 max-xl:px-16 max-lg:px-10 pt-32 gap-10 ${
             i + 1 === 2 ? "flex-row-reverse" : ""
@@ -22,25 +22,25 @@ function EarphonesClient({ earphones }: EarphonesProps) {
           transition={{ duration: 1 }}
         >
           <Image
-            src={earphones?.gallery?.first?.desktop}
+            src={product?.gallery?.first?.desktop}
             quality={100}
-            alt={earphones.name}
+            alt={product.name}
             width={500}
             height={500}
             className="rounded-xl w-[45%] max-lg:hidden"
           />
           <Image
-            src={earphones?.gallery?.first?.tablet}
+            src={product?.gallery?.first?.tablet}
             quality={100}
-            alt={earphones.name}
+            alt={product.name}
             width={500}
             height={500}
             className="rounded-xl hidden max-lg:block max-sm:hidden"
           />
           <Image
-            src={earphones?.gallery?.first?.mobile}
+            src={product?.gallery?.first?.mobile}
             quality={100}
-            alt={earphones.name}
+            alt={product.name}
             width={500}
             height={500}
             className="rounded-xl hidden max-sm:block"
@@ -54,15 +54,15 @@ function EarphonesClient({ earphones }: EarphonesProps) {
               NEW PRODUCT
             </h2>
             <h2 className="text-black text-[40px] font-bold mb-10 max-sm:text-[28px]">
-              {earphones.name}
+              {product.name}
               <br />
-              speakers
+              productS
             </h2>
             <p className="text-gray-500 text-[15px] w-90 mb-10 max-lg:w-[60.5%] max-lg:mx-auto">
-              {earphones.description}
+              {product.description}
             </p>
             <Link
-              href={`/earphones/${earphones?.slug}`}
+              href={`/${product.category}/${product?.slug}`}
               className="text-white font-bold bg-[#D87D4A] px-7 py-3 lg:hover:brightness-130"
             >
               SEE PRODUCT
@@ -73,4 +73,5 @@ function EarphonesClient({ earphones }: EarphonesProps) {
     </>
   );
 }
-export default EarphonesClient;
+
+export default Products;

@@ -1,14 +1,15 @@
+import { getProducts } from "../_lib/services/getProducts";
+
+import Products from "../_components/Products/Products";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
-import { getSpeakers } from "@/app/_lib/services/getSpeakers";
-import SpeakersClient from "@/app/_components/Products/SpeakersClient";
 
 export const metadata = {
   title: "Speakers",
 };
 
 async function Page() {
-  const speakers = await getSpeakers();
+  const products = await getProducts({ productName: "speakers" });
 
   return (
     <div>
@@ -17,7 +18,7 @@ async function Page() {
           SPEAKERS
         </h2>
       </div>
-      <SpeakersClient speakers={speakers} />
+      <Products products={products} />
       <HomeNavigation />
       <HomeAudioGear />
     </div>

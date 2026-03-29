@@ -2,13 +2,15 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/app/_lib/config/mongodb";
 import Headphones from "@/app/_lib/models/headphones";
 
-export async function GET() {
+export async function GET(request, { params }) {
   // Connect to the MongoDB Database
   await connectDB();
 
-  // Select only name, image, category, description, features, includes, and gallery
+  const { productName } = await params;
+
+  // Select only id, slug, name, category, price, description, features, includes, and gallery
   const data = await Headphones.find(
-    {},
+    { slug: productName },
     {
       _id: 0,
       id: 1,

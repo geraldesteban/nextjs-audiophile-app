@@ -1,0 +1,17 @@
+export async function getProducts({ productName }: { productName: string }) {
+  try {
+    const data = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/${productName}`,
+      { next: { revalidate: 60 } },
+    );
+
+    if (!data.ok) {
+      throw new Error(`HTTP Error: ${data.status}`);
+    }
+
+    return data.json();
+  } catch (error) {
+    console.error("Fetch failed", error);
+    throw error;
+  }
+}

@@ -1,10 +1,10 @@
-import { getHeadphones } from "@/app/_lib/services/getHeadphones";
+import { getProductDetails } from "@/app/_lib/services/getProductDetails";
 
-import HeadphonesDetails from "@/app/_components/Products/HeadphonesDetails";
 import Gallery from "@/app/_components/Gallery";
 import YouMayAlsoLike from "@/app/_components/YouMayAlsoLike";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
+import ProductDetails from "@/app/_components/Products/productDetails";
 
 export async function generateMetadata({
   params,
@@ -18,12 +18,17 @@ export async function generateMetadata({
   };
 }
 
-async function Page() {
-  const headphones = await getHeadphones();
+async function Page({ params }: { params: { productName: string } }) {
+  const { productName } = await params;
+
+  const productDetails = await getProductDetails({
+    productName: "headphones",
+    productNameDetails: `${productName}`,
+  });
 
   return (
     <div>
-      <HeadphonesDetails headphones={headphones} />
+      <ProductDetails products={productDetails} />
       <Gallery />
       <YouMayAlsoLike />
       <HomeNavigation />

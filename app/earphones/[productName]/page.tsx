@@ -1,6 +1,6 @@
-import { getEarphones } from "@/app/_lib/services/getEarphones";
+import { getProductDetails } from "@/app/_lib/services/getProductDetails";
 
-import EarphonesDetails from "@/app/_components/Products/EarphonesDetails";
+import ProductDetails from "@/app/_components/Products/productDetails";
 import Gallery from "@/app/_components/Gallery";
 import YouMayAlsoLike from "@/app/_components/YouMayAlsoLike";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
@@ -18,12 +18,17 @@ export async function generateMetadata({
   };
 }
 
-async function Page() {
-  const earphones = await getEarphones();
+async function Page({ params }: { params: { productName: string } }) {
+  const { productName } = await params;
+
+  const productDetails = await getProductDetails({
+    productName: "earphones",
+    productNameDetails: `${productName}`,
+  });
 
   return (
     <div>
-      <EarphonesDetails earphones={earphones} />
+      <ProductDetails products={productDetails} />
       <Gallery />
       <YouMayAlsoLike />
       <HomeNavigation />
