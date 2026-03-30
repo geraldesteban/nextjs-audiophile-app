@@ -1,16 +1,11 @@
-import { NextResponse } from "next/server";
 import { connectDB } from "@/app/_lib/config/mongodb";
 import Speakers from "@/app/_lib/models/speakers";
 
-export async function GET(request, { params }) {
-  // Connect to the MongoDB Database
+export async function getSpeakers() {
   await connectDB();
 
-  const { productName } = await params;
-
-  // Select only name, image, category, description, features, includes, and gallery
   const data = await Speakers.find(
-    { slug: productName },
+    {},
     {
       _id: 0,
       id: 1,
@@ -27,7 +22,7 @@ export async function GET(request, { params }) {
       "gallery.first.tablet": 1,
       "gallery.first.desktop": 1,
     },
-  );
+  ).lean();
 
-  return NextResponse.json(data);
+  return data;
 }

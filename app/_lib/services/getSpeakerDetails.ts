@@ -1,12 +1,17 @@
 import { connectDB } from "@/app/_lib/config/mongodb";
-import Headphones from "@/app/_lib/models/headphones";
-import { unstable_cache } from "next/cache";
+import Speakers from "@/app/_lib/models/speakers";
 
-export async function getHeadphones() {
+export async function getSpeakerDetails({
+  productName,
+}: {
+  productName: string;
+}) {
   await connectDB();
 
-  const data = await Headphones.find(
-    {},
+  const data = await Speakers.find(
+    {
+      slug: productName,
+    },
     {
       _id: 0,
       id: 1,

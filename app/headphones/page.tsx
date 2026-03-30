@@ -1,7 +1,8 @@
+import { getHeadphones } from "@/app/_lib/services/getHeadphones";
+
 import Products from "../_components/Products/Products";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
-import { getHeadphones } from "@/app/_lib/services/getHeadphones";
 
 export const metadata = {
   title: "Headphones",

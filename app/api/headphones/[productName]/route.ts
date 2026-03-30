@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 import { getHeadphoneDetails } from "@/app/_lib/services/getHeadphoneDetails";
 
-export async function GET(request, { params }) {
+type Params = {
+  productName: string;
+};
+
+export async function GET(request: Request, { params }: { params: Params }) {
   try {
     const { productName } = await params;
 
