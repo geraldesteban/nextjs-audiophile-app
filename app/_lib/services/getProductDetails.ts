@@ -6,10 +6,9 @@ export async function getProductDetails({
   productNameDetails: string;
 }) {
   try {
-    const data = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/${productName}/${productNameDetails}`,
-      { next: { revalidate: 60 } },
-    );
+    const data = await fetch(`/api/${productName}/${productNameDetails}`, {
+      next: { revalidate: 60 },
+    });
 
     if (!data.ok) {
       throw new Error(`HTTP Error: ${data.status}`);
