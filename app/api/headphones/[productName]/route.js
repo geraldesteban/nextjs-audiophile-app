@@ -1,33 +1,16 @@
 import { NextResponse } from "next/server";
-import { connectDB } from "@/app/_lib/config/mongodb";
-import Headphones from "@/app/_lib/models/headphones";
+import { getHeadphoneDetails } from "@/app/_lib/services/getHeadphoneDetails";
 
 export async function GET(request, { params }) {
-  // Connect to the MongoDB Database
-  await connectDB();
+  try {
+    const { productName } = await params;
 
-  const { productName } = await params;
-
-  // Select only id, slug, name, category, price, description, features, includes, and gallery
-  const data = await Headphones.find(
-    { slug: productName },
-    {
-      _id: 0,
-      id: 1,
-      slug: 1,
-      name: 1,
-      category: 1,
-      new: 1,
-      price: 1,
-      description: 1,
-      features: 1,
-      "includes.quantity": 1,
-      "includes.item": 1,
-      "gallery.first.mobile": 1,
-      "gallery.first.tablet": 1,
-      "gallery.first.desktop": 1,
-    },
-  );
-
-  return NextResponse.json(data);
+    const data = await getHeadphoneDetails({ productName: productName });
+    return NextResponse.json(data);
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed to fetch headphones" },
+      { status: 500 },
+    );
+  }
 }

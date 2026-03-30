@@ -1,4 +1,4 @@
-import { getProductDetails } from "@/app/_lib/services/getProductDetails";
+import { getHeadphoneDetails } from "@/app/_lib/services/getHeadphoneDetails";
 
 import Gallery from "@/app/_components/Gallery";
 import YouMayAlsoLike from "@/app/_components/YouMayAlsoLike";
@@ -21,14 +21,13 @@ export async function generateMetadata({
 async function Page({ params }: { params: { productName: string } }) {
   const { productName } = await params;
 
-  const productDetails = await getProductDetails({
-    productName: "headphones",
-    productNameDetails: `${productName}`,
+  const headphoneDetails = await getHeadphoneDetails({
+    productName: productName,
   });
 
   return (
     <div>
-      <ProductDetails products={productDetails} />
+      <ProductDetails products={headphoneDetails} />
       <Gallery />
       <YouMayAlsoLike />
       <HomeNavigation />

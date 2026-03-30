@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 // Reusable connnect to database
-export const connectDB = async () => {
+export async function connectDB() {
   // Check if there is mongodb uri
   if (!process.env.MONGODB_URI) {
     throw new Error("MONGODB_URI missing");
@@ -13,4 +13,4 @@ export const connectDB = async () => {
   } catch (error) {
     console.error("Connection error:", error);
   }
-};
+}

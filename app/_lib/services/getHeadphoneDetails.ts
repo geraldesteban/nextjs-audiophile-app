@@ -1,14 +1,15 @@
-import { NextResponse } from "next/server";
 import { connectDB } from "@/app/_lib/config/mongodb";
-import Speakers from "@/app/_lib/models/speakers";
+import Headphones from "@/app/_lib/models/headphones";
 
-export async function GET() {
-  // Connect to the MongoDB Database
+export async function getHeadphoneDetails({
+  productName,
+}: {
+  productName: string;
+}) {
   await connectDB();
 
-  // Select only name, image, category, description, features, includes, and gallery
-  const data = await Speakers.find(
-    {},
+  const data = await Headphones.find(
+    { slug: productName },
     {
       _id: 0,
       id: 1,
@@ -27,5 +28,5 @@ export async function GET() {
     },
   );
 
-  return NextResponse.json(data);
+  return data;
 }
