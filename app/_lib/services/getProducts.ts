@@ -9,7 +9,7 @@ export async function getProducts({ productName }: { productName: string }) {
       throw new Error(`HTTP Error: ${data.status}`);
     }
 
-    return data.json();
+    return await data.json();
   } catch (error) {
     console.error("Fetch failed", error);
     throw error;
