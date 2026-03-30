@@ -1,6 +1,6 @@
-import { getProducts } from "../_lib/services/getProducts";
+// import { getProducts } from "../_lib/services/getProducts";
 
-import Products from "../_components/Products/Products";
+// import Products from "../_components/Products/Products";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 
@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 async function Page() {
-  const products = await getProducts({ productName: "headphones" });
+  // const products = await getProducts({ productName: "headphones" });
 
   return (
     <div>
@@ -19,7 +19,7 @@ async function Page() {
           HEADPHONES
         </h2>
       </div>
-      <Products products={products} />
+      {/* <Products products={products} /> */}
       <HomeNavigation />
       <HomeAudioGear />
     </div>
