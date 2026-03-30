@@ -1,14 +1,16 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { getHeadphoneDetails } from "@/app/_lib/services/getHeadphoneDetails";
 
 type Params = {
   productName: string;
 };
 
-export async function GET(request: Request, { params }: { params: Params }) {
+export async function GET(
+  request: NextRequest,
+  context: { params: Promise<{ productName: string }> },
+) {
+  const { productName } = await context.params;
   try {
-    const { productName } = await params;
-
     const data = await getHeadphoneDetails({ productName: productName });
     return NextResponse.json(data);
   } catch (error) {
