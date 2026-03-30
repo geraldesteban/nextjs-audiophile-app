@@ -1,14 +1,19 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 
 import { ProductsProps } from "@/app/types/products";
 
 import { useParams } from "next/navigation";
 import useMoveBack from "@/app/hooks/useMoveback";
+import { useCartStore } from "@/app/store/cartStore";
 
 function ProductDetails({ products }: ProductsProps) {
+  const cart = useCartStore(state => state.cart);
+  const addToCart = useCartStore(state => state.addToCart);
+  const increasedCart = useCartStore(state => state.increaseQty);
+  const decreasedCart = useCartStore(state => state.decreaseQty);
+
   const params = useParams();
   const { productName } = params;
 
@@ -25,7 +30,7 @@ function ProductDetails({ products }: ProductsProps) {
       {products
         .filter(product => product.slug === productName)
         .map(product => (
-          <div key={product.name}>
+          <div key={product.id}>
             <div
               className={`flex justify-between items-center px-32 pt-32 gap-10 max-xl:px-16 max-lg:px-10 max-lg:flex-row max-lg:pt-20 max-sm:pt-10 max-sm:flex-col`}
             >
@@ -70,16 +75,32 @@ function ProductDetails({ products }: ProductsProps) {
                 <p className="text-[18px] font-bold mb-10">$ {product.price}</p>
                 <div className="flex items-center gap-5">
                   <div className="bg-[#F1F1F1] flex items-center gap-5 px-6 py-3">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
+                    <button
+                      className="cursor-pointer hover:opacity-50"
+                      onClick={() => decreasedCart(product.id)}
+                    >
+                      -
+                    </button>
+                    <span>0</span>
+                    <button
+                      className="cursor-pointer hover:opacity-50"
+                      onClick={() => increasedCart(product.id)}
+                    >
+                      +
+                    </button>
                   </div>
-                  <Link
-                    href="/"
-                    className="text-white font-bold bg-[#D87D4A] px-7 py-3 hover:brightness-130"
+                  <button
+                    className="text-white font-bold bg-[#D87D4A] px-7 py-3 hover:brightness-130 cursor-pointer"
+                    onClick={() =>
+                      addToCart({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                      })
+                    }
                   >
                     ADD TO CART
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
