@@ -24,10 +24,6 @@ jobs:
       - name: Start dev server
         run: npm start &
 
-      # ⏳ Wait for localhost to be ready
-      - name: Wait for server
-        run: npx wait-on http://localhost:3000
-
       # 🔨 Build project
       - name: Build project
         run: npm run build
