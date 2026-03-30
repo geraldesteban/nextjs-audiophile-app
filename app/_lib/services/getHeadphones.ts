@@ -22,7 +22,7 @@ export async function getHeadphones() {
       "gallery.first.tablet": 1,
       "gallery.first.desktop": 1,
     },
-  );
+  ).lean();
 
   return data;
 }

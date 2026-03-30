@@ -26,7 +26,7 @@ export async function getHeadphoneDetails({
       "gallery.first.tablet": 1,
       "gallery.first.desktop": 1,
     },
-  );
+  ).lean();
 
   return data;
 }
