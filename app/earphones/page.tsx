@@ -1,4 +1,4 @@
-// import { getProducts } from "@/app/_lib/services/getProducts";
+import { getProducts } from "@/app/_lib/services/getProducts";
 
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 async function Page() {
-  // const products = await getProducts({ productName: "earphones" });
+  const products = await getProducts({ productName: "earphones" });
 
   return (
     <div>
@@ -18,7 +18,7 @@ async function Page() {
           EARPHONES
         </h2>
       </div>
-      {/* <Products products={products} /> */}
+      <Products products={products} />
       <HomeNavigation />
       <HomeAudioGear />
     </div>
