@@ -17,7 +17,7 @@ import earphoneYX1Mobile from "@/app/_assets/SectionThree/mobile/image-earphones
 
 function HomeGallery() {
   return (
-    <div className="relative px-32 pb-32 flex justify-around flex-col gap-10 max-xl:px-16 max-lg:px-10 max-md:pb-20">
+    <div className="relative px-32 flex justify-around flex-col gap-10 max-xl:px-16 max-lg:px-10 max-md:pb-20">
       {/* ZX9 Speaker */}
       <motion.div
         className="bg-[#D87D4A] flex justify-around gap-5 pt-32 rounded-xl
