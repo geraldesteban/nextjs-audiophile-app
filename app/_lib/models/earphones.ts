@@ -15,6 +15,7 @@ const earphonesSchema = new mongoose.Schema(
     includes: { type: Array, default: [] },
     gallery: { type: Object },
     others: { type: Array, default: [] },
+    cart: { type: Object },
   },
   { timestamps: true },
 );

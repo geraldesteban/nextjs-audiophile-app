@@ -11,10 +11,7 @@ import { useState } from "react";
 
 function ProductDetails({ products }: ProductsProps) {
   const [count, setCount] = useState(1);
-  const carts = useCartStore(state => state.cart);
-  const addToCart = useCartStore(state => state.addToCart);
-  const increasedCart = useCartStore(state => state.increaseQty);
-  const decreasedCart = useCartStore(state => state.decreaseQty);
+  const addToCart = useCartStore((state) => state.addToCart);
 
   const params = useParams();
   const { productName } = params;
@@ -22,22 +19,22 @@ function ProductDetails({ products }: ProductsProps) {
   const moveBack = useMoveBack();
 
   return (
-    <div className="pt-40 pb-20 max-lg:py-10">
+    <div className="">
       <button
-        className="text-[15px] text-gray-500 font-medium ml-32 max-xl:ml-16 max-lg:ml-10 cursor-pointer hover:text-[#D87D4A]"
+        className="text-[15px] py-10 text-gray-500 font-medium ml-32 max-xl:ml-16 max-lg:ml-10 cursor-pointer hover:text-[#D87D4A]"
         onClick={moveBack}
       >
         Go Back
       </button>
       {products
-        .filter(product => product.slug === productName)
-        .map(product => (
-          <div key={product.id}>
+        .filter((product) => product.slug === productName)
+        .map((product) => (
+          <div key={product.id} className="py-20">
             <div
-              className={`flex justify-between items-center px-32 pt-32 gap-10 max-xl:px-16 max-lg:px-10 max-lg:flex-row max-lg:pt-20 max-sm:pt-10 max-sm:flex-col`}
+              className={`flex justify-between items-center px-32 gap-10 max-xl:px-16 max-lg:px-10 max-lg:flex-col`}
             >
               <Image
-                src={product?.gallery?.first?.desktop}
+                src={product?.image?.desktop}
                 quality={100}
                 alt={product.name}
                 width={500}
@@ -45,7 +42,7 @@ function ProductDetails({ products }: ProductsProps) {
                 className="rounded-xl w-[45%] max-lg:hidden"
               />
               <Image
-                src={product?.gallery?.first?.tablet}
+                src={product?.image?.tablet}
                 quality={100}
                 alt={product.name}
                 width={500}
@@ -53,7 +50,7 @@ function ProductDetails({ products }: ProductsProps) {
                 className="rounded-xl hidden max-lg:block max-sm:hidden"
               />
               <Image
-                src={product?.gallery?.first?.mobile}
+                src={product?.image?.mobile}
                 quality={100}
                 alt={product.name}
                 width={500}
@@ -69,7 +66,6 @@ function ProductDetails({ products }: ProductsProps) {
                 <h2 className="text-black text-[40px] font-bold mb-10 max-sm:text-[28px]">
                   {product.name}
                   <br />
-                  {/* EARPHONES */}
                 </h2>
                 <p className="text-gray-500 text-[15px] w-90 mb-10 max-lg:w-full">
                   {product.description}
@@ -79,26 +75,27 @@ function ProductDetails({ products }: ProductsProps) {
                   <div className="bg-[#F1F1F1] flex items-center gap-5 px-6 py-3">
                     <button
                       className="cursor-pointer hover:text-[#D87D4A]"
-                      onClick={() => setCount(prev => Math.max(1, prev - 1))}
+                      onClick={() => setCount((prev) => Math.max(1, prev - 1))}
                     >
                       -
                     </button>
                     <span>{count}</span>
                     <button
                       className="cursor-pointer hover:text-[#D87D4A]"
-                      onClick={() => setCount(prev => prev + 1)}
+                      onClick={() => setCount((prev) => prev + 1)}
                     >
                       +
                     </button>
                   </div>
                   <button
-                    className="text-white font-bold bg-[#D87D4A] px-7 py-3 hover:brightness-130 cursor-pointer"
+                    className="text-white font-bold bg-[#D87D4A] px-7 py-3 hover:brightness-130 cursor-pointer hover:opacity-90"
                     onClick={() =>
                       addToCart({
                         id: product.id,
                         name: product.name,
                         price: product.price,
                         qty: count,
+                        image: product.cart.image,
                       })
                     }
                   >
@@ -119,7 +116,7 @@ function ProductDetails({ products }: ProductsProps) {
                 </h2>
                 <div>
                   <ul>
-                    {product.includes.map(inc => (
+                    {product.includes.map((inc) => (
                       <li key={inc.item} className="whitespace-nowrap">
                         <span className="text-[#D87D4A]">{inc.quantity}x</span>
                         <span className="ml-5">{inc.item}</span>

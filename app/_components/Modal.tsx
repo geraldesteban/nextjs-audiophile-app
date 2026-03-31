@@ -7,6 +7,7 @@ interface ModalProps {
   children: ReactNode;
 }
 
+// Reusable modal
 function Modal({ isOpen, onClose, style, children }: ModalProps) {
   if (!isOpen) return null;
 

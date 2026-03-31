@@ -14,9 +14,9 @@ function Header() {
   const [activeCart, setActiveCart] = useState(false);
 
   return (
-    <div className="fixed w-full z-50">
-      <header className="bg-black border-b border-gray-500">
-        <div className="flex justify-between items-center px-32 py-10 max-xl:px-16 max-lg:px-10">
+    <div>
+      <header className="bg-black border-b border-gray-500 px-32 py-10 max-xl:px-16 max-lg:px-10">
+        <div className="flex justify-between items-center">
           <div className="flex items-center">
             <button
               className="cursor-pointer"
@@ -29,9 +29,14 @@ function Header() {
                 className="hidden mr-10 max-lg:block"
               />
             </button>
-            <Logo />
+            <div className="max-sm:hidden">
+              <Logo />
+            </div>
           </div>
           <Navigation />
+          <div className="hidden max-sm:block">
+            <Logo />
+          </div>
           <CartIcon activeCart={activeCart} setActiveCart={setActiveCart} />
         </div>
       </header>

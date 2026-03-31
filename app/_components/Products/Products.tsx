@@ -12,9 +12,9 @@ function Products({ products }: ProductsProps) {
     <>
       {products.map((product, i) => (
         <motion.div
-          className={`flex justify-between items-center px-32 max-xl:px-16 max-lg:px-10 pt-32 gap-10 ${
+          className={`flex justify-between items-center px-32 max-xl:px-16 max-lg:px-10 gap-10 ${
             i + 1 === 2 ? "flex-row-reverse" : ""
-          } max-lg:px-10 max-lg:flex-col max-lg:pt-20`}
+          } max-lg:px-10 max-lg:flex-col`}
           key={i}
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -22,7 +22,7 @@ function Products({ products }: ProductsProps) {
           transition={{ duration: 1 }}
         >
           <Image
-            src={product?.gallery?.first?.desktop}
+            src={product?.image?.desktop}
             quality={100}
             alt={product.name}
             width={500}
@@ -30,7 +30,7 @@ function Products({ products }: ProductsProps) {
             className="rounded-xl w-[45%] max-lg:hidden"
           />
           <Image
-            src={product?.gallery?.first?.tablet}
+            src={product?.image?.tablet}
             quality={100}
             alt={product.name}
             width={500}
@@ -38,14 +38,14 @@ function Products({ products }: ProductsProps) {
             className="rounded-xl hidden max-lg:block max-sm:hidden"
           />
           <Image
-            src={product?.gallery?.first?.mobile}
+            src={product?.image?.mobile}
             quality={100}
             alt={product.name}
             width={500}
             height={500}
             className="rounded-xl hidden max-sm:block"
           />
-          <div className="max-lg:text-center">
+          <div className="max-lg:text-center mb-10">
             <h2
               className={`text-[#D87D4A] text-[14px] tracking-[8px] mb-5 ${
                 i === 0 ? "block" : "hidden"
@@ -55,8 +55,6 @@ function Products({ products }: ProductsProps) {
             </h2>
             <h2 className="text-black text-[40px] font-bold mb-10 max-sm:text-[28px]">
               {product.name}
-              <br />
-              productS
             </h2>
             <p className="text-gray-500 text-[15px] w-90 mb-10 max-lg:w-[60.5%] max-lg:mx-auto">
               {product.description}

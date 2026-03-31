@@ -12,6 +12,9 @@ export async function getHeadphones() {
       id: 1,
       slug: 1,
       name: 1,
+      "image.mobile": 1,
+      "image.tablet": 1,
+      "image.desktop": 1,
       category: 1,
       new: 1,
       price: 1,
@@ -22,6 +25,7 @@ export async function getHeadphones() {
       "gallery.first.mobile": 1,
       "gallery.first.tablet": 1,
       "gallery.first.desktop": 1,
+      "cart.image": 1,
     },
   ).lean();
 

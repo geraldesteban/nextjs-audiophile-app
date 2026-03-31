@@ -4,7 +4,7 @@ import ConfirmIcon from "@/app/_assets/Icons/icon-order-confirmation.svg";
 import { useCartStore } from "@/app/store/cartStore";
 
 function Checkout() {
-  const carts = useCartStore(state => state.cart);
+  const carts = useCartStore((state) => state.cart);
 
   return (
     <div className="relative max-md:mx-5">
@@ -23,7 +23,7 @@ function Checkout() {
           <div className="bg-[#F1F1F1] flex flex-1 flex-col gap-2 rounded-tl-xl rounded-bl-xl p-5">
             <div className="flex justify-between border-b border-gray-500 pb-3">
               <div className="flex items-center">
-                <Image src="" alt="Item" />
+                {/* <Image src="" alt="Item" />  */}
                 <div className="flex flex-col">
                   <span className="text-[15px] font-bold whitespace-nowrap">
                     XX99 MK II

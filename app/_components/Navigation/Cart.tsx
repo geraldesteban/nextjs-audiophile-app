@@ -9,10 +9,10 @@ type ModalCartProps = {
 };
 
 function Cart({ activeCart, setActiveCart }: ModalCartProps) {
-  const carts = useCartStore(state => state.cart);
-  const clearCart = useCartStore(state => state.clearCart);
-  const increasedCart = useCartStore(state => state.increaseQty);
-  const decreasedCart = useCartStore(state => state.decreaseQty);
+  const carts = useCartStore((state) => state.cart);
+  const clearCart = useCartStore((state) => state.clearCart);
+  const increasedCart = useCartStore((state) => state.increaseQty);
+  const decreasedCart = useCartStore((state) => state.decreaseQty);
 
   return (
     <Modal
@@ -28,7 +28,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
               Cart<span>({carts.length})</span>
             </h2>
             <button
-              className="text-gray-500 text-[15px] underline cursor-pointer hover:text-red-500"
+              className="text-gray-500 text-[15px] underline cursor-pointer hover:text-[#D87D4A]"
               onClick={clearCart}
             >
               Remove all
@@ -38,14 +38,19 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
           {carts.length === 0 ? (
             <p className="text-center font-bold">Cart is empty.</p>
           ) : (
-            carts.map(item => (
+            carts.map((item) => (
               <div
                 key={item.id}
                 className="flex justify-between items-center mb-10"
               >
-                <div className="flex items-center">
+                <div className="flex items-center gap-5">
                   <div className="relative">
-                    {/* <Image src="" alt="Added Cart" /> */}
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={50}
+                      height={50}
+                    />
                   </div>
                   <div>
                     <h2 className="text-[15px] font-bold">{item.name}</h2>
@@ -82,14 +87,14 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
                 <p className="text-[18px] font-bold">
                   $
                   {carts
-                    .map(item => item.price * item.qty)
+                    .map((item) => item.price * item.qty)
                     .reduce((a, b) => a + b, 0)}
                 </p>
               </div>
               {/*   // Checkout */}
               <Link href="/checkout" className="flex flex-col gap-5">
                 <button
-                  className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer"
+                  className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer hover:opacity-80"
                   onClick={() => setActiveCart(!activeCart)}
                 >
                   CHECKOUT

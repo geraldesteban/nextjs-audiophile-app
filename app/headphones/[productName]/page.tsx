@@ -26,9 +26,9 @@ async function Page({ params }: { params: { productName: string } }) {
   });
 
   return (
-    <div>
+    <div className="py-20">
       <ProductDetails products={headphoneDetails} />
-      <Gallery />
+      <Gallery products={headphoneDetails} />
       <YouMayAlsoLike />
       <HomeNavigation />
       <HomeAudioGear />

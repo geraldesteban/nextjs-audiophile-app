@@ -37,7 +37,7 @@ function Footer() {
       </p>
       <div className="flex items-center justify-between max-sm:block max-sm:justify-center">
         <p className="text-gray-500 text-[15px] font-bold text-center">
-          Copyright 2026. All Rights Reserved
+          Copyright {new Date().getFullYear()}. All Rights Reserved
         </p>
         <div className="flex justify-end items-center gap-5 max-lg:gap-5 max-sm:justify-center max-sm:mt-10">
           <Link href="/">
@@ -45,23 +45,18 @@ function Footer() {
               src={facebook}
               quality={100}
               alt="Facebook"
-              className="text-[#D87D4A]"
+              className="icon"
             />
           </Link>
           <Link href="/">
-            <Image
-              src={twitter}
-              quality={100}
-              alt="Twitter"
-              className="text-[#D87D4A]"
-            />
+            <Image src={twitter} quality={100} alt="Twitter" className="icon" />
           </Link>
           <Link href="/">
             <Image
               src={instagram}
               quality={100}
               alt="Instagram"
-              className="text-[#D87D4A]"
+              className="icon"
             />
           </Link>
         </div>

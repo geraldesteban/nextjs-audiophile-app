@@ -9,10 +9,7 @@ import "@/app/_styles/globals.css";
 import Footer from "@/app/footer";
 
 export const metadata = {
-  title: {
-    template: "%s / Audiophile",
-    default: "Welcome / Audiophile",
-  },
+  title: "Welcome / Audiophile",
 };
 
 type RootLayoutProps = { children: ReactNode };

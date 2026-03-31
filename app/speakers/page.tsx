@@ -13,14 +13,16 @@ async function Page() {
 
   return (
     <div>
-      <div className="bg-black pt-52 pb-32 max-lg:py-20 max-sm:py-10">
+      <div className="bg-black py-20 max-md:py-10">
         <h2 className="text-white text-[40px] font-bold text-center">
           SPEAKERS
         </h2>
       </div>
-      <Products products={speakers} />
-      <HomeNavigation />
-      <HomeAudioGear />
+      <div className="py-20">
+        <Products products={speakers} />
+        <HomeNavigation />
+        <HomeAudioGear />
+      </div>
     </div>
   );
 }
