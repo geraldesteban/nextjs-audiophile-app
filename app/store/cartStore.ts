@@ -10,7 +10,7 @@ type CartItem = {
 
 type CartStore = {
   cart: CartItem[];
-  addToCart: (item: Omit<CartItem, "qty">) => void;
+  addToCart: (item: Omit<CartItem, "qty"> & { qty?: number }) => void;
   clearCart: () => void;
   increaseQty: (id: number) => void;
   decreaseQty: (id: number) => void;
@@ -19,6 +19,7 @@ type CartStore = {
 export const useCartStore = create<CartStore>()(
   persist(
     (set, get) => ({
+      // Cart Storage
       cart: [],
 
       // Add item to cart
@@ -26,17 +27,17 @@ export const useCartStore = create<CartStore>()(
         const cart = get().cart;
         const existing = cart.find(p => p.id === item.id);
 
-        let updatedCart;
-
         if (existing) {
-          updatedCart = cart.map(p =>
-            p.id === item.id ? { ...p, qty: p.qty + 1 } : p,
-          );
+          set({
+            cart: cart.map(p =>
+              p.id === item.id ? { ...p, qty: p.qty + (item.qty ?? 1) } : p,
+            ),
+          });
         } else {
-          updatedCart = [...cart, { ...item, qty: 1 }];
+          set({
+            cart: [...cart, { ...item, qty: item.qty ?? 1 }],
+          });
         }
-
-        set({ cart: updatedCart });
       },
 
       // Increased quantity of item
