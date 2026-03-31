@@ -207,7 +207,8 @@ function Page() {
                   $
                   {carts
                     .map((item) => item.price * item.qty)
-                    .reduce((a, b) => a + b, 0)}
+                    .reduce((a, b) => a + b, 0)
+                    .toFixed(0)}
                 </p>
               </div>
               {/* Shipping*/}
@@ -226,13 +227,15 @@ function Page() {
                 </h2>
                 <p className="text-[18px] font-bold">
                   $
-                  {carts
-                    .map((item) => item.price * item.qty)
-                    .reduce((a, b) => a + b, 0) *
-                    0.2 +
+                  {(
                     carts
                       .map((item) => item.price * item.qty)
-                      .reduce((a, b) => a + b, 0)}
+                      .reduce((a, b) => a + b, 0) *
+                      0.2 +
+                    carts
+                      .map((item) => item.price * item.qty)
+                      .reduce((a, b) => a + b, 0)
+                  ).toFixed(0)}
                 </p>
               </div>
               {/* Grand total */}
@@ -242,9 +245,11 @@ function Page() {
                 </h2>
                 <p className="text-[18px] font-bold">
                   $
-                  {carts.reduce((a, item) => a + item.price * item.qty, 0) *
-                    1.2 +
-                    (carts.length === 0 ? 0 : 50)}
+                  {(
+                    carts.reduce((a, item) => a + item.price * item.qty, 0) *
+                      1.2 +
+                    (carts.length === 0 ? 0 : 50)
+                  ).toFixed(0)}
                 </p>
               </div>
               {/* Checkout button */}

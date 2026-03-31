@@ -21,7 +21,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
       style={""}
     >
       <div className="relative max-md:mx-5">
-        <div className="absolute top-40 bg-white right-30 p-10 rounded-xl shadow-xl w-125 max-xl:right-15 max-lg:right-10 max-md:right-0 max-md:w-full">
+        <div className="absolute top-20 bg-white right-30 p-10 rounded-xl shadow-xl w-125 max-xl:right-15 max-lg:right-10 max-md:right-0 max-md:w-full">
           <div className="flex justify-between items-center mb-10">
             {/* Header */}
             <h2 className="text-[18px] font-bold">
@@ -35,49 +35,50 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
             </button>
           </div>
           {/* Added Carts */}
-          {carts.length === 0 ? (
-            <p className="text-center font-bold">Cart is empty.</p>
-          ) : (
-            carts.map((item) => (
-              <div
-                key={item.id}
-                className="flex justify-between items-center mb-10"
-              >
-                <div className="flex items-center gap-5">
-                  <div className="relative">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={50}
-                      height={50}
-                    />
+          <div className="max-h-50 overflow-y-auto">
+            {carts.length === 0 ? (
+              <p className="text-center font-bold">Cart is empty.</p>
+            ) : (
+              carts.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex justify-between items-center mb-10"
+                >
+                  <div className="flex items-center gap-5">
+                    <div className="relative">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        width={50}
+                        height={50}
+                      />
+                    </div>
+                    <div>
+                      <h2 className="text-[15px] font-bold">{item.name}</h2>
+                      <p className="text-gray-500 text-[14px] font-bold">
+                        $ {item.price * item.qty}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h2 className="text-[15px] font-bold">{item.name}</h2>
-                    <p className="text-gray-500 text-[14px] font-bold">
-                      $ {item.price * item.qty}
-                    </p>
+                  <div className="bg-[#F1F1F1] flex items-center gap-5 px-6 py-3">
+                    <button
+                      className="cursor-pointer hover:hover:text-[#D87D4A]"
+                      onClick={() => decreasedCart(item.id)}
+                    >
+                      -
+                    </button>
+                    <span>{item.qty}</span>
+                    <button
+                      className="cursor-pointer hover:text-[#D87D4A]"
+                      onClick={() => increasedCart(item.id)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
-                <div className="bg-[#F1F1F1] flex items-center gap-5 px-6 py-3">
-                  <button
-                    className="cursor-pointer hover:hover:text-[#D87D4A]"
-                    onClick={() => decreasedCart(item.id)}
-                  >
-                    -
-                  </button>
-                  <span>{item.qty}</span>
-                  <button
-                    className="cursor-pointer hover:text-[#D87D4A]"
-                    onClick={() => increasedCart(item.id)}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            ))
-          )}
-
+              ))
+            )}
+          </div>
           {/* Checkout button */}
           {carts.length === 0 ? null : (
             <>

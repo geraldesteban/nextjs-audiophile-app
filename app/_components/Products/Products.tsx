@@ -48,7 +48,7 @@ function Products({ products }: ProductsProps) {
           <div className="max-lg:text-center mb-10">
             <h2
               className={`text-[#D87D4A] text-[14px] tracking-[8px] mb-5 ${
-                i === 0 ? "block" : "hidden"
+                product.new ? "block" : "hidden"
               }`}
             >
               NEW PRODUCT

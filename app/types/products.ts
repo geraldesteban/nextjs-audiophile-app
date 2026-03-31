@@ -2,27 +2,27 @@ export type Products = {
   id: number;
   slug: string;
   name: string;
-
   image: {
     desktop: string;
     tablet: string;
     mobile: string;
   };
   category: string;
-
-  categoryImage?: Record<string, unknown>;
-
+  categoryImage: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+  };
   new: boolean;
   price: number;
-
-  description?: string;
-  features?: string;
-
-  includes: {
-    quantity: number;
-    item: string;
-  }[];
-
+  description: string;
+  features: string;
+  includes: [
+    {
+      quantity: number;
+      item: string;
+    },
+  ];
   gallery: {
     first: {
       desktop: string;
@@ -40,15 +40,20 @@ export type Products = {
       mobile: string;
     };
   };
-
-  others: unknown[];
-
+  others: [
+    {
+      slug: string;
+      name: string;
+      image: {
+        mobile: string;
+        tablet: string;
+        desktop: string;
+      };
+    },
+  ];
   cart: {
     image: string;
   };
-
-  createdAt?: Date;
-  updatedAt?: Date;
 };
 
 export type ProductsProps = {

@@ -18,7 +18,6 @@ export async function getEarphoneDetails({
       "image.mobile": 1,
       "image.tablet": 1,
       "image.desktop": 1,
-      category: 1,
       new: 1,
       price: 1,
       description: 1,

@@ -1,6 +1,5 @@
 import { connectDB } from "@/app/_lib/config/mongodb";
 import Headphones from "@/app/_lib/models/headphones";
-import { unstable_cache } from "next/cache";
 
 export async function getHeadphones() {
   await connectDB();
@@ -12,20 +11,14 @@ export async function getHeadphones() {
       id: 1,
       slug: 1,
       name: 1,
-      "image.mobile": 1,
-      "image.tablet": 1,
-      "image.desktop": 1,
+      image: {
+        mobile: 1,
+        tablet: 1,
+        desktop: 1,
+      },
       category: 1,
       new: 1,
-      price: 1,
       description: 1,
-      features: 1,
-      "includes.quantity": 1,
-      "includes.item": 1,
-      "gallery.first.mobile": 1,
-      "gallery.first.tablet": 1,
-      "gallery.first.desktop": 1,
-      "cart.image": 1,
     },
   ).lean();
 

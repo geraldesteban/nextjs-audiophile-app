@@ -15,7 +15,7 @@ export async function GET(
     return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json(
-      { error: "Failed to fetch headphones" },
+      { error: "Failed to fetch speakers" },
       { status: 500 },
     );
   }

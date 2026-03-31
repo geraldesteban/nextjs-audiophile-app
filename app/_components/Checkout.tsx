@@ -46,8 +46,10 @@ function Checkout() {
             </span>
             <span className="text-white text-[18px] font-bold">
               $
-              {carts.reduce((a, item) => a + item.price * item.qty, 0) * 1.2 +
-                (carts.length === 0 ? 0 : 50)}
+              {(
+                carts.reduce((a, item) => a + item.price * item.qty, 0) * 1.2 +
+                (carts.length === 0 ? 0 : 50)
+              ).toFixed(0)}
             </span>
           </div>
         </div>

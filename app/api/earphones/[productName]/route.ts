@@ -1,4 +1,4 @@
-import { getHeadphoneDetails } from "@/app/_lib/services/getHeadphoneDetails";
+import { getEarphoneDetails } from "@/app/_lib/services/getEarphoneDetails";
 import { NextResponse, NextRequest } from "next/server";
 
 type Params = {
@@ -11,12 +11,12 @@ export async function GET(
 ) {
   const { productName } = await context.params;
   try {
-    const data = await getHeadphoneDetails({ productName });
+    const data = await getEarphoneDetails({ productName });
 
     return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json(
-      { error: "Failed to fetch headphones" },
+      { error: "Failed to fetch earphones" },
       { status: 500 },
     );
   }
