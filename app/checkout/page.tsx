@@ -5,9 +5,12 @@ import Link from "next/link";
 import Checkout from "../_components/Checkout";
 import Modal from "@/app/_components/Modal";
 import { useState } from "react";
+import { useCartStore } from "../store/cartStore";
 
 function Page() {
   const [activeCheckout, setActiveCheckout] = useState(false);
+
+  const carts = useCartStore(state => state.cart);
 
   return (
     <div className="py-20 max-lg:py-10">
@@ -166,78 +169,88 @@ function Page() {
           {/* Header */}
           <h2 className="text-[18px] font-bold mb-10">Summary</h2>
           {/* Added Carts */}
-          <div className="flex justify-between items-center mb-10">
-            <div className="flex items-center">
-              <div className="relative">
-                {/* <Image src="" alt="Added Cart" /> */}
+          {carts.length === 0 ? (
+            <p className="text-center mb-10 font-bold">Cart is Empty.</p>
+          ) : (
+            carts.map(item => (
+              <div
+                key={item.id}
+                className="flex justify-between items-center mb-10"
+              >
+                <div className="flex items-center">
+                  <div className="relative">
+                    {/* <Image src="" alt="Added Cart" /> */}
+                  </div>
+                  <div>
+                    <h2 className="text-[15px] font-bold">{item.name}</h2>
+                    <p className="text-gray-500 text-[14px] font-bold">
+                      $ {item.price * item.qty}
+                    </p>
+                  </div>
+                </div>
+                {/* quantity */}
+                <span>X{item.qty}</span>
               </div>
-              <div>
-                <h2 className="text-[15px] font-bold">XX99 MK II</h2>
-                <p className="text-gray-500 text-[14px] font-bold">$ 2,999</p>
+            ))
+          )}
+          {carts.length === 0 ? null : (
+            <>
+              {/* Total */}
+              <div className="flex justify-between items-center mb-2">
+                <h2 className="text-gray-500 text-[15px] font-medium">Total</h2>
+                <p className="text-[18px] font-bold">
+                  $
+                  {carts
+                    .map(item => item.price * item.qty)
+                    .reduce((a, b) => a + b, 0)}
+                </p>
               </div>
-            </div>
-            {/* quantity */}
-            <span>X1</span>
-          </div>
-          {/* Test one */}
-          <div className="flex justify-between items-center mb-10">
-            <div className="flex items-center">
-              <div className="relative">
-                {/* <Image src="" alt="Added Cart" /> */}
+              {/* Shipping*/}
+              <div className="flex justify-between items-center mb-2">
+                <h2 className="text-gray-500 text-[15px] font-medium">
+                  Shipping
+                </h2>
+                <p className="text-[18px] font-bold">
+                  {carts.length === 0 ? "$0" : "$50"}
+                </p>
               </div>
-              <div>
-                <h2 className="text-[15px] font-bold">XX99 MK II</h2>
-                <p className="text-gray-500 text-[14px] font-bold">$ 2,999</p>
+              {/* VAT*/}
+              <div className="flex justify-between items-center mb-2">
+                <h2 className="text-gray-500 text-[15px] font-medium">
+                  VAT (INCLUDED)
+                </h2>
+                <p className="text-[18px] font-bold">
+                  $
+                  {carts
+                    .map(item => item.price * item.qty)
+                    .reduce((a, b) => a + b, 0) *
+                    0.2 +
+                    carts
+                      .map(item => item.price * item.qty)
+                      .reduce((a, b) => a + b, 0)}
+                </p>
               </div>
-            </div>
-            {/* quantity */}
-            <span>X2</span>
-          </div>
-          {/* Test two */}
-          <div className="flex justify-between items-center mb-10">
-            <div className="flex items-center">
-              <div className="relative">
-                {/* <Image src="" alt="Added Cart" /> */}
+              {/* Grand total */}
+              <div className="flex justify-between items-center mb-5">
+                <h2 className="text-gray-500 text-[15px] font-medium">
+                  Grand Total
+                </h2>
+                <p className="text-[18px] font-bold">
+                  $
+                  {carts.reduce((a, item) => a + item.price * item.qty, 0) *
+                    1.2 +
+                    (carts.length === 0 ? 0 : 50)}
+                </p>
               </div>
-              <div>
-                <h2 className="text-[15px] font-bold">XX99 MK II</h2>
-                <p className="text-gray-500 text-[14px] font-bold">$ 2,999</p>
-              </div>
-            </div>
-            {/* quantity */}
-            <span>X1</span>
-          </div>
-          {/* Total */}
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-gray-500 text-[15px] font-medium">Total</h2>
-            <p className="text-[18px] font-bold">$ 5,396</p>
-          </div>
-          {/* Shipping*/}
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-gray-500 text-[15px] font-medium">Shipping</h2>
-            <p className="text-[18px] font-bold">$ 50</p>
-          </div>
-          {/* VAT*/}
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-gray-500 text-[15px] font-medium">
-              VAT (INCLUDED)
-            </h2>
-            <p className="text-[18px] font-bold">$ 1,079</p>
-          </div>
-          {/* Grand total */}
-          <div className="flex justify-between items-center mb-5">
-            <h2 className="text-gray-500 text-[15px] font-medium">
-              Grand Total
-            </h2>
-            <p className="text-[18px] font-bold">$ 5,446</p>
-          </div>
-          {/* Checkout button */}
-          <button
-            className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer"
-            onClick={() => setActiveCheckout(!activeCheckout)}
-          >
-            CONTINUE & PAY
-          </button>
+              {/* Checkout button */}
+              <button
+                className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer"
+                onClick={() => setActiveCheckout(!activeCheckout)}
+              >
+                CONTINUE & PAY
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

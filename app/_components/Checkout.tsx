@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import ConfirmIcon from "@/app/_assets/Icons/icon-order-confirmation.svg";
+import { useCartStore } from "@/app/store/cartStore";
 
 function Checkout() {
+  const carts = useCartStore(state => state.cart);
+
   return (
     <div className="relative max-md:mx-5">
       <div className="bg-white shadow-xl p-10 rounded-xl w-125 max-md:mx-auto max-md:w-full max-md:absolute max-md:top-40">
@@ -33,7 +36,7 @@ function Checkout() {
               <span className="text-gray-500 text-[15px] font-bold">x1</span>
             </div>
             <span className="text-gray-500 text-[14px] font-bold text-center whitespace-nowrap">
-              and 2 other item(s)
+              {carts.length === 1 ? null : <span>and other item(s)</span>}
             </span>
           </div>
           {/* Grand total */}
@@ -41,7 +44,11 @@ function Checkout() {
             <span className="text-gray-500 text-[15px] font-medium">
               GRAND TOTAL
             </span>
-            <span className="text-white text-[18px] font-bold">$ 5,446</span>
+            <span className="text-white text-[18px] font-bold">
+              $
+              {carts.reduce((a, item) => a + item.price * item.qty, 0) * 1.2 +
+                (carts.length === 0 ? 0 : 50)}
+            </span>
           </div>
         </div>
         <Link href="/">

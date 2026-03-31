@@ -7,9 +7,11 @@ import { ProductsProps } from "@/app/types/products";
 import { useParams } from "next/navigation";
 import useMoveBack from "@/app/hooks/useMoveback";
 import { useCartStore } from "@/app/store/cartStore";
+import { useState } from "react";
 
 function ProductDetails({ products }: ProductsProps) {
-  const cart = useCartStore(state => state.cart);
+  const [count, setCount] = useState(1);
+  const carts = useCartStore(state => state.cart);
   const addToCart = useCartStore(state => state.addToCart);
   const increasedCart = useCartStore(state => state.increaseQty);
   const decreasedCart = useCartStore(state => state.decreaseQty);
@@ -76,15 +78,15 @@ function ProductDetails({ products }: ProductsProps) {
                 <div className="flex items-center gap-5">
                   <div className="bg-[#F1F1F1] flex items-center gap-5 px-6 py-3">
                     <button
-                      className="cursor-pointer hover:opacity-50"
-                      onClick={() => decreasedCart(product.id)}
+                      className="cursor-pointer hover:text-[#D87D4A]"
+                      onClick={() => setCount(prev => Math.max(1, prev - 1))}
                     >
                       -
                     </button>
-                    <span>0</span>
+                    <span>{count}</span>
                     <button
-                      className="cursor-pointer hover:opacity-50"
-                      onClick={() => increasedCart(product.id)}
+                      className="cursor-pointer hover:text-[#D87D4A]"
+                      onClick={() => setCount(prev => prev + 1)}
                     >
                       +
                     </button>
@@ -96,6 +98,7 @@ function ProductDetails({ products }: ProductsProps) {
                         id: product.id,
                         name: product.name,
                         price: product.price,
+                        qty: count,
                       })
                     }
                   >

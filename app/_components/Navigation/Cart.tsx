@@ -9,7 +9,7 @@ type ModalCartProps = {
 };
 
 function Cart({ activeCart, setActiveCart }: ModalCartProps) {
-  const cart = useCartStore(state => state.cart);
+  const carts = useCartStore(state => state.cart);
   const clearCart = useCartStore(state => state.clearCart);
   const increasedCart = useCartStore(state => state.increaseQty);
   const decreasedCart = useCartStore(state => state.decreaseQty);
@@ -25,7 +25,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
           <div className="flex justify-between items-center mb-10">
             {/* Header */}
             <h2 className="text-[18px] font-bold">
-              Cart<span>({cart.length})</span>
+              Cart<span>({carts.length})</span>
             </h2>
             <button
               className="text-gray-500 text-[15px] underline cursor-pointer hover:text-red-500"
@@ -35,10 +35,10 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
             </button>
           </div>
           {/* Added Carts */}
-          {cart.length === 0 ? (
-            <p className="text-center">Cart is empty.</p>
+          {carts.length === 0 ? (
+            <p className="text-center font-bold">Cart is empty.</p>
           ) : (
-            cart.map(item => (
+            carts.map(item => (
               <div
                 key={item.id}
                 className="flex justify-between items-center mb-10"
@@ -56,14 +56,14 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
                 </div>
                 <div className="bg-[#F1F1F1] flex items-center gap-5 px-6 py-3">
                   <button
-                    className="cursor-pointer hover:opacity-50"
+                    className="cursor-pointer hover:hover:text-[#D87D4A]"
                     onClick={() => decreasedCart(item.id)}
                   >
                     -
                   </button>
                   <span>{item.qty}</span>
                   <button
-                    className="cursor-pointer hover:opacity-50"
+                    className="cursor-pointer hover:text-[#D87D4A]"
                     onClick={() => increasedCart(item.id)}
                   >
                     +
@@ -73,25 +73,30 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
             ))
           )}
 
-          {/* Total */}
-          <div className="flex justify-between items-center mb-10">
-            <h2 className="text-gray-500 text-[15px] font-medium">Total</h2>
-            <p className="text-[18px] font-bold">
-              ${" "}
-              {cart
-                .map(item => item.price * item.qty)
-                .reduce((a, b) => a + b, 0)}
-            </p>
-          </div>
           {/* Checkout button */}
-          <Link href="/checkout">
-            <button
-              className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer"
-              onClick={() => setActiveCart(!activeCart)}
-            >
-              CHECKOUT
-            </button>
-          </Link>
+          {carts.length === 0 ? null : (
+            <>
+              {/* Total price of all carts */}
+              <div className="flex justify-between items-center mb-10">
+                <h2 className="text-gray-500 text-[15px] font-medium">Total</h2>
+                <p className="text-[18px] font-bold">
+                  $
+                  {carts
+                    .map(item => item.price * item.qty)
+                    .reduce((a, b) => a + b, 0)}
+                </p>
+              </div>
+              {/*   // Checkout */}
+              <Link href="/checkout" className="flex flex-col gap-5">
+                <button
+                  className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer"
+                  onClick={() => setActiveCart(!activeCart)}
+                >
+                  CHECKOUT
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </Modal>
