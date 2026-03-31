@@ -3,7 +3,11 @@ export type Products = {
   slug: string;
   name: string;
 
-  image: Record<string, unknown>;
+  image: {
+    desktop: string;
+    tablet: string;
+    mobile: string;
+  };
   category: string;
 
   categoryImage?: Record<string, unknown>;
@@ -25,9 +29,23 @@ export type Products = {
       tablet: string;
       mobile: string;
     };
+    second: {
+      desktop: string;
+      tablet: string;
+      mobile: string;
+    };
+    third: {
+      desktop: string;
+      tablet: string;
+      mobile: string;
+    };
   };
 
   others: unknown[];
+
+  cart: {
+    image: string;
+  };
 
   createdAt?: Date;
   updatedAt?: Date;
