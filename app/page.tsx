@@ -9,7 +9,7 @@ import HomeGallery from "@/app/_components/Home/HomeGallery";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 
 /* Home page*/
-async function Page() {
+function Page() {
   return (
     <div>
       <main className="relative pb-240">
@@ -20,20 +20,19 @@ async function Page() {
           fill
           className="object-cover object-top rounded-bl-xl rounded-br-xl max-lg:hidden"
         />
-
         <Image
           src={heroTablet}
           alt="Hero background"
           quality={100}
           fill
-          className="object-cover hidden max-lg:block"
+          className="object-cover object-top rounded-bl-xl rounded-br-xl hidden max-lg:block"
         />
         <Image
           src={heroMobile}
           alt="Hero background"
           quality={100}
           fill
-          className="object-cover hidden max-sm:block"
+          className="object-cover object-top rounded-bl-xl rounded-br-xl hidden max-sm:block"
         />
         <div className="z-10 absolute left-30 top-70 max-xl:left-20 max-lg:text-center max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2">
           <h2 className="text-gray-500 text-[14px] tracking-[10px] mb-5">
@@ -58,10 +57,12 @@ async function Page() {
       </main>
       {/* Home navigation */}
       <HomeNavigation />
-      {/* Home gallery */}
-      <HomeGallery />
-      {/* Home audio gear */}
-      <HomeAudioGear />
+      <div className="flex flex-col gap-20 py-20">
+        {/* Home gallery */}
+        <HomeGallery />
+        {/* Home audio gear */}
+        <HomeAudioGear />
+      </div>
     </div>
   );
 }
