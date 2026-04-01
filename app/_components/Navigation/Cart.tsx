@@ -15,12 +15,8 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
   const decreasedCart = useCartStore((state) => state.decreaseQty);
 
   return (
-    <Modal
-      isOpen={activeCart}
-      onClose={() => setActiveCart(!activeCart)}
-      style={""}
-    >
-      <div className="relative">
+    <Modal isOpen={activeCart} onClose={() => setActiveCart(!activeCart)}>
+      <div className="relative max-sm:mx-5">
         <div className="bg-white p-5 rounded-xl">
           <div className="flex justify-between items-center mb-10">
             {/* Number of Carts */}
@@ -35,7 +31,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
             </button>
           </div>
           {/* Added Carts */}
-          <div className="max-h-50 overflow-y-auto">
+          <div className="max-h-50 overflow-y-auto mb-5">
             {carts.length === 0 ? (
               <p className="text-center font-bold">Cart is empty.</p>
             ) : (

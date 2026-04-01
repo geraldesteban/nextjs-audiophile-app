@@ -7,8 +7,8 @@ function Checkout() {
   const carts = useCartStore((state) => state.cart);
 
   return (
-    <div className="max-sm:mx-5">
-      <div className="bg-white shadow-xl p-5 max-sm:p-5 rounded-xl w-125 max-sm:w-full max-sm:mx-auto">
+    <div className="max-sm:mx-5 relative">
+      <div className="bg-white shadow-xl p-5 max-sm:p-5 rounded-xl">
         <Image src={ConfirmIcon} alt="confirm Icon" />
         <h2 className="text-3xl max-sm:text-xl font-bold">
           THANK YOU FOR YOUR ORDER
