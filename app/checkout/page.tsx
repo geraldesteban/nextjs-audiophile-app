@@ -22,7 +22,7 @@ function Page() {
         <Checkout />
       </Modal>
       <Link
-        href="/headphones/productdetails"
+        href="/"
         className="text-[15px] text-gray-500 font-medium ml-32 mb-20 max-lg:mb-10 max-lg:ml-5"
       >
         Go Back

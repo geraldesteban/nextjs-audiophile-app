@@ -35,11 +35,11 @@ function Footer() {
         helping you get the most out of personal audio. Come and visit our demo
         facility - we&apos;re open 7 days a week.
       </p>
-      <div className="flex items-center justify-between max-sm:block max-sm:justify-center">
+      <div className="flex items-center justify-between max-sm:flex max-sm:justify-center max-sm:flex-col-reverse">
         <p className="text-gray-500 text-xs font-bold text-center">
           Copyright {new Date().getFullYear()}. All Rights Reserved
         </p>
-        <div className="flex justify-end items-center gap-5 max-sm:justify-center max-sm:mt-5">
+        <div className="flex justify-end items-center gap-5 max-sm:justify-center mb-5">
           <Link href="/">
             <Image
               src={facebook}

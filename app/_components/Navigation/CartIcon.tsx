@@ -19,7 +19,7 @@ function CartIcon({ activeCart, setActiveCart }: CartIconProps) {
         <Image src={cart} quality={100} alt="cart icon" />
       </button>
       {cart.length === 0 ? null : (
-        <span className="absolute bottom-1 left-4 bg-[#D87D4A]/50 text-white p-0.5 px-2 rounded-full">
+        <span className="absolute bottom-1 left-4 bg-[#D87D4A]/50 text-white p-0.5 px-3 rounded-full">
           {carts.length}
         </span>
       )}

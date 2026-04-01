@@ -16,7 +16,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
 
   return (
     <Modal isOpen={activeCart} onClose={() => setActiveCart(!activeCart)}>
-      <div className="bg-white p-5 rounded-xl max-sm:mx-5">
+      <div className="bg-white p-5 rounded-xl mx-auto max-sm:mx-5">
         <div className="flex justify-between items-center mb-10 gap-10 max-sm:mb-5">
           {/* Number of Carts */}
           <h2 className="text-[18px] font-bold">
