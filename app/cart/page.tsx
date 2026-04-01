@@ -1,22 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import Modal from "@/app/_components/Modal";
 import { useCartStore } from "@/app/store/cartStore";
 
-type ModalCartProps = {
-  activeCart: boolean;
-  setActiveCart: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-function Cart({ activeCart, setActiveCart }: ModalCartProps) {
+function Page() {
   const carts = useCartStore(state => state.cart);
   const clearCart = useCartStore(state => state.clearCart);
   const increasedCart = useCartStore(state => state.increaseQty);
   const decreasedCart = useCartStore(state => state.decreaseQty);
 
   return (
-    <Modal isOpen={activeCart} onClose={() => setActiveCart(!activeCart)}>
-      <div className="bg-white p-10 rounded-xl max-sm:mx-5">
+    <div className="py-20 max-lg:py-10 min-h-screen px-30 max-lg:px-5">
+      <div className="mb-20">
+        <Link
+          href="/"
+          className="text-[15px] text-gray-500 font-medium hover:text-[#D87D4A]"
+        >
+          Go Home
+        </Link>
+      </div>
+      <div className="bg-white p-10 rounded-xl max-sm:mx-5 shadow-sm w-[50%] max-lg:w-full">
         <div className="flex justify-between items-center mb-10 gap-10">
           {/* Number of Carts */}
           <h2 className="text-[18px] font-bold">
@@ -30,7 +34,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
           </button>
         </div>
         {/* Added Carts */}
-        <div className="max-h-50 overflow-y-auto mb-5">
+        <div className="">
           {carts.length === 0 ? (
             <p className="text-center font-bold">Cart is empty.</p>
           ) : (
@@ -89,17 +93,14 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
             </div>
             {/*   // Checkout */}
             <Link href="/checkout" className="flex flex-col gap-5">
-              <button
-                className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer hover:opacity-80"
-                onClick={() => setActiveCart(!activeCart)}
-              >
+              <button className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer hover:opacity-80">
                 CHECKOUT
               </button>
             </Link>
           </>
         )}
       </div>
-    </Modal>
+    </div>
   );
 }
-export default Cart;
+export default Page;

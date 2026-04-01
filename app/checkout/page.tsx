@@ -25,7 +25,7 @@ function Page() {
         href="/"
         className="text-[15px] text-gray-500 font-medium ml-32 mb-20 max-lg:mb-10 max-lg:ml-5 hover:text-[#D87D4A]"
       >
-        Go Back
+        Go Home
       </Link>
       {/* Checkout and Summary */}
       <div className="flex justify-between gap-10 px-30 pt-20 max-lg:pt-10 max-lg:px-5 max-lg:flex-col">
