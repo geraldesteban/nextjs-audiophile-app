@@ -7,18 +7,16 @@ function Checkout() {
   const carts = useCartStore((state) => state.cart);
 
   return (
-    <div className="relative max-lg:mx-5">
-      <div className="bg-white shadow-xl p-10 rounded-xl w-125 max-md:mx-auto max-md:w-full max-md:absolute max-md:top-30">
-        <Image src={ConfirmIcon} alt="Confirm Icon" className="mb-5" />
-        <h2 className="text-[32px] font-bold mb-5">
-          THANK YOU
-          <br />
-          FOR YOUR ORDER
+    <div className="max-sm:mx-5">
+      <div className="bg-white shadow-xl p-5 max-sm:p-5 rounded-xl w-125 max-sm:w-full max-sm:mx-auto">
+        <Image src={ConfirmIcon} alt="confirm Icon" />
+        <h2 className="text-3xl max-sm:text-xl font-bold">
+          THANK YOU FOR YOUR ORDER
         </h2>
-        <p className="text-gray-500 text-[15px] font-medium mb-10">
+        <p className="text-gray-500 text-[15px] font-medium mb-5">
           You will receive an email confirmation shortly.
         </p>
-        <div className="flex items-stretch mb-10">
+        <div className="flex items-stretch mb-5">
           {/* Item */}
           <div className="bg-[#F1F1F1] flex flex-1 flex-col gap-2 rounded-tl-xl rounded-bl-xl p-5">
             <div className="flex justify-between border-b border-gray-500 pb-3">

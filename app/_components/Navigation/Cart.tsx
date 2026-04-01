@@ -21,7 +21,7 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
       style={""}
     >
       <div className="relative">
-        <div className="absolute top-30 right-10 bg-white p-5 rounded-xl">
+        <div className="bg-white p-5 rounded-xl">
           <div className="flex justify-between items-center mb-10">
             {/* Number of Carts */}
             <h2 className="text-[18px] font-bold">

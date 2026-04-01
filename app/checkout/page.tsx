@@ -31,7 +31,7 @@ function Page() {
       {/* Checkout and Summary */}
       <div className="flex justify-between gap-10 px-30 pt-20 max-lg:pt-10 max-lg:px-5 max-lg:flex-col">
         {/* Checkout */}
-        <div className="flex-1 rounded-xl shadow-xl p-20 max-lg:p-10 max-sm:p-5">
+        <div className="flex-1 rounded-xl shadow-xl p-10 max-sm:p-5">
           <h2 className="text-[32px] font-bold mb-20 max-lg:mb-10">CHECKOUT</h2>
           <form action="">
             {/* Billing details */}
@@ -165,7 +165,7 @@ function Page() {
           </form>
         </div>
         {/* Summary */}
-        <div className="p-10 max-sm:p-5 rounded-xl shadow-xl w-125 self-start max-lg:w-full">
+        <div className="p-5 rounded-xl shadow-xl w-125 self-start max-lg:w-full">
           {/* Header */}
           <h2 className="text-[18px] font-bold mb-10 max-sm:mb-5">Summary</h2>
           {/* Added Carts */}
@@ -177,7 +177,7 @@ function Page() {
                 key={item.id}
                 className="flex justify-between items-center mb-10 max-sm:mb-5"
               >
-                <div className="flex items-center gap-5 max-sm:gap-2">
+                <div className="flex items-center gap-2">
                   <div className="relative">
                     <Image
                       src={item.image}
@@ -187,8 +187,8 @@ function Page() {
                     />
                   </div>
                   <div>
-                    <h2 className="max-sm:text-sm font-bold">{item.name}</h2>
-                    <p className="text-gray-500 text-[14px] font-bold">
+                    <h2 className="text-sm font-bold">{item.name}</h2>
+                    <p className="text-gray-500 font-bold">
                       $ {item.price * item.qty}
                     </p>
                   </div>
@@ -201,7 +201,7 @@ function Page() {
           {carts.length === 0 ? null : (
             <>
               {/* Total */}
-              <div className="flex justify-between items-center mb-2">
+              <div className="flex justify-between items-center mb-5">
                 <h2 className="text-gray-500 text-[15px] font-medium">Total</h2>
                 <p className="text-[18px] font-bold">
                   $
