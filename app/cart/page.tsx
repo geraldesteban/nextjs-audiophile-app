@@ -20,7 +20,7 @@ function Page() {
           Go Home
         </Link>
       </div>
-      <div className="bg-white p-10 rounded-xl max-sm:mx-5 shadow-sm w-[50%] max-lg:w-full">
+      <div className="bg-white p-10 rounded-xl shadow-sm w-[50%] max-lg:w-full max-sm:mx-auto max-sm:p-5">
         <div className="flex justify-between items-center mb-10 gap-10">
           {/* Number of Carts */}
           <h2 className="text-[18px] font-bold">

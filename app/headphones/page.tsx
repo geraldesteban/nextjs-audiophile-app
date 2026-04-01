@@ -3,8 +3,6 @@ import { getHeadphones } from "@/app/_lib/services/getHeadphones";
 import Products from "@/app/_components/Products/Products";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
-import { Suspense } from "react";
-import Spinner from "../_components/Spinners/Spinner";
 
 export const metadata = {
   title: "Headphones",
@@ -21,15 +19,7 @@ async function Page() {
         </h2>
       </div>
       <div className="py-20 max-lg:py-10">
-        <Suspense
-          fallback={
-            <div className="min-h-screen">
-              <Spinner />
-            </div>
-          }
-        >
-          <Products products={headphones} />
-        </Suspense>
+        <Products products={headphones} />
         <HomeNavigation />
         <HomeAudioGear />
       </div>
