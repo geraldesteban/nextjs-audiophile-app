@@ -11,15 +11,15 @@ function CartIcon({ activeCart, setActiveCart }: CartIconProps) {
   const carts = useCartStore((state) => state.cart);
 
   return (
-    <div className="relativeflex items-center">
+    <div className="relative flex items-center mr-5">
       <button
-        className="max-sm:ml-10 cursor-pointer"
+        className="cursor-pointer"
         onClick={() => setActiveCart(!activeCart)}
       >
-        <Image src={cart} quality={100} alt="Cart icon" />
+        <Image src={cart} quality={100} alt="cart icon" />
       </button>
       {cart.length === 0 ? null : (
-        <span className="absolute top-7 right-27 bg-[#D87D4A]/70 text-white p-0.5 px-2 rounded-full max-xl:right-11 max-lg:right-5">
+        <span className="absolute bottom-1 left-4 bg-[#D87D4A]/50 text-white p-0.5 px-2 rounded-full">
           {carts.length}
         </span>
       )}

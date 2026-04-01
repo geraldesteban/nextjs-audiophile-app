@@ -20,10 +20,10 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
       onClose={() => setActiveCart(!activeCart)}
       style={""}
     >
-      <div className="relative max-md:mx-5">
-        <div className="absolute top-20 bg-white right-30 p-10 rounded-xl shadow-xl w-125 max-xl:right-15 max-lg:right-10 max-md:right-0 max-md:w-full">
+      <div className="relative">
+        <div className="absolute top-30 right-10 bg-white p-5 rounded-xl">
           <div className="flex justify-between items-center mb-10">
-            {/* Header */}
+            {/* Number of Carts */}
             <h2 className="text-[18px] font-bold">
               Cart<span>({carts.length})</span>
             </h2>

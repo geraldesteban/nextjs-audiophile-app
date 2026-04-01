@@ -17,12 +17,12 @@ import earphoneYX1Mobile from "@/app/_assets/SectionThree/mobile/image-earphones
 
 function HomeGallery() {
   return (
-    <div className="relative px-32 flex justify-around flex-col gap-10 max-xl:px-16 max-lg:px-10 max-md:pb-20">
+    <div className="relative flex justify-around flex-col gap-10 px-30 max-lg:px-10">
       {/* ZX9 Speaker */}
       <motion.div
-        className="bg-[#D87D4A] flex justify-around gap-5 pt-32 rounded-xl
+        className="bg-[#D87D4A] flex justify-around gap-5 pt-20 max-lg:pt-10 max-sm:pt-5 rounded-xl
         bg-no-repeat bg-size-[80%] bg-position-[-70%_10%]
-        max-lg:block max-lg:text-center max-lg:pt-10 max-lg:pb-20
+        max-lg:block max-lg:text-center max-lg:pb-10
         max-lg:bg-size-[120%] max-lg:bg-position-[50%_115%]"
         initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -38,7 +38,7 @@ function HomeGallery() {
           height={400}
           quality={100}
           alt="ZX9 Speaker"
-          className="ml-5 max-lg:hidden"
+          className="max-lg:hidden"
         />
         <Image
           src={speakerZX9Tablet}
@@ -46,23 +46,21 @@ function HomeGallery() {
           height={200}
           quality={100}
           alt="ZX9 Speaker"
-          className="hidden max-lg:block mb-10 max-lg:mx-auto max-sm:hidden"
+          className="hidden max-lg:block mb-5 max-lg:mx-auto max-sm:hidden"
         />
         <Image
           src={speakerZX9Mobile}
-          width={200}
-          height={200}
+          width={100}
+          height={100}
           quality={100}
           alt="ZX9 Speaker"
-          className="hidden mb-10 max-sm:block max-sm:mx-auto"
+          className="hidden mb-5 max-sm:block max-sm:mx-auto"
         />
-        <div className="mr-10 max-lg:mr-0">
-          <h2 className="text-white text-[56px] font-bold mb-10 max-sm:text-[36px] max-sm:mb-5">
-            ZX9
-            <br />
-            SPEAKER
+        <div className="max-sm:mx-10">
+          <h2 className="text-white text-6xl font-bold mb-5 max-sm:text-4xl max-sm:mb-2">
+            ZX9 SPEAKER
           </h2>
-          <p className="text-[#F1F1F1] w-90 mb-10 max-lg:mx-auto max-sm:w-full">
+          <p className="text-[#F1F1F1] w-90 mb-5 max-lg:mx-auto max-sm:w-full">
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
@@ -83,7 +81,7 @@ function HomeGallery() {
         className="relative rounded-xl"
       >
         <div className="absolute inset-0 flex flex-col justify-center items-start left-20 max-md:left-10">
-          <h2 className="text-black text-[28px] font-bold mb-10">
+          <h2 className="text-black text-3xl font-bold mb-10 max-sm:mb-5">
             ZX7 SPEAKER
           </h2>
           <Link
@@ -136,7 +134,7 @@ function HomeGallery() {
           className="flex-1 bg-[#F1F1F1] rounded-xl max-sm:flex-none max-sm:h-62.5"
         >
           <div className="h-full flex flex-col justify-center mx-32 max-xl:mx-10 max-md:mx-5 max-sm:mx-10">
-            <h2 className="text-black text-[28px] font-bold mb-10">
+            <h2 className="text-black text-3xl font-bold mb-10 max-sm:mb-5">
               YX1 EARPHONES
             </h2>
             <div className="mb-5">

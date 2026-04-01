@@ -24,18 +24,18 @@ function Page() {
       </Modal>
       <Link
         href="/headphones/productdetails"
-        className="text-[15px] text-gray-500 font-medium ml-32 max-xl:ml-16 max-lg:ml-10"
+        className="text-[15px] text-gray-500 font-medium ml-32 mb-20 max-lg:mb-10 max-lg:ml-5"
       >
         Go Back
       </Link>
       {/* Checkout and Summary */}
-      <div className="flex justify-between gap-10 px-32 pt-32 max-lg:pt-20 max-sm:pt-10 max-xl:px-16 max-lg:px-10 max-lg:flex-col">
+      <div className="flex justify-between gap-10 px-30 pt-20 max-lg:pt-10 max-lg:px-5 max-lg:flex-col">
         {/* Checkout */}
-        <div className="flex-1 rounded-xl shadow-xl p-20 max-md:p-10">
-          <h2 className="text-[32px] font-bold mb-20">CHECKOUT</h2>
+        <div className="flex-1 rounded-xl shadow-xl p-20 max-lg:p-10 max-sm:p-5">
+          <h2 className="text-[32px] font-bold mb-20 max-lg:mb-10">CHECKOUT</h2>
           <form action="">
             {/* Billing details */}
-            <div className="mb-20">
+            <div className="mb-20 max-lg:mb-10">
               <h2 className="text-[#D87D4A] text-[13px] font-bold mb-5">
                 BILLING DETAILS
               </h2>
@@ -46,7 +46,7 @@ function Page() {
                   <input
                     type="text"
                     placeholder="Alexei Ward"
-                    className="border border-gray-500 rounded-lg py-3 px-5"
+                    className="border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3"
                   />
                 </div>
                 {/* Email */}
@@ -57,7 +57,7 @@ function Page() {
                   <input
                     type="text"
                     placeholder="alexei@mail.com"
-                    className="border border-gray-500 rounded-lg py-3 px-5"
+                    className="border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3"
                   />
                 </div>
               </div>
@@ -69,12 +69,12 @@ function Page() {
                 <input
                   type="text"
                   placeholder="+1 202-555-0136"
-                  className="border border-gray-500 rounded-lg py-3 px-5"
+                  className="border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3"
                 />
               </div>
             </div>
             {/* Shipping info */}
-            <div className="mb-20">
+            <div className="mb-20 max-lg:mb-10">
               <h2 className="text-[#D87D4A] text-[13px] font-bold mb-5">
                 SHIPPING INFO
               </h2>
@@ -84,7 +84,7 @@ function Page() {
                 <input
                   type="text"
                   placeholder="1137 Williams Avenue"
-                  className="border border-gray-500 rounded-lg py-3 px-5"
+                  className="border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3"
                 />
               </div>
               <div className="flex justify-between items-center gap-5 max-sm:flex-col max-sm:items-start max-sm:gap-0">
@@ -94,7 +94,7 @@ function Page() {
                   <input
                     type="text"
                     placeholder="10001"
-                    className="border border-gray-500 rounded-lg py-3 px-5"
+                    className="border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3"
                   />
                 </div>
                 {/* City */}
@@ -103,7 +103,7 @@ function Page() {
                   <input
                     type="text"
                     placeholder="New York"
-                    className="border border-gray-500 rounded-lg py-3 px-5"
+                    className="border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3"
                   />
                 </div>
               </div>
@@ -113,7 +113,7 @@ function Page() {
                 <input
                   type="text"
                   placeholder="United States"
-                  className="border border-gray-500 rounded-lg py-3 px-5"
+                  className="border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3"
                 />
               </div>
             </div>
@@ -126,11 +126,11 @@ function Page() {
                 <div className="flex justify-between gap-5 max-sm:flex-col">
                   <h2 className="flex-1">Payment Method</h2>
                   <div className="flex flex-1 flex-col gap-5">
-                    <div className="flex items-center gap-5 border border-gray-500 rounded-lg py-3 px-5">
+                    <div className="flex items-center gap-5 max-sm:gap-2 border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3">
                       <input type="radio" />
                       <span>e-Money</span>
                     </div>
-                    <div className="flex flex-1 items-center gap-5 border border-gray-500 rounded-lg py-3 px-5">
+                    <div className="flex flex-1 items-center gap-5 max-sm:gap-2 border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3">
                       <input type="radio" />
                       <span>Cash on Delivery</span>
                     </div>
@@ -146,7 +146,7 @@ function Page() {
                   <input
                     type="text"
                     placeholder="238521993"
-                    className="border border-gray-500 rounded-lg py-3 px-5"
+                    className="border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3"
                   />
                 </div>
                 {/* E-money PIN */}
@@ -157,7 +157,7 @@ function Page() {
                   <input
                     type="text"
                     placeholder="6891"
-                    className="border border-gray-500 rounded-lg py-3 px-5"
+                    className="border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3"
                   />
                 </div>
               </div>
@@ -165,9 +165,9 @@ function Page() {
           </form>
         </div>
         {/* Summary */}
-        <div className="p-10 rounded-xl shadow-xl w-125 self-start max-lg:w-full">
+        <div className="p-10 max-sm:p-5 rounded-xl shadow-xl w-125 self-start max-lg:w-full">
           {/* Header */}
-          <h2 className="text-[18px] font-bold mb-10">Summary</h2>
+          <h2 className="text-[18px] font-bold mb-10 max-sm:mb-5">Summary</h2>
           {/* Added Carts */}
           {carts.length === 0 ? (
             <p className="text-center mb-10 font-bold">Cart is Empty.</p>
@@ -175,9 +175,9 @@ function Page() {
             carts.map((item) => (
               <div
                 key={item.id}
-                className="flex justify-between items-center mb-10"
+                className="flex justify-between items-center mb-10 max-sm:mb-5"
               >
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-5 max-sm:gap-2">
                   <div className="relative">
                     <Image
                       src={item.image}
@@ -187,7 +187,7 @@ function Page() {
                     />
                   </div>
                   <div>
-                    <h2 className="text-[15px] font-bold">{item.name}</h2>
+                    <h2 className="max-sm:text-sm font-bold">{item.name}</h2>
                     <p className="text-gray-500 text-[14px] font-bold">
                       $ {item.price * item.qty}
                     </p>

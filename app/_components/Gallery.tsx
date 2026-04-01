@@ -18,7 +18,7 @@ function Gallery({ products }: ProductsProps) {
         .map((product) => (
           <div key={product.id}>
             {/* Desktop */}
-            <div className="grid grid-cols-2 gap-10 px-32 max-xl:px-16 max-lg:px-10 max-lg:py-20 max-sm:py-10 mb-20 max-lg:grid-cols-1 max-lg:hidden">
+            <div className="grid grid-cols-2 gap-10 px-30 max-lg:px-5 max-lg:grid-cols-1 max-lg:hidden">
               {/* Left side images */}
               <div className="flex flex-col gap-10">
                 <div className="relative w-full">
@@ -59,7 +59,7 @@ function Gallery({ products }: ProductsProps) {
               </div>
             </div>
             {/* Tablet */}
-            <div className="hidden max-lg:grid max-sm:hidden grid-cols-2 gap-10 px-32 max-xl:px-16 max-lg:px-10 max-lg:py-20 max-sm:py-10 mb-20 max-lg:grid-cols-1">
+            <div className="hidden max-lg:grid max-sm:hidden grid-cols-2 max-lg:grid-cols-1 gap-10 px-30 max-lg:px-5">
               {/* Left side images */}
               <div className="flex flex-col gap-10">
                 <div className="relative w-full">
@@ -100,7 +100,7 @@ function Gallery({ products }: ProductsProps) {
               </div>
             </div>
             {/* Mobile */}
-            <div className="hidden max-sm:grid grid-cols-2 gap-10 px-32 max-xl:px-16 max-lg:px-10 max-lg:py-20 max-sm:py-10 mb-20 max-lg:grid-cols-1 max-lg:hidden">
+            <div className="hidden max-sm:grid grid-cols-2 gap-10 px-30 max-lg:px-5 max-lg:grid-cols-1 max-lg:hidden">
               {/* Left side images */}
               <div className="flex flex-col gap-10">
                 <div className="relative w-full">

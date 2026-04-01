@@ -5,7 +5,7 @@ import logo from "@/public/logo.svg";
 function Logo() {
   return (
     <Link href="/">
-      <Image src={logo} quality={100} alt="Audiophile logo" />
+      <Image src={logo} quality={100} alt="audiophile logo" />
     </Link>
   );
 }

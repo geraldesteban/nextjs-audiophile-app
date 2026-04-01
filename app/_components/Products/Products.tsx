@@ -12,9 +12,9 @@ function Products({ products }: ProductsProps) {
     <>
       {products.map((product, i) => (
         <motion.div
-          className={`flex justify-between items-center px-32 max-xl:px-16 max-lg:px-10 gap-10 ${
+          className={`flex justify-between items-center px-30 max-lg:px-10 gap-10 max-lg:gap-5 ${
             i + 1 === 2 ? "flex-row-reverse" : ""
-          } max-lg:px-10 max-lg:flex-col`}
+          } max-lg:flex-col`}
           key={i}
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -27,7 +27,7 @@ function Products({ products }: ProductsProps) {
             alt={product.name}
             width={500}
             height={500}
-            className="rounded-xl w-[45%] max-lg:hidden"
+            className="rounded-xl w-[50%] max-lg:hidden"
           />
           <Image
             src={product?.image?.tablet}
@@ -43,20 +43,20 @@ function Products({ products }: ProductsProps) {
             alt={product.name}
             width={500}
             height={500}
-            className="rounded-xl hidden max-sm:block"
+            className="rounded-xl hidden w-full max-sm:block"
           />
           <div className="max-lg:text-center mb-10">
             <h2
-              className={`text-[#D87D4A] text-[14px] tracking-[8px] mb-5 ${
+              className={`text-[#D87D4A] text-sm tracking-[8px] mb-5 ${
                 product.new ? "block" : "hidden"
               }`}
             >
               NEW PRODUCT
             </h2>
-            <h2 className="text-black text-[40px] font-bold mb-10 max-sm:text-[28px]">
+            <h2 className="text-black text-4xl font-bold mb-10 max-sm:text-3xl text-nowrap max-sm:mb-2">
               {product.name}
             </h2>
-            <p className="text-gray-500 text-[15px] w-90 mb-10 max-lg:w-[60.5%] max-lg:mx-auto">
+            <p className="text-gray-500 text-[15px] w-90 mb-10 max-lg:w-full max-lg:mx-auto max-sm:mb-5">
               {product.description}
             </p>
             <Link

@@ -14,31 +14,26 @@ function Header() {
   const [activeCart, setActiveCart] = useState(false);
 
   return (
-    <div>
-      <header className="bg-black border-b border-gray-500 px-32 py-10 max-xl:px-16 max-lg:px-10">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <button
-              className="cursor-pointer"
-              onClick={() => setActive(!active)}
-            >
-              <Image
-                src={menu}
-                quality={100}
-                alt="Menu"
-                className="hidden mr-10 max-lg:block"
-              />
-            </button>
-            <div className="max-sm:hidden">
-              <Logo />
-            </div>
-          </div>
-          <Navigation />
-          <div className="hidden max-sm:block">
+    <div className="bg-black border-b border-gray-500 py-10 px-30 max-lg:px-5">
+      <header className="flex justify-between items-center">
+        <div className="flex items-center max-lg:gap-5">
+          <button className="cursor-pointer" onClick={() => setActive(!active)}>
+            <Image
+              src={menu}
+              quality={100}
+              alt="Menu"
+              className="hidden max-lg:block"
+            />
+          </button>
+          <div className="max-sm:hidden">
             <Logo />
           </div>
-          <CartIcon activeCart={activeCart} setActiveCart={setActiveCart} />
         </div>
+        <Navigation />
+        <div className="hidden max-sm:block">
+          <Logo />
+        </div>
+        <CartIcon activeCart={activeCart} setActiveCart={setActiveCart} />
       </header>
       {/* Modal Cart */}
       <Cart activeCart={activeCart} setActiveCart={setActiveCart} />

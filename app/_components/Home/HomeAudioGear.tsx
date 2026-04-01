@@ -11,8 +11,8 @@ import bestGearMobile from "@/app/_assets/SectionFour/mobile/image-best-gear.jpg
 
 function HomeAudioGear() {
   return (
-    <div className="flex justify-between items-center px-32 max-xl:px-16 max-lg:block max-lg:px-10">
-      <div className="max-xl:text-center">
+    <div className="flex justify-between items-center gap-10 px-30 max-lg:px-5 max-lg:block">
+      <div className="max-lg:text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -23,7 +23,7 @@ function HomeAudioGear() {
             src={bestGearTablet}
             quality={100}
             alt="Best Gear"
-            className="rounded-xl hidden mb-16 max-lg:block max-sm:hidden"
+            className="rounded-xl hidden mb-10 max-lg:block max-sm:hidden"
           />
         </motion.div>
         <motion.div
@@ -36,7 +36,7 @@ function HomeAudioGear() {
             src={bestGearMobile}
             quality={100}
             alt="Best Gear"
-            className="rounded-xl hidden mb-16 max-sm:block"
+            className="rounded-xl hidden mb-5 max-sm:block"
           />
         </motion.div>
         <motion.h2
@@ -44,7 +44,7 @@ function HomeAudioGear() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1 }}
-          className="text-black text-[40px] font-bold mb-10 max-sm:text-[28px]"
+          className="text-black text-4xl font-bold mb-10 max-sm:text-3xl max-sm:mb-5"
         >
           BRINGING YOU THE
           <br />
@@ -55,7 +55,7 @@ function HomeAudioGear() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1 }}
-          className="text-gray-500 text-[15px] w-111.5 max-lg:w-140 max-lg:mx-auto max-sm:w-full"
+          className="text-gray-500 w-111.5 max-lg:w-140 max-lg:mx-auto max-sm:w-full"
         >
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.

@@ -34,16 +34,16 @@ function Page() {
           fill
           className="object-cover object-top rounded-bl-xl rounded-br-xl hidden max-sm:block"
         />
-        <div className="z-10 absolute left-30 top-70 max-xl:left-20 max-lg:text-center max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2">
-          <h2 className="text-gray-500 text-[14px] tracking-[10px] mb-5">
+        <div className="z-10 absolute left-30 top-70 max-lg:text-center max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2">
+          <h2 className="text-gray-500 text-sm tracking-[10px] mb-5">
             NEW PRODUCT
           </h2>
-          <h2 className="text-white text-[56px] font-bold tracking-wider mb-10 max-sm:text-[36px]">
+          <h2 className="text-white text-6xl font-bold tracking-wider mb-10 max-sm:text-4xl max-sm:mb-5">
             XX99 MARK II
             <br />
             HEADPHONES
           </h2>
-          <p className="text-[#F1F1F1] text-[15px] w-90 mb-10 max-lg:mx-auto max-sm:w-full">
+          <p className="text-[#F1F1F1] w-90 mb-10 max-lg:mx-auto max-sm:w-full">
             Experience natural, life like audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
@@ -57,7 +57,7 @@ function Page() {
       </main>
       {/* Home navigation */}
       <HomeNavigation />
-      <div className="flex flex-col gap-20 py-20">
+      <div className="flex flex-col gap-20 py-20 max-lg:py-10 max-lg:gap-10">
         {/* Home gallery */}
         <HomeGallery />
         {/* Home audio gear */}

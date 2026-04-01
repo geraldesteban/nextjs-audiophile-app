@@ -16,30 +16,36 @@ import ZX9Mobile from "@/app/_assets/YouMayAlsoLike/mobile/image-zx9-speaker.jpg
 function YouMayAlsoLike() {
   return (
     <div>
-      <h2 className="text-center text-[32px] font-bold mb-20 max-lg:mb-10 max-sm:mb-5">
+      <h2 className="text-center text-3xl max-sm:text-2xl font-bold mb-10 max-lg:mb-5">
         YOU MAY ALSO LIKE
       </h2>
-      <div className="flex justify-between items-center gap-10 px-32 mb-20 max-xl:px-16 max-lg:px-10 max-lg:gap-5 max-sm:flex-col">
+      <div className="flex justify-between items-center gap-10 px-30 max-lg:px-5 max-lg:gap-5 max-sm:flex-col">
         <div>
           <div className="relative">
             <Image
               src={XXMARKI}
+              width={500}
+              height={500}
               alt="Headphone"
               className="object-cover rounded-xl mb-10 w-full max-lg:hidden"
             />
             <Image
               src={XXMARKITablet}
+              width={500}
+              height={500}
               alt="Headphone"
               className="object-cover rounded-xl mb-10 w-full hidden max-lg:block max-sm:hidden"
             />
             <Image
               src={XXMARKIMobile}
+              width={500}
+              height={500}
               alt="Headphone"
-              className="object-cover rounded-xl mb-10 w-full hidden max-sm:block"
+              className="object-cover rounded-xl mb-5 w-full hidden max-sm:block"
             />
           </div>
           <div className="flex flex-col items-center">
-            <h2 className="text-[24px] font-bold mb-10 whitespace-nowrap">
+            <h2 className="text-[24px] font-bold mb-10 whitespace-nowrap max-sm:mb-5">
               XX99 MARK I
             </h2>
             <Link
@@ -55,22 +61,28 @@ function YouMayAlsoLike() {
           <div className="relative">
             <Image
               src={XX59}
+              width={500}
+              height={500}
               alt="Headphone"
               className="object-cover rounded-xl mb-10 w-full max-lg:hidden"
             />
             <Image
               src={XX59Tablet}
+              width={500}
+              height={500}
               alt="Headphone"
               className="object-cover rounded-xl mb-10 w-full hidden max-lg:block max-sm:hidden"
             />
             <Image
               src={XX59Mobile}
+              width={500}
+              height={500}
               alt="Headphone"
-              className="object-cover rounded-xl mb-10 w-full hidden max-sm:block"
+              className="object-cover rounded-xl mb-5 w-full hidden max-sm:block"
             />
           </div>
           <div className="flex flex-col items-center">
-            <h2 className="text-[24px] font-bold mb-10 whitespace-nowrap">
+            <h2 className="text-[24px] font-bold mb-10 whitespace-nowrap max-sm:mb-5">
               XX59
             </h2>
             <Link
@@ -86,22 +98,28 @@ function YouMayAlsoLike() {
           <div className="relative">
             <Image
               src={ZX9}
+              width={500}
+              height={500}
               alt="Headphone"
               className="object-cover rounded-xl mb-10 w-full max-lg:hidden"
             />
             <Image
               src={ZX9Tablet}
+              width={500}
+              height={500}
               alt="Headphone"
               className="object-cover rounded-xl mb-10 w-full hidden max-lg:block max-sm:hidden"
             />
             <Image
               src={ZX9Mobile}
+              width={500}
+              height={500}
               alt="Headphone"
-              className="object-cover rounded-xl mb-10 w-full hidden max-sm:block"
+              className="object-cover rounded-xl mb-5 w-full hidden max-sm:block"
             />
           </div>
           <div className="flex flex-col items-center">
-            <h2 className="text-[24px] font-bold mb-10 whitespace-nowrap">
+            <h2 className="text-[24px] font-bold mb-10 whitespace-nowrap max-sm:mb-5">
               ZX9 SPEAKER
             </h2>
             <Link

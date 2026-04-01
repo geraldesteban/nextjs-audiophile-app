@@ -18,7 +18,7 @@ async function Page() {
           HEADPHONES
         </h2>
       </div>
-      <div className="py-20">
+      <div className="py-20 max-lg:py-10">
         <Products products={headphones} />
         <HomeNavigation />
         <HomeAudioGear />

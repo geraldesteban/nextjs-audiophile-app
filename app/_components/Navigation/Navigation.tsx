@@ -3,7 +3,7 @@ import Link from "next/link";
 function Navigation() {
   return (
     <nav className="max-lg:hidden">
-      <ul className="text-white text-[13px] font-bold tracking-widest flex items-center gap-10 max-xl:-tracking-wider max-xl:gap-5">
+      <ul className="text-white text-sm font-bold tracking-widest flex items-center gap-5">
         <li className="lg:hover:text-[#D87D4A]">
           <Link href="/">HOME</Link>
         </li>

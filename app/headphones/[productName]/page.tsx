@@ -26,7 +26,7 @@ async function Page({ params }: { params: { productName: string } }) {
   });
 
   return (
-    <div className="py-20">
+    <div className="py-20 max-lg:py-10 flex flex-col gap-20 max-lg:gap-10">
       <ProductDetails products={headphoneDetails} />
       <Gallery products={headphoneDetails} />
       <YouMayAlsoLike />

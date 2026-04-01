@@ -21,7 +21,7 @@ function ProductDetails({ products }: ProductsProps) {
   return (
     <div className="">
       <button
-        className="text-[15px] py-10 text-gray-500 font-medium ml-32 max-xl:ml-16 max-lg:ml-10 cursor-pointer hover:text-[#D87D4A]"
+        className="text-gray-500 font-medium ml-32 mb-20 max-lg:mb-10 max-lg:ml-5 cursor-pointer hover:text-[#D87D4A]"
         onClick={moveBack}
       >
         Go Back
@@ -29,9 +29,9 @@ function ProductDetails({ products }: ProductsProps) {
       {products
         .filter((product) => product.slug === productName)
         .map((product) => (
-          <div key={product.id} className="py-20">
+          <div key={product.id} className="flex flex-col gap-20 max-lg:gap-10">
             <div
-              className={`flex justify-between items-center px-32 gap-10 max-xl:px-16 max-lg:px-10 max-lg:flex-col`}
+              className={`flex justify-between items-center gap-10 px-30 max-lg:px-5 max-lg:flex-col`}
             >
               <Image
                 src={product?.image?.desktop}
@@ -39,7 +39,7 @@ function ProductDetails({ products }: ProductsProps) {
                 alt={product.name}
                 width={500}
                 height={500}
-                className="rounded-xl w-[45%] max-lg:hidden"
+                className="rounded-xl w-[50%] max-lg:hidden"
               />
               <Image
                 src={product?.image?.tablet}
@@ -55,24 +55,24 @@ function ProductDetails({ products }: ProductsProps) {
                 alt={product.name}
                 width={500}
                 height={500}
-                className="rounded-xl hidden max-sm:block"
+                className="rounded-xl hidden w-full max-sm:block"
               />
               <div className="max-lg:text-left">
-                <h2
-                  className={`text-[#D87D4A] text-[14px] tracking-[8px] mb-5`}
-                >
+                <h2 className={`text-[#D87D4A] tracking-[8px] mb-5`}>
                   {product.new ? "NEW PRODUCT" : ""}
                 </h2>
-                <h2 className="text-black text-[40px] font-bold mb-10 max-sm:text-[28px]">
+                <h2 className="text-black text-4xl font-bold mb-10 max-sm:text-3xl max-sm:mb-2">
                   {product.name}
                   <br />
                 </h2>
-                <p className="text-gray-500 text-[15px] w-90 mb-10 max-lg:w-full">
+                <p className="text-gray-500 w-90 mb-10 max-lg:w-full max-lg:mx-auto max-sm:mb-5">
                   {product.description}
                 </p>
-                <p className="text-[18px] font-bold mb-10">$ {product.price}</p>
-                <div className="flex items-center gap-5">
-                  <div className="bg-[#F1F1F1] flex items-center gap-5 px-6 py-3">
+                <p className="text-[18px] font-bold mb-10 max-sm:mb-5">
+                  $ {product.price}
+                </p>
+                <div className="flex items-center gap-5 max-sm:gap-2">
+                  <div className="bg-[#F1F1F1] flex items-center gap-5 px-7 py-3 max-sm:px-2">
                     <button
                       className="cursor-pointer hover:text-[#D87D4A]"
                       onClick={() => setCount((prev) => Math.max(1, prev - 1))}
@@ -88,7 +88,7 @@ function ProductDetails({ products }: ProductsProps) {
                     </button>
                   </div>
                   <button
-                    className="text-white font-bold bg-[#D87D4A] px-7 py-3 hover:brightness-130 cursor-pointer hover:opacity-90"
+                    className="text-white font-bold bg-[#D87D4A] px-7 py-3 max-sm:px-2 hover:brightness-130 cursor-pointer hover:opacity-90"
                     onClick={() =>
                       addToCart({
                         id: product.id,
@@ -105,21 +105,25 @@ function ProductDetails({ products }: ProductsProps) {
               </div>
             </div>
             {/* features */}
-            <div className="flex justify-around gap-96 mt-52 px-32 max-xl:px-16 max-lg:flex-col max-lg:gap-36 max-lg:px-10 max-sm:mt-24">
-              <div className="flex-1">
-                <h2 className="text-[32px] font-bold mb-10">FEATURES</h2>
-                <p className="text-[15px] text-gray-500">{product.features}</p>
+            <div className="flex justify-around px-30 max-lg:px-5 max-lg:flex-col gap-20 max-lg:gap-10">
+              <div>
+                <h2 className="text-4xl font-bold mb-10 max-sm:mb-5">
+                  FEATURES
+                </h2>
+                <p className="text-gray-500 w-[70%] max-lg:w-full">
+                  {product.features}
+                </p>
               </div>
-              <div className="flex-1 max-lg:flex max-lg:gap-72 max-md:gap-48 max-sm:flex-col max-sm:gap-0">
-                <h2 className="text-[32px] font-bold mb-10 whitespace-nowrap">
+              <div className="flex-1">
+                <h2 className="text-4xl font-bold mb-10 max-sm:mb-5">
                   IN THE BOX
                 </h2>
                 <div>
                   <ul>
                     {product.includes.map((inc) => (
-                      <li key={inc.item} className="whitespace-nowrap">
+                      <li key={inc.item}>
                         <span className="text-[#D87D4A]">{inc.quantity}x</span>
-                        <span className="ml-5">{inc.item}</span>
+                        <span className="ml-2">{inc.item}</span>
                       </li>
                     ))}
                   </ul>
