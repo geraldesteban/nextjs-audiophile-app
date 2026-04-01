@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getHeadphones } from "@/app/_lib/services/getHeadphones";
 import Products from "./Products";
 
