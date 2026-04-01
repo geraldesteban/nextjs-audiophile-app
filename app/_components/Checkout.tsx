@@ -7,56 +7,62 @@ function Checkout() {
   const carts = useCartStore((state) => state.cart);
 
   return (
-    <div className="max-sm:mx-5 relative">
-      <div className="bg-white shadow-xl p-5 max-sm:p-5 rounded-xl">
-        <Image src={ConfirmIcon} alt="confirm Icon" />
-        <h2 className="text-3xl max-sm:text-xl font-bold">
-          THANK YOU FOR YOUR ORDER
-        </h2>
-        <p className="text-gray-500 text-[15px] font-medium mb-5">
-          You will receive an email confirmation shortly.
-        </p>
-        <div className="flex items-stretch mb-5">
-          {/* Item */}
+    <div className="bg-white shadow-xl p-5 rounded-xl max-sm:mx-5 max-sm:p-5">
+      <Image src={ConfirmIcon} alt="confirm Icon" className="mb-10" />
+      <h2 className="text-3xl font-bold">THANK YOU FOR YOUR ORDER</h2>
+      <p className="text-gray-500 text-[15px] font-medium mb-5">
+        You will receive an email confirmation shortly.
+      </p>
+      <div className="flex items-stretch mb-10">
+        {/* Item */}
+        {carts.slice(0, 1).map((item) => (
           <div className="bg-[#F1F1F1] flex flex-1 flex-col gap-2 rounded-tl-xl rounded-bl-xl p-5">
             <div className="flex justify-between border-b border-gray-500 pb-3">
-              <div className="flex items-center">
-                {/* <Image src="" alt="Item" />  */}
+              <div className="flex items-center gap-2">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  width={50}
+                  height={50}
+                />
                 <div className="flex flex-col">
-                  <span className="text-[15px] font-bold whitespace-nowrap">
-                    XX99 MK II
-                  </span>
+                  <span className="text-[15px] font-bold">{item.name}</span>
                   <span className="text-gray-500 text-[14px] font-bold">
-                    $ 2,999
+                    ${item.price}
                   </span>
                 </div>
               </div>
               <span className="text-gray-500 text-[15px] font-bold">x1</span>
             </div>
-            <span className="text-gray-500 text-[14px] font-bold text-center whitespace-nowrap">
-              {carts.length === 1 ? null : <span>and other item(s)</span>}
+            <span className="text-gray-500 text-[14px] font-bold text-center">
+              {carts.length === 1 ? null : (
+                <span>
+                  and {carts.length - 1} other item
+                  {carts.length === 1 ? "(s)" : ""}
+                </span>
+              )}
             </span>
           </div>
-          {/* Grand total */}
-          <div className="bg-black flex flex-1 flex-col gap-2 rounded-tr-xl rounded-br-xl p-5 place-content-center">
-            <span className="text-gray-500 text-[15px] font-medium">
-              GRAND TOTAL
-            </span>
-            <span className="text-white text-[18px] font-bold">
-              $
-              {(
-                carts.reduce((a, item) => a + item.price * item.qty, 0) * 1.2 +
-                (carts.length === 0 ? 0 : 50)
-              ).toFixed(0)}
-            </span>
-          </div>
+        ))}
+        {/* Grand total */}
+        <div className="bg-black flex flex-1 flex-col gap-2 rounded-tr-xl rounded-br-xl p-5 place-content-center">
+          <span className="text-gray-500 text-[15px] font-medium">
+            GRAND TOTAL
+          </span>
+          <span className="text-white text-[18px] font-bold">
+            $
+            {(
+              carts.reduce((a, item) => a + item.price * item.qty, 0) * 1.2 +
+              (carts.length === 0 ? 0 : 50)
+            ).toFixed(0)}
+          </span>
         </div>
-        <Link href="/">
-          <button className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer">
-            BACK TO HOME
-          </button>
-        </Link>
       </div>
+      <Link href="/">
+        <button className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer">
+          BACK TO HOME
+        </button>
+      </Link>
     </div>
   );
 }

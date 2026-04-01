@@ -17,7 +17,7 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
       {/* Click outside to close modal */}
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
       {/* Modal content */}
-      <div>{children}</div>
+      <div className="relative">{children}</div>
     </div>
   );
 }
