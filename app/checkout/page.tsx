@@ -18,7 +18,6 @@ function Page() {
       <Modal
         isOpen={activeCheckout}
         onClose={() => setActiveCheckout(!activeCheckout)}
-        style={"flex justify-center items-center max-md:block"}
       >
         <Checkout />
       </Modal>
