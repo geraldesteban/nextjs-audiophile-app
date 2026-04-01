@@ -9,15 +9,15 @@ type ModalCartProps = {
 };
 
 function Cart({ activeCart, setActiveCart }: ModalCartProps) {
-  const carts = useCartStore((state) => state.cart);
-  const clearCart = useCartStore((state) => state.clearCart);
-  const increasedCart = useCartStore((state) => state.increaseQty);
-  const decreasedCart = useCartStore((state) => state.decreaseQty);
+  const carts = useCartStore(state => state.cart);
+  const clearCart = useCartStore(state => state.clearCart);
+  const increasedCart = useCartStore(state => state.increaseQty);
+  const decreasedCart = useCartStore(state => state.decreaseQty);
 
   return (
     <Modal isOpen={activeCart} onClose={() => setActiveCart(!activeCart)}>
-      <div className="bg-white p-5 rounded-xl mx-auto max-sm:mx-5">
-        <div className="flex justify-between items-center mb-10 gap-10 max-sm:mb-5">
+      <div className="bg-white p-10 rounded-xl max-sm:mx-5">
+        <div className="flex justify-between items-center mb-10 gap-10">
           {/* Number of Carts */}
           <h2 className="text-[18px] font-bold">
             Cart<span>({carts.length})</span>
@@ -34,12 +34,12 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
           {carts.length === 0 ? (
             <p className="text-center font-bold">Cart is empty.</p>
           ) : (
-            carts.map((item) => (
+            carts.map(item => (
               <div
                 key={item.id}
-                className="flex justify-between items-center mb-10 gap-5"
+                className="flex justify-between items-center mb-10 gap-5 max-sm:gap-2"
               >
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-5 max-sm:gap-2">
                   <div className="relative">
                     <Image
                       src={item.image}
@@ -78,12 +78,12 @@ function Cart({ activeCart, setActiveCart }: ModalCartProps) {
         {carts.length === 0 ? null : (
           <>
             {/* Total price of all carts */}
-            <div className="flex justify-between items-center mb-10 max-sm:mb-5">
+            <div className="flex justify-between items-center mb-10">
               <h2 className="text-gray-500 text-[15px] font-medium">Total</h2>
               <p className="text-[18px] font-bold">
                 $
                 {carts
-                  .map((item) => item.price * item.qty)
+                  .map(item => item.price * item.qty)
                   .reduce((a, b) => a + b, 0)}
               </p>
             </div>

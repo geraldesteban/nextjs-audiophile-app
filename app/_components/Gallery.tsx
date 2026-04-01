@@ -10,12 +10,11 @@ function Gallery({ products }: ProductsProps) {
   const params = useParams();
   const { productName } = params;
 
-  console.log(productName);
   return (
     <>
       {products
-        .filter((product) => product.slug === productName)
-        .map((product) => (
+        .filter(product => product.slug === productName)
+        .map(product => (
           <div key={product.id}>
             {/* Desktop */}
             <div className="grid grid-cols-2 gap-10 px-30 max-lg:px-5 max-lg:grid-cols-1 max-lg:hidden">

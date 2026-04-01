@@ -3,6 +3,8 @@ import { getSpeakers } from "../_lib/services/getSpeakers";
 import Products from "../_components/Products/Products";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
+import { Suspense } from "react";
+import Spinner from "../_components/Spinners/Spinner";
 
 export const metadata = {
   title: "Speakers",
@@ -19,7 +21,15 @@ async function Page() {
         </h2>
       </div>
       <div className="py-20">
-        <Products products={speakers} />
+        <Suspense
+          fallback={
+            <div className="min-h-screen">
+              <Spinner />
+            </div>
+          }
+        >
+          <Products products={speakers} />
+        </Suspense>
         <HomeNavigation />
         <HomeAudioGear />
       </div>
