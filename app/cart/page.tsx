@@ -5,14 +5,14 @@ import Link from "next/link";
 import { useCartStore } from "@/app/store/cartStore";
 
 function Page() {
-  const carts = useCartStore(state => state.cart);
-  const clearCart = useCartStore(state => state.clearCart);
-  const increasedCart = useCartStore(state => state.increaseQty);
-  const decreasedCart = useCartStore(state => state.decreaseQty);
+  const carts = useCartStore((state) => state.cart);
+  const clearCart = useCartStore((state) => state.clearCart);
+  const increasedCart = useCartStore((state) => state.increaseQty);
+  const decreasedCart = useCartStore((state) => state.decreaseQty);
 
   return (
     <div className="py-20 max-lg:py-10 min-h-screen px-30 max-lg:px-5">
-      <div className="mb-20">
+      <div className="mb-20 max-lg:mb-10">
         <Link
           href="/"
           className="text-[15px] text-gray-500 font-medium hover:text-[#D87D4A]"
@@ -38,7 +38,7 @@ function Page() {
           {carts.length === 0 ? (
             <p className="text-center font-bold">Cart is empty.</p>
           ) : (
-            carts.map(item => (
+            carts.map((item) => (
               <div
                 key={item.id}
                 className="flex justify-between items-center mb-10 gap-5 max-sm:gap-2"
@@ -87,7 +87,7 @@ function Page() {
               <p className="text-[18px] font-bold">
                 $
                 {carts
-                  .map(item => item.price * item.qty)
+                  .map((item) => item.price * item.qty)
                   .reduce((a, b) => a + b, 0)}
               </p>
             </div>

@@ -10,7 +10,7 @@ import { useCartStore } from "../store/cartStore";
 function Page() {
   const [activeCheckout, setActiveCheckout] = useState(false);
 
-  const carts = useCartStore(state => state.cart);
+  const carts = useCartStore((state) => state.cart);
 
   return (
     <div className="py-20 max-lg:py-10">
@@ -171,7 +171,7 @@ function Page() {
           {carts.length === 0 ? (
             <p className="text-center mb-10 font-bold">Cart is Empty.</p>
           ) : (
-            carts.map(item => (
+            carts.map((item) => (
               <div
                 key={item.id}
                 className="flex justify-between items-center mb-10 max-sm:mb-5"
@@ -205,7 +205,7 @@ function Page() {
                 <p className="text-[18px] font-bold">
                   $
                   {carts
-                    .map(item => item.price * item.qty)
+                    .map((item) => item.price * item.qty)
                     .reduce((a, b) => a + b, 0)
                     .toFixed(0)}
                 </p>
@@ -228,11 +228,11 @@ function Page() {
                   $
                   {(
                     carts
-                      .map(item => item.price * item.qty)
+                      .map((item) => item.price * item.qty)
                       .reduce((a, b) => a + b, 0) *
                       0.2 +
                     carts
-                      .map(item => item.price * item.qty)
+                      .map((item) => item.price * item.qty)
                       .reduce((a, b) => a + b, 0)
                   ).toFixed(0)}
                 </p>

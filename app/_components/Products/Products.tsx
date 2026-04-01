@@ -27,6 +27,7 @@ function Products({ products }: ProductsProps) {
             alt={product.name}
             width={500}
             height={500}
+            priority
             className="rounded-xl w-[50%] max-lg:hidden"
           />
           <Image
@@ -35,6 +36,7 @@ function Products({ products }: ProductsProps) {
             alt={product.name}
             width={500}
             height={500}
+            priority
             className="rounded-xl hidden max-lg:block max-sm:hidden"
           />
           <Image
@@ -43,6 +45,7 @@ function Products({ products }: ProductsProps) {
             alt={product.name}
             width={500}
             height={500}
+            priority
             className="rounded-xl hidden w-full max-sm:block"
           />
           <div className="max-lg:text-center mb-10">
