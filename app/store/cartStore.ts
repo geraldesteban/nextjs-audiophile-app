@@ -1,21 +1,13 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-type CartItem = {
-  id: number;
-  name: string;
-  price: number;
-  qty: number;
-  image: string;
-};
-
-type CartStore = {
-  cart: CartItem[];
-  addToCart: (item: Omit<CartItem, "qty"> & { qty?: number }) => void;
+interface CartStore {
+  cart: CartItemDetails[];
+  addToCart: (item: Omit<CartItemDetails, "qty"> & { qty?: number }) => void;
   clearCart: () => void;
   increaseQty: (id: number) => void;
   decreaseQty: (id: number) => void;
-};
+}
 
 export const useCartStore = create<CartStore>()(
   persist(
@@ -24,13 +16,13 @@ export const useCartStore = create<CartStore>()(
       cart: [],
 
       // Add item to cart
-      addToCart: item => {
+      addToCart: (item) => {
         const cart = get().cart;
-        const existing = cart.find(p => p.id === item.id);
+        const existing = cart.find((p) => p.id === item.id);
 
         if (existing) {
           set({
-            cart: cart.map(p =>
+            cart: cart.map((p) =>
               p.id === item.id ? { ...p, qty: p.qty + (item.qty ?? 1) } : p,
             ),
           });
@@ -42,22 +34,22 @@ export const useCartStore = create<CartStore>()(
       },
 
       // Increased quantity of item
-      increaseQty: id => {
-        set(state => ({
-          cart: state.cart.map(item =>
+      increaseQty: (id) => {
+        set((state) => ({
+          cart: state.cart.map((item) =>
             item.id === id ? { ...item, qty: item.qty + 1 } : item,
           ),
         }));
       },
 
       // Decreased quantity of item
-      decreaseQty: id => {
-        set(state => ({
+      decreaseQty: (id) => {
+        set((state) => ({
           cart: state.cart
-            .map(item =>
+            .map((item) =>
               item.id === id ? { ...item, qty: item.qty - 1 } : item,
             )
-            .filter(item => item.qty > 0),
+            .filter((item) => item.qty > 0),
         }));
       },
 
