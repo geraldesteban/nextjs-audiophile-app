@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import Image from "next/image";
 import Link from "next/link";
+
 /* Desktop */
 import patterCircles from "@/app/_assets/Icons/pattern-circles.svg";
 import speakerZX9 from "@/app/_assets/SectionThree/image-speaker-zx9.png";
@@ -27,7 +29,7 @@ function HomeGallery() {
         initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: false, amount: 0.5 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
         style={{
           backgroundImage: `url(${patterCircles.src})`,
         }}
@@ -77,7 +79,7 @@ function HomeGallery() {
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: false, amount: 0.5 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
         className="relative rounded-xl"
       >
         <div className="absolute inset-0 flex flex-col justify-center items-start left-20 max-md:left-10">
@@ -110,7 +112,7 @@ function HomeGallery() {
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.5 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
           className="flex-1"
         >
           <Image
@@ -130,7 +132,7 @@ function HomeGallery() {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.5 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
           className="flex-1 bg-[#F1F1F1] rounded-xl max-sm:flex-none max-sm:h-62.5"
         >
           <div className="h-full flex flex-col justify-center mx-32 max-xl:mx-10 max-md:mx-5 max-sm:mx-10">

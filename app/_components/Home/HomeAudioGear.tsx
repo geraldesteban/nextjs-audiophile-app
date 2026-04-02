@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import Image from "next/image";
+
 /* Desktop */
 import bestGear from "@/app/_assets/SectionFour/image-best-gear.jpg";
 /* Tablet */
@@ -17,7 +19,7 @@ function HomeAudioGear() {
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: false, amount: 0.5 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <Image
             src={bestGearTablet}
@@ -30,7 +32,7 @@ function HomeAudioGear() {
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: false, amount: 0.5 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <Image
             src={bestGearMobile}
@@ -43,7 +45,7 @@ function HomeAudioGear() {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
           className="text-black text-4xl font-bold mb-10 max-sm:text-3xl max-sm:mb-5"
         >
           BRINGING YOU THE
@@ -54,7 +56,7 @@ function HomeAudioGear() {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
           className="text-gray-500 w-111.5 max-lg:w-140 max-lg:mx-auto max-sm:w-full"
         >
           Located at the heart of New York City, Audiophile is the premier store
@@ -69,7 +71,7 @@ function HomeAudioGear() {
         initial={{ opacity: 0, scale: 0.5 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: false, amount: 0.5 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
       >
         <Image
           src={bestGear}
