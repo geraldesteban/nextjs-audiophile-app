@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-
 import Image from "next/image";
 import Link from "next/link";
-
 import { ProductsProps } from "@/app/types/products";
 
 function Products({ products }: ProductsProps) {
@@ -19,7 +17,7 @@ function Products({ products }: ProductsProps) {
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: false, amount: 0.5 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <Image
             src={product?.image?.desktop}

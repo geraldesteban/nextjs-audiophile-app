@@ -1,13 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-
-import { ProductsProps } from "@/app/types/products";
-
 import { useParams } from "next/navigation";
+import { ProductsProps } from "@/app/types/products";
 import useMoveBack from "@/app/hooks/useMoveback";
 import { useCartStore } from "@/app/store/cartStore";
-import { useState } from "react";
 
 function ProductDetails({ products }: ProductsProps) {
   const [isAdding, setIsAdding] = useState(false);
@@ -31,8 +30,12 @@ function ProductDetails({ products }: ProductsProps) {
         .filter((product) => product.slug === productName)
         .map((product) => (
           <div key={product.id} className="flex flex-col gap-20 max-lg:gap-10">
-            <div
+            <motion.div
               className={`flex justify-between items-center gap-10 px-30 max-lg:px-5 max-lg:flex-col`}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
             >
               <Image
                 src={product?.image?.desktop}
@@ -113,7 +116,7 @@ function ProductDetails({ products }: ProductsProps) {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
             {/* features */}
             <div className="flex justify-around px-30 max-lg:px-5 max-lg:flex-col gap-20 max-lg:gap-10">
               <div>
