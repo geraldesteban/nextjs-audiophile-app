@@ -5,6 +5,8 @@ import YouMayAlsoLike from "@/app/_components/YouMayAlsoLike";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 import ProductDetails from "@/app/_components/Products/productDetails";
+import { Suspense } from "react";
+import Spinner from "@/app/_components/Spinners/Spinner";
 
 export async function generateMetadata({
   params,
@@ -27,8 +29,16 @@ async function Page({ params }: { params: { productName: string } }) {
 
   return (
     <div className="py-20 max-lg:py-10 flex flex-col gap-20 max-lg:gap-10">
-      <ProductDetails products={headphoneDetails} />
-      <Gallery products={headphoneDetails} />
+      <Suspense
+        fallback={
+          <div className="min-h-screen">
+            <Spinner />
+          </div>
+        }
+      >
+        <ProductDetails products={headphoneDetails} />
+        <Gallery products={headphoneDetails} />
+      </Suspense>
       <YouMayAlsoLike />
       <HomeNavigation />
       <HomeAudioGear />
