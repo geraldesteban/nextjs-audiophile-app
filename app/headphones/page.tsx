@@ -1,20 +1,21 @@
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
-import Headphones from "../_components/Products/headphones";
 import { Suspense } from "react";
 import Spinner from "../_components/Spinners/Spinner";
+import Products from "../_components/Products/Products";
+import { getHeadphones } from "../_lib/services/getHeadphones";
+import Title from "../_components/PageTitle";
 
 export const metadata = {
   title: "Headphones",
 };
 
-function Page() {
+async function Page() {
+  const headphones = await getHeadphones();
   return (
     <div>
       <div className="bg-black py-20 max-md:py-10">
-        <h2 className="text-white text-[40px] font-bold text-center max-sm:text-[28px]">
-          HEADPHONES
-        </h2>
+        <Title>HEADPHONES</Title>
       </div>
       <div className="py-20 max-lg:py-10">
         <Suspense
@@ -24,7 +25,7 @@ function Page() {
             </div>
           }
         >
-          <Headphones />
+          <Products products={headphones} />
         </Suspense>
         <HomeNavigation />
         <HomeAudioGear />

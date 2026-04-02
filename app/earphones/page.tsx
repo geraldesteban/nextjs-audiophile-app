@@ -5,6 +5,7 @@ import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 import Products from "@/app/_components/Products/Products";
 import { Suspense } from "react";
 import Spinner from "../_components/Spinners/Spinner";
+import Title from "../_components/PageTitle";
 
 export const metadata = {
   title: "Earphones",
@@ -16,9 +17,7 @@ async function Page() {
   return (
     <div>
       <div className="bg-black py-20 max-md:py-10">
-        <h2 className="text-white text-[40px] font-bold text-center max-sm:text-[28px]">
-          EARPHONES
-        </h2>
+        <Title>EARPHONES</Title>
       </div>
       <div className="py-20">
         <Suspense

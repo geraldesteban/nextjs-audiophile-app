@@ -5,6 +5,7 @@ import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 import { Suspense } from "react";
 import Spinner from "../_components/Spinners/Spinner";
+import Title from "../_components/PageTitle";
 
 export const metadata = {
   title: "Speakers",
@@ -16,9 +17,7 @@ async function Page() {
   return (
     <div>
       <div className="bg-black py-20 max-md:py-10">
-        <h2 className="text-white text-[40px] font-bold text-center">
-          SPEAKERS
-        </h2>
+        <Title>SPEAKERS</Title>
       </div>
       <div className="py-20">
         <Suspense
