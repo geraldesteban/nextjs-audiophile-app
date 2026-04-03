@@ -55,3 +55,7 @@ export type Products = {
     image: string;
   };
 };
+
+export type ProductsProps = {
+  products: Products[];
+};
