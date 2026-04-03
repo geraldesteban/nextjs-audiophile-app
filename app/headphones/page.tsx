@@ -16,15 +16,15 @@ export default function Page() {
         <Title>HEADPHONES</Title>
       </div>
       <div className="py-20 max-lg:py-10">
-        <Suspense
+        {/* <Suspense
           fallback={
             <div className="min-h-screen">
               <Spinner />
             </div>
           }
-        >
-          <HeadphoneList />
-        </Suspense>
+        > */}
+        <HeadphoneList />
+        {/* </Suspense> */}
         <HomeNavigation />
         <HomeAudioGear />
       </div>
