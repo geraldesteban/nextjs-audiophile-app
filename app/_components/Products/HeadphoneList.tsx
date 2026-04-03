@@ -3,11 +3,8 @@ import { Products } from "@/app/types/products";
 import Image from "next/image";
 import Link from "next/link";
 
-export const revalidate = 15;
-
 export default async function HeadphoneList() {
-  const data = await fetch("http://localhost:3000/api/headphones");
-  const headphones: Products[] = await data.json();
+  const headphones: Products[] = await getHeadphones();
 
   return (
     <>
