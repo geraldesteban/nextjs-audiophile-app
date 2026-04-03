@@ -1,4 +1,4 @@
-import { getEarphoneDetails } from "@/app/_lib/services/getEarphoneDetails";
+import { getEarphoneDetails } from "@/app/_lib/services/earphones/getEarphoneDetails";
 import { NextResponse, NextRequest } from "next/server";
 
 type Params = {
@@ -15,9 +15,6 @@ export async function GET(
 
     return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.json(
-      { error: "Failed to fetch earphones" },
-      { status: 500 },
-    );
+    return NextResponse.json({ error: "Failed to fetch earphones" });
   }
 }

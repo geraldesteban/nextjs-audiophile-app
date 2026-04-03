@@ -1,5 +1,5 @@
 import { NextResponse, NextRequest } from "next/server";
-import { getSpeakerDetails } from "@/app/_lib/services/getSpeakerDetails";
+import { getSpeakerDetails } from "@/app/_lib/services/speakers/getSpeakerDetails";
 
 type Params = {
   productName: string;

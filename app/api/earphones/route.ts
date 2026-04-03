@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getEarphones } from "@/app/_lib/services/getEarphones";
+import { getEarphones } from "@/app/_lib/services/earphones/getEarphones";
 
 export async function GET() {
   try {

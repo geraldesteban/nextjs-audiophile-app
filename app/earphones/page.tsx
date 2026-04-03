@@ -1,4 +1,4 @@
-import { getEarphones } from "@/app/_lib/services/getEarphones";
+import { getEarphones } from "@/app/_lib/services/earphones/getEarphones";
 
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";

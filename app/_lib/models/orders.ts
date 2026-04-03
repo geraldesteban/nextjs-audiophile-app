@@ -9,6 +9,7 @@ const ordersSchema = new mongoose.Schema(
         name: { type: String },
         price: { type: Number },
         qty: { type: Number },
+        image: { type: String },
       },
     ],
     customer: {

@@ -1,4 +1,4 @@
-import { getSpeakers } from "../_lib/services/getSpeakers";
+import { getSpeakers } from "../_lib/services/speakers/getSpeakers";
 
 import Products from "../_components/Products/Products";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";

@@ -1,4 +1,4 @@
-import { getSpeakerDetails } from "@/app/_lib/services/getSpeakerDetails";
+import { getSpeakerDetails } from "@/app/_lib/services/speakers/getSpeakerDetails";
 
 import Gallery from "@/app/_components/Gallery";
 import YouMayAlsoLike from "@/app/_components/YouMayAlsoLike";

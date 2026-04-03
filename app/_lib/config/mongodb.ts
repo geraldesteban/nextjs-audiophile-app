@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-// Reusable connnect to database
+// Reusable connect to the MongoDB database
 export async function connectDB() {
   // Check if there is mongodb uri
   if (!process.env.MONGODB_URI) {

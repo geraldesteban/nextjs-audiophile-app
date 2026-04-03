@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getSpeakers } from "@/app/_lib/services/getSpeakers";
+import { getSpeakers } from "@/app/_lib/services/speakers/getSpeakers";
 
 export async function GET() {
   try {

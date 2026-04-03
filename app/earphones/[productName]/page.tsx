@@ -1,4 +1,4 @@
-import { getEarphoneDetails } from "@/app/_lib/services/getEarphoneDetails";
+import { getEarphoneDetails } from "@/app/_lib/services/earphones/getEarphoneDetails";
 
 import ProductDetails from "@/app/_components/Products/productDetails";
 import Gallery from "@/app/_components/Gallery";
