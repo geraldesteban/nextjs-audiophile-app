@@ -1,5 +1,5 @@
-import { connectDB } from "../../config/mongodb";
-import Orders from "../../models/orders";
+import { connectDB } from "@/app/_lib/config/mongodb";
+import Orders from "@/app/_lib/models/orders";
 
 export async function createOrders(
   carts: CartItemDetails[],

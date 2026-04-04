@@ -1,5 +1,5 @@
-import { connectDB } from "../../config/mongodb";
-import Orders from "../../models/orders";
+import { connectDB } from "@/app/_lib/config/mongodb";
+import Orders from "@/app/_lib/models/orders";
 
 type UpdateOrderStatus = {
   orderId: string;
@@ -17,8 +17,6 @@ export async function updateOrderStatus({
     { status },
     { returnDocument: "after" },
   );
-
-  console.log("DB UPDATE RESULT:", data);
 
   return data;
 }
