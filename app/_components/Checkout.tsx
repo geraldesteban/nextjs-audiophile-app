@@ -29,12 +29,10 @@ export default function Checkout({ orders }: { orders: Order[] }) {
   }, []);
 
   return (
-    <div className="bg-white shadow-xl p-5 rounded-xl max-sm:mx-5">
+    <div className="bg-white shadow-xl p-10 max-sm:p-5 rounded-xl max-lg:mx-5">
       <Image src={ConfirmIcon} alt="confirm Icon" className="mb-10" />
-
-      <h2 className="text-3xl font-bold">THANK YOU FOR YOUR ORDER</h2>
-
-      <p className="text-gray-500 text-[15px] font-medium mb-5">
+      <h2 className="text-4xl font-bold mb-5">THANK YOU FOR YOUR ORDER</h2>
+      <p className="text-gray-500 font-medium mb-5 max-sm:text-xs">
         You will receive an email confirmation shortly.
       </p>
 
@@ -43,7 +41,7 @@ export default function Checkout({ orders }: { orders: Order[] }) {
         <div className="bg-[#F1F1F1] flex flex-col rounded-tl-xl rounded-tr-xl p-5">
           {items.slice(0, 1).map((item, i) => (
             <div key={i} className="flex justify-between border-b pb-5">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-5 max-sm:gap-2">
                 <Image
                   src={item.image}
                   alt={item.name}
@@ -52,16 +50,22 @@ export default function Checkout({ orders }: { orders: Order[] }) {
                 />
 
                 <div className="flex flex-col">
-                  <span className="font-bold">{item.name}</span>
-                  <span className="text-gray-500 font-bold">${item.price}</span>
+                  <span className="font-bold text-sm max-sm:text-xs">
+                    {item.name.split(" ").slice(0, -1).join(" ")}
+                  </span>
+                  <span className="text-gray-500 font-bold text-sm max-sm:text-xs">
+                    ${item.price}
+                  </span>
                 </div>
               </div>
 
-              <span className="text-gray-500 font-bold">x{item.qty}</span>
+              <span className="text-gray-500 font-bold text-sm max-sm:text-xs">
+                x{item.qty}
+              </span>
             </div>
           ))}
           {orders?.[0]?.items?.length > 1 && (
-            <span className="text-gray-500 text-[14px] font-bold text-center">
+            <span className="text-gray-500 font-bold text-center text-sm max-sm:text-xs mt-5">
               and {orders[0].items.length - 1} other item
               {orders[0].items.length - 1 > 1 ? "s" : ""}
             </span>
@@ -70,11 +74,11 @@ export default function Checkout({ orders }: { orders: Order[] }) {
 
         {/* GRAND TOTAL */}
         <div className="bg-black flex flex-col gap-2 rounded-br-xl rounded-bl-xl p-5">
-          <span className="text-gray-500 text-[15px] font-medium">
+          <span className="text-gray-500 font-medium max-sm:text-xs">
             GRAND TOTAL
           </span>
 
-          <span className="text-white text-[18px] font-bold">
+          <span className="text-white font-bold text-sm max-sm:text-xs">
             $
             {(
               items.reduce((a, item) => a + item.price * item.qty, 0) * 1.2 +
@@ -85,7 +89,7 @@ export default function Checkout({ orders }: { orders: Order[] }) {
       </div>
 
       <Link href="/">
-        <button className="text-white bg-[#D87D4A] py-3 w-full cursor-pointer">
+        <button className="text-white font-bold bg-[#D87D4A] py-3 w-full cursor-pointer lg:hover:opacity-80 max-sm:text-sm">
           BACK TO HOME
         </button>
       </Link>

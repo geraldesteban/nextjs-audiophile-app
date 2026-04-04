@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import Transition from "@/app/_components/Transition";
+
 import { ProductsProps } from "@/app/types/products";
 
 import { useParams } from "next/navigation";
@@ -13,9 +15,9 @@ function Gallery({ products }: ProductsProps) {
   return (
     <>
       {products
-        .filter(product => product.slug === productName)
-        .map(product => (
-          <div key={product.id}>
+        .filter((product) => product.slug === productName)
+        .map((product) => (
+          <Transition key={product.id}>
             {/* Desktop */}
             <div className="grid grid-cols-2 gap-10 px-30 max-lg:px-5 max-lg:grid-cols-1 max-lg:hidden">
               {/* Left side images */}
@@ -139,7 +141,7 @@ function Gallery({ products }: ProductsProps) {
                 />
               </div>
             </div>
-          </div>
+          </Transition>
         ))}
     </>
   );
