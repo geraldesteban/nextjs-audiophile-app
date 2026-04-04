@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import cart from "@/public/icon-cart.svg";
 import { useCartStore } from "@/app/store/cartStore";
+
+import { IoCartOutline } from "react-icons/io5";
 
 function CartIcon() {
   const carts = useCartStore((state) => state.cart);
@@ -10,8 +10,8 @@ function CartIcon() {
   return (
     <div className="relative flex items-center mr-5">
       <button className="cursor-pointer">
-        <Image src={cart} quality={100} alt="cart icon" />
-        <span className="absolute bottom-1 left-3 bg-[#D87D4A]/50 w-8 h-8 rounded-full flex items-center justify-center text-white">
+        <IoCartOutline className="text-white text-3xl lg:hover:text-[#D87D4A] max-sm:text-2xl" />
+        <span className="pointer-events-none absolute bottom-2 left-4 bg-[#D87D4A]/50 w-7 h-7 rounded-full flex items-center justify-center text-white">
           {carts.length}
         </span>
       </button>
