@@ -9,7 +9,7 @@ function Products({ products }: ProductsProps) {
   return (
     <div className="flex flex-col gap-10 mb-10">
       {products.map((product, i) => (
-        <Transition key={i}>
+        <Transition key={product.id}>
           <div
             className={`flex justify-between items-center px-30 max-lg:px-10 gap-10 max-lg:gap-5 ${
               i + 1 === 2 ? "flex-row-reverse" : ""
