@@ -27,12 +27,3 @@
     }
   }
 }
-
-.icon {
-  transition: 0.3s ease;
-}
-
-.icon:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
-}
