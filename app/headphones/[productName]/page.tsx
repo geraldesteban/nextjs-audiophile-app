@@ -33,7 +33,7 @@ export default async function Page({
     <div className="py-20 max-lg:py-10 flex flex-col gap-20 max-lg:gap-10">
       <ProductDetails products={headphoneDetails} />
       <Gallery products={headphoneDetails} />
-      <YouMayAlsoLike />
+      <YouMayAlsoLike productName={productName} />
       <HomeNavigation />
       <HomeAudioGear />
     </div>
