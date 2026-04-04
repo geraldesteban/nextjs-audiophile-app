@@ -1,25 +1,19 @@
-"use client";
+import { getOrders } from "@/app/_lib/services/orders/getOrders";
 
-import { useEffect } from "react";
-import Checkout from "../../_components/Checkout";
-import { useParams } from "next/navigation";
+import Checkout from "@/app/_components/Checkout";
 
-function Page() {
-  const params = useParams();
-  const orderId = params.orderId;
-  console.log(orderId);
-  useEffect(() => {
-    if (!orderId) return;
+export default async function Page({
+  params,
+}: {
+  params: { orderId: string };
+}) {
+  const { orderId } = await params;
 
-    fetch(`/api/orders/${orderId}`)
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, [orderId]);
+  const orders = await getOrders({ orderId: orderId });
 
   return (
     <div className="min-h-screen flex justify-center items-center">
-      <Checkout />
+      <Checkout orders={orders} />
     </div>
   );
 }
-export default Page;
