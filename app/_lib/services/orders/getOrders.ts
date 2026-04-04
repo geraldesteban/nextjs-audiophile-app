@@ -17,5 +17,13 @@ export async function getOrders({ orderId }: { orderId: string }) {
     },
   ).lean();
 
-  return data;
+  const cleaned = data.map((order: any) => ({
+    ...order,
+    items: order.items.map((item: any) => ({
+      ...item,
+      _id: item._id?.toString(),
+    })),
+  }));
+
+  return cleaned;
 }
