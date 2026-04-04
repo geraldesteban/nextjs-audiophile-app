@@ -1,5 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+
+import Transition from "@/app/_components/Transition";
+
 import heroDesktop from "@/public/image-hero.jpg";
 import heroTablet from "@/public/image-hero-tablet.jpg";
 import heroMobile from "@/public/image-hero-mobile.jpg";
@@ -15,45 +18,47 @@ function Page() {
       <main className="relative pb-240">
         <Image
           src={heroDesktop}
-          alt="Hero background"
+          alt="Desktop Hero Background"
           quality={100}
           fill
           className="object-cover object-top rounded-bl-xl rounded-br-xl max-lg:hidden"
         />
         <Image
           src={heroTablet}
-          alt="Hero background"
+          alt="Tablet Hero background"
           quality={100}
           fill
           className="object-cover object-top rounded-bl-xl rounded-br-xl hidden max-lg:block"
         />
         <Image
           src={heroMobile}
-          alt="Hero background"
+          alt="Mobile Hero background"
           quality={100}
           fill
           className="object-cover object-top rounded-bl-xl rounded-br-xl hidden max-sm:block"
         />
-        <div className="z-10 absolute left-30 top-70 max-lg:text-center max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2">
-          <h2 className="text-gray-500 text-sm tracking-[10px] mb-5">
-            NEW PRODUCT
-          </h2>
-          <h2 className="text-white text-6xl font-bold tracking-wider mb-10 max-sm:text-4xl max-sm:mb-5">
-            XX99 MARK II
-            <br />
-            HEADPHONES
-          </h2>
-          <p className="text-[#F1F1F1] w-90 mb-10 max-lg:mx-auto max-sm:w-full">
-            Experience natural, life like audio and exceptional build quality
-            made for the passionate music enthusiast.
-          </p>
-          <Link
-            href="/headphones/xx99-mark-two-headphones"
-            className="text-white font-bold bg-[#D87D4A] px-7 py-3 lg:hover:brightness-130"
-          >
-            SEE PRODUCT
-          </Link>
-        </div>
+        <Transition>
+          <div className="z-10 absolute left-30 top-70 max-lg:text-center max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2">
+            <h2 className="text-gray-500 text-sm tracking-[10px] mb-5 max-sm:text-xs">
+              NEW PRODUCT
+            </h2>
+            <h2 className="text-white text-6xl font-bold tracking-wider mb-10 max-sm:text-4xl max-sm:mb-5">
+              XX99 MARK II
+              <br />
+              HEADPHONES
+            </h2>
+            <p className="text-[#F1F1F1] w-90 mb-10 max-lg:mx-auto max-sm:w-full max-sm:text-sm">
+              Experience natural, life like audio and exceptional build quality
+              made for the passionate music enthusiast.
+            </p>
+            <Link
+              href="/headphones/xx99-mark-two-headphones"
+              className="text-white font-bold bg-[#D87D4A] px-5 py-3 lg:hover:brightness-130 max-sm:text-sm"
+            >
+              SEE PRODUCT
+            </Link>
+          </div>
+        </Transition>
       </main>
       {/* Home navigation */}
       <HomeNavigation />
