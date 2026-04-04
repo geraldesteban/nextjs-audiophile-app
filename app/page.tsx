@@ -53,6 +53,7 @@ function Page() {
             </p>
             <Link
               href="/headphones/xx99-mark-two-headphones"
+              scroll={true}
               className="text-white font-bold bg-[#D87D4A] px-5 py-3 lg:hover:brightness-130 max-sm:text-sm"
             >
               SEE PRODUCT

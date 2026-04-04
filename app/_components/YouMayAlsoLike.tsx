@@ -38,42 +38,42 @@ export default async function YouMayAlsoLike({
 
   if (productName === "xx99-mark-two-headphones") {
     youMayAlsoLike = base.filter(
-      (item) =>
+      item =>
         item.slug === "xx99-mark-one-headphones" ||
         item.slug === "xx59-headphones" ||
         item.slug === "zx9-speaker",
     );
   } else if (productName === "xx99-mark-one-headphones") {
     youMayAlsoLike = base.filter(
-      (item) =>
+      item =>
         item.slug === "xx99-mark-two-headphones" ||
         item.slug === "xx59-headphones" ||
         item.slug === "zx9-speaker",
     );
   } else if (productName === "xx59-headphones") {
     youMayAlsoLike = base.filter(
-      (item) =>
+      item =>
         item.slug === "xx99-mark-two-headphones" ||
         item.slug === "xx99-mark-one-headphones" ||
         item.slug === "zx9-speaker",
     );
   } else if (productName === "zx9-speaker") {
     youMayAlsoLike = base.filter(
-      (item) =>
+      item =>
         item.slug === "zx7-speaker" ||
         item.slug === "xx99-mark-one-headphones" ||
         item.slug === "xx59-headphones",
     );
   } else if (productName === "zx7-speaker") {
     youMayAlsoLike = base.filter(
-      (item) =>
+      item =>
         item.slug === "zx9-speaker" ||
         item.slug === "xx99-mark-one-headphones" ||
         item.slug === "xx59-headphones",
     );
   } else if (productName === "yx1-earphones") {
     youMayAlsoLike = base.filter(
-      (item) =>
+      item =>
         item.slug === "xx99-mark-one-headphones" ||
         item.slug === "xx59-headphones" ||
         item.slug === "zx9-speaker",
@@ -88,7 +88,7 @@ export default async function YouMayAlsoLike({
         YOU MAY ALSO LIKE
       </h2>
       <div className="flex justify-between items-center gap-10 px-30 max-lg:px-5 max-lg:gap-5 max-lg:flex-col">
-        {youMayAlsoLike?.map((item) => {
+        {youMayAlsoLike?.map(item => {
           return (
             <div key={item.slug} className="w-full">
               <Image
