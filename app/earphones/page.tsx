@@ -1,6 +1,6 @@
 import { getEarphones } from "@/app/_lib/services/earphones/getEarphones";
 
-import Title from "../_components/PageTitle";
+import Title from "@/app/_components/PageTitle";
 import Products from "@/app/_components/Products/Products";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
@@ -9,7 +9,7 @@ export const metadata = {
   title: "Earphones",
 };
 
-async function Page() {
+export default async function Page() {
   const earphones = await getEarphones();
 
   return (
@@ -25,5 +25,3 @@ async function Page() {
     </div>
   );
 }
-
-export default Page;

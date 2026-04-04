@@ -18,7 +18,11 @@ export async function generateMetadata({
   };
 }
 
-async function Page({ params }: { params: { productName: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: { productName: string };
+}) {
   const { productName } = await params;
 
   const earphoneDetails = await getEarphoneDetails({
@@ -35,5 +39,3 @@ async function Page({ params }: { params: { productName: string } }) {
     </div>
   );
 }
-
-export default Page;

@@ -1,7 +1,7 @@
-import { getSpeakers } from "../_lib/services/speakers/getSpeakers";
+import { getSpeakers } from "@/app/_lib/services/speakers/getSpeakers";
 
-import Title from "../_components/PageTitle";
-import Products from "../_components/Products/Products";
+import Title from "@/app/_components/PageTitle";
+import Products from "@/app/_components/Products/Products";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 
@@ -9,7 +9,7 @@ export const metadata = {
   title: "Speakers",
 };
 
-async function Page() {
+export default async function Page() {
   const speakers = await getSpeakers();
 
   return (
@@ -25,5 +25,3 @@ async function Page() {
     </div>
   );
 }
-
-export default Page;
