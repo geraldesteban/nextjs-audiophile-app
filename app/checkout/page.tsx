@@ -1,7 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import Checkout from "../_components/Checkout";
-import PaymentForm from "../_components/PaymentForm";
+import PaymentForm from "@/app/_components/PaymentForm";
 
 function Page() {
   return (
