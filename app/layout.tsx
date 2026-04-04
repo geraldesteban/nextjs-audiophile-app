@@ -5,6 +5,7 @@ import "@/app/_styles/globals.css";
 
 import Header from "@/app/_components/Navigation/Header";
 import Footer from "@/app/footer";
+import ScrollToTop from "./_components/ScrollToTop";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -18,6 +19,7 @@ function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={`${manrope.className} min-h-screen`}>
+        <ScrollToTop />
         {/* Navigation Bar */}
         <Header />
         {/* Pages Contents */}
