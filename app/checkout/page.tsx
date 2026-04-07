@@ -6,10 +6,10 @@ function Page() {
   return (
     <div className="py-20 max-lg:py-10">
       <Link
-        href="/"
-        className="text-[15px] text-gray-500 font-medium ml-32 mb-20 max-lg:mb-10 max-lg:ml-5 hover:text-[#D87D4A]"
+        href="/cart"
+        className="text-[15px] text-gray-500 font-medium ml-5 mb-20 max-lg:mb-10 lg:hover:text-[#D87D4A]"
       >
-        Go Home
+        Go Cart
       </Link>
       {/* Payment */}
       <PaymentForm />
