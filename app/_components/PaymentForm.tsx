@@ -18,7 +18,7 @@ function PaymentForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<CustomerDetails>();
 
   const onSubmit = async (data: CustomerDetails) => {
