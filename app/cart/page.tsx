@@ -24,7 +24,7 @@ function Page() {
         </Link>
       </div>
       <Transition>
-        <div className="bg-white p-10 rounded-xl shadow-sm w-[50%] max-lg:w-full max-sm:mx-auto max-sm:p-5">
+        <div className="bg-white p-10 rounded-xl shadow-sm w-100 max-sm:w-full max-sm:mx-auto max-sm:p-5">
           <div className="flex justify-between items-center mb-10 gap-10">
             {/* Number of Carts */}
             <h2 className="font-bold max-sm:text-sm">
