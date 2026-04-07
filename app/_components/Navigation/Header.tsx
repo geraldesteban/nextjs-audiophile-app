@@ -5,6 +5,8 @@ import Transition from "@/app/_components/Transition";
 
 import menu from "@/app/_assets/Icons/icon-hamburger.svg";
 
+import { MdAccountCircle } from "react-icons/md";
+
 import Logo from "@/app/_components/Navigation/Logo";
 import Navigation from "@/app/_components/Navigation/Navigation";
 import CartIcon from "@/app/_components/Navigation/CartIcon";
@@ -32,9 +34,14 @@ function Header() {
           <div className="hidden max-sm:block">
             <Logo />
           </div>
-          <Link href="/cart">
-            <CartIcon />
-          </Link>
+          <div className="flex items-center gap-5">
+            <Link href="/account/login">
+              <MdAccountCircle className="text-white text-3xl lg:hover:text-[#D87D4A] cursor-pointer" />
+            </Link>
+            <Link href="/cart">
+              <CartIcon />
+            </Link>
+          </div>
         </header>
         <div
           className={`bg-white rounded-bl-xl rounded-br-xl shadow-xl transition-all duration-1000 hidden max-lg:block`}
