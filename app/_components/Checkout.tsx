@@ -71,13 +71,11 @@ export default function Checkout({ orders }: { orders: Order[] }) {
             </span>
           )}
         </div>
-
         {/* GRAND TOTAL */}
         <div className="bg-black flex flex-col gap-2 rounded-br-xl rounded-bl-xl p-5">
           <span className="text-gray-500 font-medium max-sm:text-xs">
             GRAND TOTAL
           </span>
-
           <span className="text-white font-bold text-sm max-sm:text-xs">
             $
             {(
@@ -87,7 +85,6 @@ export default function Checkout({ orders }: { orders: Order[] }) {
           </span>
         </div>
       </div>
-
       <Link href="/">
         <button className="text-white font-bold bg-[#D87D4A] py-3 w-full cursor-pointer lg:hover:opacity-80 max-sm:text-sm">
           BACK TO HOME
