@@ -1,6 +1,7 @@
 "use client";
 
 import Transition from "@/app/_components/Transition";
+import LogoBlack from "@/app/_components/Auth/LogoBlack";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -33,6 +34,7 @@ export default function Signup() {
 
       if (!response.ok) {
         setMessage(result.message);
+        setMessageType("error");
         return;
       }
 
@@ -48,8 +50,9 @@ export default function Signup() {
     <Transition>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="min-h-screen flex flex-col justify-center items-center gap-4 w-100 mx-auto max-sm:w-full"
+        className="min-h-screen flex flex-col justify-center items-center gap-4 w-100 mx-auto max-sm:w-full max-sm:my-10"
       >
+        <LogoBlack />
         <h2 className="text-4xl font-semibold mr-auto">Create Account</h2>
         {/* First Name */}
         <div className="flex flex-col gap-2 w-full">
@@ -139,14 +142,11 @@ export default function Signup() {
         )}
         <Link
           href="/account/signin"
-          className="mr-auto max-sm:text-xs lg:hover:text-[#D87D4A]"
+          className="mr-auto text-sm lg:hover:text-[#D87D4A]"
         >
           Login
         </Link>
-        <Link
-          href="/"
-          className="mr-auto max-sm:text-xs lg:hover:text-[#D87D4A]"
-        >
+        <Link href="/" className="mr-auto text-sm lg:hover:text-[#D87D4A]">
           Return to Home
         </Link>
       </form>

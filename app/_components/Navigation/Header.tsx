@@ -35,7 +35,7 @@ function Header() {
             <Logo />
           </div>
           <div className="flex items-center gap-5">
-            <Link href="/account/login">
+            <Link href="/account">
               <MdAccountCircle className="text-white text-3xl lg:hover:text-[#D87D4A] cursor-pointer" />
             </Link>
             <Link href="/cart">

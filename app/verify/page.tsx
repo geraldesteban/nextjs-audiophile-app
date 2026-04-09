@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import VerifyClient from "@/app/_components/VerifyClient";
+import VerifyClient from "@/app/_components/Verify/VerifyClient";
 
 export default function Page() {
   return (

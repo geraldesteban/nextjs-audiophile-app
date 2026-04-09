@@ -1,6 +1,6 @@
 import { getOrders } from "@/app/_lib/services/orders/getOrders";
 
-import Checkout from "@/app/_components/Checkout";
+import Checkout from "@/app/_components/AfterPayment/Checkout";
 
 export default async function Page({
   params,

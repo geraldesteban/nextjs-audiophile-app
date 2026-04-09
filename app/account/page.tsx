@@ -1,5 +1,5 @@
 import Transition from "@/app/_components/Transition";
-import LogoutButton from "../_components/LogoutButton";
+import Signout from "@/app/_components/Auth/Signout";
 
 export default function Page() {
   return (
@@ -26,7 +26,7 @@ export default function Page() {
             </ul>
           </div>
         </div>
-        <LogoutButton />
+        <Signout />
       </div>
     </Transition>
   );

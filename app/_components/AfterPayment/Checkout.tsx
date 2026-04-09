@@ -22,7 +22,7 @@ type Order = {
 
 export default function Checkout({ orders }: { orders: Order[] }) {
   const items = orders?.[0]?.items ?? [];
-  const clearCart = useCartStore((state) => state.clearCart);
+  const clearCart = useCartStore(state => state.clearCart);
 
   useEffect(() => {
     clearCart();

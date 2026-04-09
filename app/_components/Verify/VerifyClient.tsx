@@ -47,7 +47,7 @@ export default function VerifyClient() {
           <p>Email verified successfully!</p>
           <button
             onClick={() => router.push("/account/login")}
-            className="px-7 py-2 bg-[#D87D4A] text-white font-bold"
+            className="px-7 py-2 bg-[#D87D4A] text-white font-bold cursor-pointer lg:hover:opacity-80"
           >
             Go to Login
           </button>

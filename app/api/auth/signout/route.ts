@@ -6,12 +6,7 @@ export async function POST() {
     message: "Logged out",
   });
 
-  // delete cookie
-  response.cookies.set("token", "", {
-    httpOnly: true,
-    expires: new Date(0),
-    path: "/",
-  });
+  response.cookies.delete("token");
 
   return response;
 }

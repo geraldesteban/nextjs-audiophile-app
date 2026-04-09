@@ -2,8 +2,8 @@ import { getEarphoneDetails } from "@/app/_lib/services/earphones/getEarphoneDet
 
 import MoveBack from "@/app/_components/MoveBack";
 import ProductDetails from "@/app/_components/Products/ProductDetails";
-import Gallery from "@/app/_components/Gallery";
-import YouMayAlsoLike from "@/app/_components/YouMayAlsoLike";
+import Gallery from "@/app/_components/Products/Gallery";
+import YouMayAlsoLike from "@/app/_components/Products/YouMayAlsoLike";
 import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 

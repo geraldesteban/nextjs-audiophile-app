@@ -1,11 +1,11 @@
 "use client";
 
 import Transition from "@/app/_components/Transition";
+import LogoBlack from "@/app/_components/Auth/LogoBlack";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import LogoBlack from "@/app/_components/LogoBlack";
 
 type Login = {
   email: string;
@@ -52,11 +52,10 @@ export default function Login() {
     <Transition>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="min-h-screen flex flex-col justify-center items-center gap-4 w-100 mx-auto max-sm:w-full"
+        className="min-h-screen flex flex-col justify-center items-center gap-4 w-100 mx-auto max-sm:w-full max-sm:my-10"
       >
         <LogoBlack />
-        <h2 className="text-4xl font-semibold mr-auto">Sign in</h2>
-
+        <h2 className="text-4xl font-semibold mr-auto">Login</h2>
         {/* Email */}
         <div className="flex flex-col gap-2 w-full">
           <label className="text-xs font-bold">Email</label>

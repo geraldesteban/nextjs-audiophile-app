@@ -5,18 +5,17 @@ export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json();
 
-    const user = await signin({ email, password });
+    const result = await signin({ email, password });
 
     const response = NextResponse.json(
       {
         success: true,
-        message: "Login Successful",
-        user: user.user,
+        user: result.user,
       },
       { status: 200 },
     );
 
-    response.cookies.set("token", user.token, {
+    response.cookies.set("token", result.token, {
       httpOnly: true,
       sameSite: "lax",
       path: "/",
@@ -28,7 +27,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message: error.message || "Login failed",
+        message: error.message || "Something went wrong",
       },
       { status: 401 },
     );

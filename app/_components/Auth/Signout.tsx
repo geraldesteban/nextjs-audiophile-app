@@ -2,15 +2,15 @@
 
 import { useRouter } from "next/navigation";
 
-export default function LogoutButton() {
+export default function Signout() {
   const router = useRouter();
 
   async function handleLogout() {
-    await fetch("/api/auth/logout", {
+    await fetch("/api/auth/signout", {
       method: "POST",
     });
 
-    router.push("/account/login");
+    router.push("/");
   }
 
   return (

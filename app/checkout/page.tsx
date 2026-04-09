@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import PaymentForm from "@/app/_components/PaymentForm";
+import PaymentForm from "@/app/_components/Checkout/PaymentForm";
 
 function Page() {
   return (
