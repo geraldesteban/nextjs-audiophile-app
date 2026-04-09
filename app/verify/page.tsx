@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Spinner from "@/app/_components/Spinners/Spinner";
@@ -17,6 +19,7 @@ export default function VerifyPage() {
         setStatus("invalid");
         return;
       }
+
       try {
         const res = await fetch(`/api/auth/verify?token=${token}`);
         const data = await res.json();
@@ -35,7 +38,7 @@ export default function VerifyPage() {
     };
 
     verifyEmail();
-  }, [token, router]);
+  }, [token]);
 
   return (
     <div className="min-h-screen flex justify-center items-center flex-col gap-4">
