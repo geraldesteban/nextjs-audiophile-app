@@ -1,4 +1,4 @@
-export type Products = {
+export type ProductTypes = {
   id: number;
   slug: string;
   name: string;
@@ -57,5 +57,5 @@ export type Products = {
 };
 
 export type ProductsProps = {
-  products: Products[];
+  products: ProductTypes[];
 };

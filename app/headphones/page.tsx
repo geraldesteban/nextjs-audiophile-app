@@ -1,31 +1,36 @@
+import { Suspense } from "react";
+
 import { getHeadphones } from "@/app/_lib/services/headphones/getHeadphones";
 
 import Transition from "@/app/_components/Transition";
 
 import Title from "@/app/_components/PageTitle";
-import Products from "@/app/_components/Products/Products";
-import HomeNavigation from "@/app/_components/Home/HomeNavigation";
-import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
+import ProductsSection from "../_components/Products/ProductsSection";
+import Spinner from "@/app/_components/Spinners/Spinner";
 
 export const metadata = {
   title: "Headphones",
 };
 
-export default async function Page() {
-  const headphones = await getHeadphones();
-
+export default function Page() {
   return (
-    <div>
+    <>
       <div className="bg-black py-20 max-md:py-10">
         <Transition>
           <Title>HEADPHONES</Title>
         </Transition>
       </div>
       <div className="py-20 max-lg:py-10">
-        <Products products={headphones} />
-        <HomeNavigation />
-        <HomeAudioGear />
+        <Suspense
+          fallback={
+            <div className="min-h-screen">
+              <Spinner />
+            </div>
+          }
+        >
+          <ProductsSection getData={getHeadphones} />
+        </Suspense>
       </div>
-    </div>
+    </>
   );
 }

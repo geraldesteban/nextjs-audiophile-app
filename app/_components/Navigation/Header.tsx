@@ -14,7 +14,7 @@ import HomeNavigation from "@/app/_components/Home/HomeNavigation";
 
 function Header() {
   return (
-    <div className="bg-black border-b border-gray-500 py-10 px-30 max-lg:px-5">
+    <div className="bg-black border-b border-gray-500 py-10 px-30 max-lg:px-5 max-sm:py-5">
       <Transition>
         <header className="flex justify-between items-center">
           <div className="flex items-center max-lg:gap-5">

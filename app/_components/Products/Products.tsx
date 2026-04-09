@@ -9,6 +9,7 @@ function Products({ products }: ProductsProps) {
   return (
     <div className="flex flex-col gap-10 mb-10">
       {products.map((product, i) => (
+        /* Products */
         <Transition key={product.id}>
           <div
             className={`flex justify-between items-center px-30 max-lg:px-10 gap-10 max-lg:gap-5 ${
@@ -57,7 +58,7 @@ function Products({ products }: ProductsProps) {
                 {product.description}
               </p>
               <Link
-                href={`/${product.category}/${product?.slug}`}
+                href={`/${product.category}/${product.slug}`}
                 className="text-white font-bold bg-[#D87D4A] px-5 py-3 lg:hover:brightness-130 max-sm:text-sm"
               >
                 SEE PRODUCT

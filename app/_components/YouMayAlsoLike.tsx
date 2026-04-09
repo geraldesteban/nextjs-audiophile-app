@@ -2,24 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Transition from "@/app/_components/Transition";
 
-/* desktop */
-import XXMARKI from "@/app/_assets/YouMayAlsoLike/desktop/image-xx99-mark-one-headphones.jpg";
-import XX59 from "@/app/_assets/YouMayAlsoLike/desktop/image-xx59-headphones.jpg";
-import ZX9 from "@/app/_assets/YouMayAlsoLike/desktop/image-zx9-speaker.jpg";
-
-/* tablet */
-import XXMARKITablet from "@/app/_assets/YouMayAlsoLike/tablet/image-xx99-mark-one-headphones.jpg";
-import XX59Tablet from "@/app/_assets/YouMayAlsoLike/tablet/image-xx59-headphones.jpg";
-import ZX9Tablet from "@/app/_assets/YouMayAlsoLike/tablet/image-zx9-speaker.jpg";
-
-/* mobile */
-import XXMARKIMobile from "@/app/_assets/YouMayAlsoLike/mobile/image-xx99-mark-one-headphones.jpg";
-import XX59Mobile from "@/app/_assets/YouMayAlsoLike/mobile/image-xx59-headphones.jpg";
-import ZX9Mobile from "@/app/_assets/YouMayAlsoLike/mobile/image-zx9-speaker.jpg";
-
 import { getHeadphones } from "@/app/_lib/services/headphones/getHeadphones";
 import { getSpeakers } from "@/app/_lib/services/speakers/getSpeakers";
-import { getEarphones } from "../_lib/services/earphones/getEarphones";
+import { getEarphones } from "@/app/_lib/services/earphones/getEarphones";
 
 export default async function YouMayAlsoLike({
   productName,
@@ -34,46 +19,44 @@ export default async function YouMayAlsoLike({
 
   let youMayAlsoLike = [];
 
-  console.log("productName:", JSON.stringify(productName));
-
   if (productName === "xx99-mark-two-headphones") {
     youMayAlsoLike = base.filter(
-      item =>
+      (item) =>
         item.slug === "xx99-mark-one-headphones" ||
         item.slug === "xx59-headphones" ||
         item.slug === "zx9-speaker",
     );
   } else if (productName === "xx99-mark-one-headphones") {
     youMayAlsoLike = base.filter(
-      item =>
+      (item) =>
         item.slug === "xx99-mark-two-headphones" ||
         item.slug === "xx59-headphones" ||
         item.slug === "zx9-speaker",
     );
   } else if (productName === "xx59-headphones") {
     youMayAlsoLike = base.filter(
-      item =>
+      (item) =>
         item.slug === "xx99-mark-two-headphones" ||
         item.slug === "xx99-mark-one-headphones" ||
         item.slug === "zx9-speaker",
     );
   } else if (productName === "zx9-speaker") {
     youMayAlsoLike = base.filter(
-      item =>
+      (item) =>
         item.slug === "zx7-speaker" ||
         item.slug === "xx99-mark-one-headphones" ||
         item.slug === "xx59-headphones",
     );
   } else if (productName === "zx7-speaker") {
     youMayAlsoLike = base.filter(
-      item =>
+      (item) =>
         item.slug === "zx9-speaker" ||
         item.slug === "xx99-mark-one-headphones" ||
         item.slug === "xx59-headphones",
     );
   } else if (productName === "yx1-earphones") {
     youMayAlsoLike = base.filter(
-      item =>
+      (item) =>
         item.slug === "xx99-mark-one-headphones" ||
         item.slug === "xx59-headphones" ||
         item.slug === "zx9-speaker",
@@ -88,7 +71,7 @@ export default async function YouMayAlsoLike({
         YOU MAY ALSO LIKE
       </h2>
       <div className="flex justify-between items-center gap-10 px-30 max-lg:px-5 max-lg:gap-5 max-lg:flex-col">
-        {youMayAlsoLike?.map(item => {
+        {youMayAlsoLike?.map((item) => {
           return (
             <div key={item.slug} className="w-full">
               <Image

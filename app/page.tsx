@@ -22,6 +22,7 @@ function Page() {
             alt="Desktop Hero Background"
             fill
             priority
+            sizes="(min-width: 1024px) 100vw, 0px"
             className="object-cover rounded-bl-xl rounded-br-xl max-lg:hidden"
           />
 
@@ -30,6 +31,7 @@ function Page() {
             alt="Tablet Hero Background"
             fill
             priority
+            sizes="(min-width: 640px) and (max-width: 1023px) 100vw, 0px"
             className="object-cover rounded-bl-xl rounded-br-xl hidden max-lg:block max-sm:hidden"
           />
 
@@ -38,11 +40,12 @@ function Page() {
             alt="Mobile Hero Background"
             fill
             priority
+            sizes="(max-width: 639px) 100vw, 0px"
             className="object-cover rounded-bl-xl rounded-br-xl hidden max-sm:block"
           />
           <div className="absolute inset-0 flex items-center justify-center lg:justify-start">
             <Transition>
-              <div className="text-center lg:text-left max-w-md px-6 lg:ml-20">
+              <div className="text-center lg:text-left max-w-md px-5 ml-30 max-lg:ml-0">
                 <h2 className="text-gray-500 text-sm tracking-[10px] mb-5 max-sm:text-xs">
                   NEW PRODUCT
                 </h2>

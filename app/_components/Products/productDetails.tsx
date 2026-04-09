@@ -8,31 +8,20 @@ import { useParams } from "next/navigation";
 import Transition from "@/app/_components/Transition";
 
 import { ProductsProps } from "@/app/types/products";
-import useMoveBack from "@/app/hooks/useMoveback";
 import { useCartStore } from "@/app/store/cartStore";
+import Gallery from "../Gallery";
 
 function ProductDetails({ products }: ProductsProps) {
-  const [isAdding, setIsAdding] = useState(false);
   const [count, setCount] = useState(1);
-  const addToCart = useCartStore(state => state.addToCart);
-
-  const params = useParams();
-  const { productName } = params;
-
-  const moveBack = useMoveBack();
+  const addToCart = useCartStore((state) => state.addToCart);
 
   return (
-    <div className="">
-      <button
-        className="text-gray-500 font-medium ml-32 mb-20 max-lg:mb-10 max-lg:ml-5 cursor-pointer lg:hover:text-[#D87D4A]"
-        onClick={moveBack}
-      >
-        Go Back
-      </button>
+    <>
       {products
-        .filter(product => product.slug === productName)
-        .map(product => (
+        .filter((product) => product.slug)
+        .map((product) => (
           <div key={product.id} className="flex flex-col gap-20 max-lg:gap-10">
+            {/* Products Details */}
             <Transition>
               <div
                 className={`flex justify-between items-center gap-10 px-30 max-lg:px-5 max-lg:flex-col`}
@@ -84,25 +73,23 @@ function ProductDetails({ products }: ProductsProps) {
                     <div className="bg-[#F1F1F1] flex items-center gap-5 px-7 py-3 max-sm:px-2">
                       <button
                         className="cursor-pointer hover:text-[#D87D4A]"
-                        onClick={() => setCount(prev => Math.max(1, prev - 1))}
+                        onClick={() =>
+                          setCount((prev) => Math.max(1, prev - 1))
+                        }
                       >
                         -
                       </button>
                       <span>{count}</span>
                       <button
                         className="cursor-pointer hover:text-[#D87D4A]"
-                        onClick={() => setCount(prev => prev + 1)}
+                        onClick={() => setCount((prev) => prev + 1)}
                       >
                         +
                       </button>
                     </div>
                     <button
                       className="text-white font-bold bg-[#D87D4A] w-35 py-3 max-sm:px-2 hover:brightness-130 cursor-pointer hover:opacity-90"
-                      onClick={async () => {
-                        setIsAdding(true);
-
-                        await new Promise(resolve => setTimeout(resolve, 500));
-
+                      onClick={() => {
                         addToCart({
                           id: product.id,
                           name: product.name,
@@ -110,17 +97,15 @@ function ProductDetails({ products }: ProductsProps) {
                           qty: count,
                           image: product.cart.image,
                         });
-
-                        setIsAdding(false);
                       }}
                     >
-                      {isAdding ? "ADDING..." : "ADD TO CART"}
+                      ADD TO CART
                     </button>
                   </div>
                 </div>
               </div>
             </Transition>
-            {/* features */}
+            {/* Features */}
             <Transition>
               <div className="flex justify-around px-30 max-lg:px-5 max-lg:flex-col gap-20 max-lg:gap-10">
                 <div>
@@ -137,7 +122,7 @@ function ProductDetails({ products }: ProductsProps) {
                   </h2>
                   <div>
                     <ul>
-                      {product.includes.map(inc => (
+                      {product.includes.map((inc) => (
                         <li key={inc.item} className="text-nowrap">
                           <span className="text-[#D87D4A]">
                             {inc.quantity}x
@@ -152,7 +137,8 @@ function ProductDetails({ products }: ProductsProps) {
             </Transition>
           </div>
         ))}
-    </div>
+      <Gallery products={products} />
+    </>
   );
 }
 
