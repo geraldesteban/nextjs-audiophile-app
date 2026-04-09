@@ -13,7 +13,7 @@ import visa from "@/app/_assets/Payment/visa.svg";
 import mastercard from "@/app/_assets/Payment/mastercard.svg";
 
 function PaymentForm() {
-  const carts = useCartStore((state) => state.cart);
+  const carts = useCartStore(state => state.cart);
 
   const {
     register,
@@ -73,7 +73,7 @@ function PaymentForm() {
       >
         <div className="flex-1 rounded-xl shadow-xl p-5">
           <h2 className="text-4xl font-bold mb-20 max-lg:mb-10">CHECKOUT</h2>
-          <div onSubmit={handleSubmit(onSubmit)}>
+          <div>
             {/* Billing details */}
             <div className="mb-20 max-lg:mb-10">
               <h2 className="text-[#D87D4A] font-bold mb-5 text-sm max-sm:text-xs">
@@ -87,7 +87,7 @@ function PaymentForm() {
                     type="text"
                     placeholder="Alexei Ward"
                     {...register("name", { required: "Name is required" })}
-                    className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
+                    className="text-base border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
                   />
                   {errors.name && (
                     <p className="text-red-500 text-xs">
@@ -102,7 +102,7 @@ function PaymentForm() {
                     type="email"
                     placeholder="alexei@mail.com"
                     {...register("email", { required: "Email is required" })}
-                    className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
+                    className="text-base border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
                   />
                   {errors.email && (
                     <p className="text-red-500 text-xs">
@@ -120,7 +120,7 @@ function PaymentForm() {
                   {...register("phone", {
                     required: "Phone number is required",
                   })}
-                  className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 w-[49%] max-sm:w-full focus:outline-none focus:border-[#D87D4A]"
+                  className="text-base border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 w-[49%] max-sm:w-full focus:outline-none focus:border-[#D87D4A]"
                 />
                 {errors.phone && (
                   <p className="text-red-500 text-xs">{errors.phone.message}</p>
@@ -132,7 +132,7 @@ function PaymentForm() {
               <h2 className="text-[#D87D4A] text-[13px] font-bold mb-5">
                 SHIPPING INFO
               </h2>
-              {/* Adress */}
+              {/* Address */}
               <div className="flex flex-col mb-5 gap-2">
                 <label className="text-xs font-bold">Address</label>
                 <input
@@ -141,7 +141,7 @@ function PaymentForm() {
                   {...register("address", {
                     required: "Address is required",
                   })}
-                  className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 w-[49%] max-sm:w-full focus:outline-none focus:border-[#D87D4A]"
+                  className="text-base border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 w-[49%] max-sm:w-full focus:outline-none focus:border-[#D87D4A]"
                 />
                 {errors.address && (
                   <p className="text-red-500 text-xs">
@@ -159,7 +159,7 @@ function PaymentForm() {
                     {...register("zipcode", {
                       required: "Zipcode is required",
                     })}
-                    className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3 focus:outline-none focus:border-[#D87D4A]"
+                    className="text-base border border-gray-500 rounded-lg py-3 px-5 max-sm:py-2 max-sm:px-3 focus:outline-none focus:border-[#D87D4A]"
                   />
                   {errors.zipcode && (
                     <p className="text-red-500 text-xs">
@@ -176,7 +176,7 @@ function PaymentForm() {
                     {...register("city", {
                       required: "City is required",
                     })}
-                    className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
+                    className="text-base border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
                   />
                   {errors.city && (
                     <p className="text-red-500 text-xs">
@@ -194,7 +194,7 @@ function PaymentForm() {
                   {...register("country", {
                     required: "Country is required",
                   })}
-                  className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 w-[49%] max-sm:w-full max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
+                  className="text-base border border-gray-500 rounded-lg py-3 pl-5 w-[49%] max-sm:w-full max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
                 />
                 {errors.country && (
                   <p className="text-red-500 text-xs">
@@ -221,9 +221,7 @@ function PaymentForm() {
                       })}
                       className="accent-[#D87D4A]"
                     />
-                    <span className="text-sm font-bold max-sm:text-xs">
-                      PayMongo
-                    </span>
+                    <span className="text-base font-bold">PayMongo</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Image src={gcash} alt="gcash logo" />
@@ -241,7 +239,7 @@ function PaymentForm() {
                       {...register("paymentMethod")}
                       className="accent-[#D87D4A]"
                     />
-                    <span className="text-sm font-bold max-sm:text-xs">
+                    <span className="text-base font-bold">
                       Cash on Delivery
                     </span>
                   </div>
@@ -263,7 +261,7 @@ function PaymentForm() {
           {carts.length === 0 ? (
             <p className="text-center mb-10 font-bold">Cart is Empty.</p>
           ) : (
-            carts.map((item) => (
+            carts.map(item => (
               <div
                 key={item.id}
                 className="flex justify-between items-center mb-10 gap-5 max-sm:gap-2"
@@ -301,7 +299,7 @@ function PaymentForm() {
                 <p className="font-bold text-sm max-sm:text-xs">
                   $
                   {carts
-                    .map((item) => item.price * item.qty)
+                    .map(item => item.price * item.qty)
                     .reduce((a, b) => a + b, 0)
                     .toFixed(0)}
                 </p>
@@ -324,11 +322,11 @@ function PaymentForm() {
                   $
                   {(
                     carts
-                      .map((item) => item.price * item.qty)
+                      .map(item => item.price * item.qty)
                       .reduce((a, b) => a + b, 0) *
                       0.2 +
                     carts
-                      .map((item) => item.price * item.qty)
+                      .map(item => item.price * item.qty)
                       .reduce((a, b) => a + b, 0)
                   ).toFixed(0)}
                 </p>

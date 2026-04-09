@@ -3,23 +3,21 @@
 import { useState } from "react";
 
 import Image from "next/image";
-import { useParams } from "next/navigation";
 
 import Transition from "@/app/_components/Transition";
 
 import { ProductsProps } from "@/app/types/products";
 import { useCartStore } from "@/app/store/cartStore";
-import Gallery from "../Gallery";
 
 function ProductDetails({ products }: ProductsProps) {
   const [count, setCount] = useState(1);
-  const addToCart = useCartStore((state) => state.addToCart);
+  const addToCart = useCartStore(state => state.addToCart);
 
   return (
     <>
       {products
-        .filter((product) => product.slug)
-        .map((product) => (
+        .filter(product => product.slug)
+        .map(product => (
           <div key={product.id} className="flex flex-col gap-20 max-lg:gap-10">
             {/* Products Details */}
             <Transition>
@@ -73,16 +71,14 @@ function ProductDetails({ products }: ProductsProps) {
                     <div className="bg-[#F1F1F1] flex items-center gap-5 px-7 py-3 max-sm:px-2">
                       <button
                         className="cursor-pointer hover:text-[#D87D4A]"
-                        onClick={() =>
-                          setCount((prev) => Math.max(1, prev - 1))
-                        }
+                        onClick={() => setCount(prev => Math.max(1, prev - 1))}
                       >
                         -
                       </button>
                       <span>{count}</span>
                       <button
                         className="cursor-pointer hover:text-[#D87D4A]"
-                        onClick={() => setCount((prev) => prev + 1)}
+                        onClick={() => setCount(prev => prev + 1)}
                       >
                         +
                       </button>
@@ -122,7 +118,7 @@ function ProductDetails({ products }: ProductsProps) {
                   </h2>
                   <div>
                     <ul>
-                      {product.includes.map((inc) => (
+                      {product.includes.map(inc => (
                         <li key={inc.item} className="text-nowrap">
                           <span className="text-[#D87D4A]">
                             {inc.quantity}x
@@ -137,7 +133,6 @@ function ProductDetails({ products }: ProductsProps) {
             </Transition>
           </div>
         ))}
-      <Gallery products={products} />
     </>
   );
 }
