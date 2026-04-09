@@ -5,7 +5,7 @@ import { useCartStore } from "@/app/store/cartStore";
 import { IoCartOutline } from "react-icons/io5";
 
 function CartIcon() {
-  const carts = useCartStore((state) => state.cart);
+  const carts = useCartStore(state => state.cart);
 
   return (
     <div className="relative flex items-center mr-5">

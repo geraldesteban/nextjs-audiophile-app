@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-import PaymentForm from "@/app/_components/Checkout/PaymentForm";
+import CheckoutForm from "@/app/_components/Checkout/CheckoutForm";
 
 function Page() {
   return (
@@ -12,7 +11,7 @@ function Page() {
         Go Cart
       </Link>
       {/* Payment */}
-      <PaymentForm />
+      <CheckoutForm />
     </div>
   );
 }
