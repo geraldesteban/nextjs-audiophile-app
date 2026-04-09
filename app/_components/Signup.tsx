@@ -58,7 +58,7 @@ export default function Signup() {
             type="text"
             placeholder="First Name"
             {...register("firstName", { required: "First name is required" })}
-            className="text-base max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
+            className="text-base border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
           />
           {errors.firstName && (
             <span className="text-red-500 text-xs">
@@ -73,7 +73,7 @@ export default function Signup() {
             type="text"
             placeholder="Last Name"
             {...register("lastName", { required: "Last name is required" })}
-            className="text-base max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
+            className="text-base border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
           />
           {errors.lastName && (
             <span className="text-red-500 text-xs">
@@ -94,7 +94,7 @@ export default function Signup() {
                 message: "Invalid email",
               },
             })}
-            className="text-base max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
+            className="text-base border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
           />
           {errors.email && (
             <span className="text-red-500 text-xs">{errors.email.message}</span>
@@ -113,7 +113,7 @@ export default function Signup() {
                 message: "Password must be at least 6 characters",
               },
             })}
-            className="text-base max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
+            className="text-base border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
           />
           {errors.password && (
             <span className="text-red-500 text-xs">
