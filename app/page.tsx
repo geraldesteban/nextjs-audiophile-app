@@ -14,51 +14,56 @@ import HomeAudioGear from "@/app/_components/Home/HomeAudioGear";
 /* Home page*/
 function Page() {
   return (
-    <div>
-      <main className="relative pb-240">
-        <Image
-          src={heroDesktop}
-          alt="Desktop Hero Background"
-          quality={100}
-          fill
-          className="object-cover object-top rounded-bl-xl rounded-br-xl max-lg:hidden"
-        />
-        <Image
-          src={heroTablet}
-          alt="Tablet Hero background"
-          quality={100}
-          fill
-          className="object-cover object-top rounded-bl-xl rounded-br-xl hidden max-lg:block"
-        />
-        <Image
-          src={heroMobile}
-          alt="Mobile Hero background"
-          quality={100}
-          fill
-          className="object-cover object-top rounded-bl-xl rounded-br-xl hidden max-sm:block"
-        />
-        <Transition>
-          <div className="z-10 absolute left-30 top-70 max-lg:text-center max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2">
-            <h2 className="text-gray-500 text-sm tracking-[10px] mb-5 max-sm:text-xs">
-              NEW PRODUCT
-            </h2>
-            <h2 className="text-white text-6xl font-bold tracking-wider mb-10 max-sm:text-4xl max-sm:mb-5">
-              XX99 MARK II
-              <br />
-              HEADPHONES
-            </h2>
-            <p className="text-[#F1F1F1] w-90 mb-10 max-lg:mx-auto max-sm:w-full max-sm:text-sm">
-              Experience natural, life like audio and exceptional build quality
-              made for the passionate music enthusiast.
-            </p>
-            <Link
-              href="/headphones/xx99-mark-two-headphones"
-              className="text-white font-bold bg-[#D87D4A] px-5 py-3 lg:hover:brightness-130 max-sm:text-sm"
-            >
-              SEE PRODUCT
-            </Link>
+    <>
+      <main className="relative bg-[#0E0E0E]">
+        <div className="relative w-full h-screen">
+          <Image
+            src={heroDesktop}
+            alt="Desktop Hero Background"
+            fill
+            priority
+            className="object-cover rounded-bl-xl rounded-br-xl max-lg:hidden"
+          />
+
+          <Image
+            src={heroTablet}
+            alt="Tablet Hero Background"
+            fill
+            priority
+            className="object-cover rounded-bl-xl rounded-br-xl hidden max-lg:block max-sm:hidden"
+          />
+
+          <Image
+            src={heroMobile}
+            alt="Mobile Hero Background"
+            fill
+            priority
+            className="object-cover rounded-bl-xl rounded-br-xl hidden max-sm:block"
+          />
+          <div className="absolute inset-0 flex items-center justify-center lg:justify-start">
+            <Transition>
+              <div className="text-center lg:text-left max-w-md px-6 lg:ml-20">
+                <h2 className="text-gray-500 text-sm tracking-[10px] mb-5 max-sm:text-xs">
+                  NEW PRODUCT
+                </h2>
+                <h2 className="text-white text-4xl font-bold tracking-wider mb-10 max-sm:mb-5">
+                  XX99 MARK II
+                </h2>
+                <p className="text-[#F1F1F1] mb-10 max-sm:text-sm">
+                  Experience natural, life like audio and exceptional build
+                  quality made for the passionate music enthusiast.
+                </p>
+
+                <Link
+                  href="/headphones/xx99-mark-two-headphones"
+                  className="text-white font-bold bg-[#D87D4A] px-5 py-3 hover:brightness-125 transition"
+                >
+                  SEE PRODUCT
+                </Link>
+              </div>
+            </Transition>
           </div>
-        </Transition>
+        </div>
       </main>
       {/* Home navigation */}
       <HomeNavigation />
@@ -68,7 +73,7 @@ function Page() {
         {/* Home audio gear */}
         <HomeAudioGear />
       </div>
-    </div>
+    </>
   );
 }
 
