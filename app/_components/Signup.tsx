@@ -14,6 +14,7 @@ type Signup = {
 
 export default function Signup() {
   const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState<"success" | "error" | "">("");
   const {
     register,
     handleSubmit,
@@ -22,22 +23,24 @@ export default function Signup() {
 
   const onSubmit = async (data: Signup) => {
     try {
-      const res = await fetch("/api/auth/signup", {
+      const response = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      const result = await res.json();
+      const result = await response.json();
 
-      if (!result.success) {
+      if (!response.ok) {
         setMessage(result.message);
         return;
       }
 
-      setMessage("Verification email sent!");
-    } catch (error) {
-      setMessage("Network error");
+      setMessage("Verification email sent. Please check your inbox.");
+      setMessageType("success");
+    } catch {
+      setMessage("Unable to connect. Please try again.");
+      setMessageType("error");
     }
   };
 
@@ -57,6 +60,11 @@ export default function Signup() {
             {...register("firstName", { required: "First name is required" })}
             className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
           />
+          {errors.firstName && (
+            <span className="text-red-500 text-xs">
+              {errors.firstName.message}
+            </span>
+          )}
         </div>
         {/* Last Name */}
         <div className="flex flex-col gap-2 w-full">
@@ -67,6 +75,11 @@ export default function Signup() {
             {...register("lastName", { required: "Last name is required" })}
             className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
           />
+          {errors.lastName && (
+            <span className="text-red-500 text-xs">
+              {errors.lastName.message}
+            </span>
+          )}
         </div>
         {/* Email */}
         <div className="flex flex-col gap-2 w-full">
@@ -83,6 +96,9 @@ export default function Signup() {
             })}
             className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
           />
+          {errors.email && (
+            <span className="text-red-500 text-xs">{errors.email.message}</span>
+          )}
         </div>
         {/* Password */}
         <div className="flex flex-col gap-2 w-full">
@@ -99,7 +115,13 @@ export default function Signup() {
             })}
             className="text-sm max-sm:text-xs border border-gray-500 rounded-lg py-3 pl-5 max-sm:py-2 max-sm:pl-3 focus:outline-none focus:border-[#D87D4A]"
           />
+          {errors.password && (
+            <span className="text-red-500 text-xs">
+              {errors.password.message}
+            </span>
+          )}
         </div>
+        {/* Create account button */}
         <button
           type="submit"
           disabled={isSubmitting}
@@ -107,9 +129,16 @@ export default function Signup() {
         >
           {isSubmitting ? "Creating account..." : "CREATE"}
         </button>
-        {message && <span className="mr-auto">{message}</span>}
+        {/* Message for success or error */}
+        {message && (
+          <span
+            className={`mr-auto max-sm:text-xs ${messageType === "success" ? "text-green-500" : "text-red-500"}`}
+          >
+            {message}
+          </span>
+        )}
         <Link
-          href="/account/login"
+          href="/account/signin"
           className="mr-auto max-sm:text-xs lg:hover:text-[#D87D4A]"
         >
           Login
