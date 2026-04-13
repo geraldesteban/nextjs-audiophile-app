@@ -24,7 +24,6 @@ export async function signin({ email, password }: Login) {
   const token = jwt.sign(
     {
       userId: user._id.toString(),
-      email: user.email,
     },
     process.env.JWT_SECRET as string,
     { expiresIn: "1d" },
