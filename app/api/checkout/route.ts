@@ -5,7 +5,7 @@ export async function POST(req: Request) {
   try {
     // Get carts details and customer details
     const { carts, customer } = await req.json();
-    console.log(carts);
+
     // PayMongo Secret Key
     const secret = process.env.PAYMONGO_SECRET_KEY;
 
