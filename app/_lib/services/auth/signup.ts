@@ -4,6 +4,7 @@ import crypto from "crypto";
 import { connectDB } from "@/app/_lib/config/mongodb";
 import Users from "@/app/_lib/models/users";
 import { sendVerificationEmail } from "@/app/_lib/services/mail/nodemailer";
+import Orders from "../../models/orders";
 
 type Signup = {
   firstName: string;
@@ -36,6 +37,13 @@ export async function signup({ firstName, lastName, email, password }: Signup) {
     verifyToken: token,
     verifyTokenExpires: Date.now() + 1000 * 60 * 60,
   });
+
+  const result = await Orders.updateMany(
+    { "customer.email": email },
+    { $set: { userId: user._id } },
+  );
+
+  console.log(result);
 
   await sendVerificationEmail(email, token);
 
