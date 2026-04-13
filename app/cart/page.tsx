@@ -8,10 +8,10 @@ import Transition from "@/app/_components/Transition";
 import { useCartStore } from "@/app/store/cartStore";
 
 function Page() {
-  const carts = useCartStore(state => state.cart);
-  const clearCart = useCartStore(state => state.clearCart);
-  const increasedCart = useCartStore(state => state.increaseQty);
-  const decreasedCart = useCartStore(state => state.decreaseQty);
+  const carts = useCartStore((state) => state.cart);
+  const clearCart = useCartStore((state) => state.clearCart);
+  const increasedCart = useCartStore((state) => state.increaseQty);
+  const decreasedCart = useCartStore((state) => state.decreaseQty);
 
   return (
     <div className="py-20 max-lg:py-10 min-h-screen px-30 max-lg:px-5">
@@ -45,7 +45,7 @@ function Page() {
                 Cart is empty.
               </p>
             ) : (
-              carts.map(item => (
+              carts.map((item) => (
                 <div
                   key={item.id}
                   className="flex justify-between items-center mb-10 gap-5 max-sm:gap-2"
@@ -98,7 +98,7 @@ function Page() {
                 <p className="font-bold text-sm max-sm:text-xs">
                   $
                   {carts
-                    .map(item => item.price * item.qty)
+                    .map((item) => item.price * item.qty)
                     .reduce((a, b) => a + b, 0)}
                 </p>
               </div>
