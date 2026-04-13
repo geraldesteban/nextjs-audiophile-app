@@ -38,12 +38,10 @@ export async function signup({ firstName, lastName, email, password }: Signup) {
     verifyTokenExpires: Date.now() + 1000 * 60 * 60,
   });
 
-  const result = await Orders.updateMany(
+  await Orders.updateMany(
     { "customer.email": email },
     { $set: { userId: user._id } },
   );
-
-  console.log(result);
 
   await sendVerificationEmail(email, token);
 
