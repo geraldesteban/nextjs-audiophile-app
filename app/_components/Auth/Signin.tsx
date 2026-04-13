@@ -19,7 +19,6 @@ export default function Login() {
   const {
     register,
     handleSubmit,
-    setError,
     formState: { errors, isSubmitting },
   } = useForm<Login>();
 
@@ -42,6 +41,7 @@ export default function Login() {
       }
 
       router.push("/account");
+      router.refresh();
     } catch {
       setMessage("Unable to connect. Please try again.");
       setMessageType("error");
