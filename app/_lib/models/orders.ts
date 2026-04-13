@@ -3,6 +3,12 @@ import mongoose from "mongoose";
 const ordersSchema = new mongoose.Schema(
   {
     orderId: { type: String },
+
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Users",
+    },
+
     items: [
       {
         id: { type: String },
@@ -12,6 +18,7 @@ const ordersSchema = new mongoose.Schema(
         image: { type: String },
       },
     ],
+
     customer: {
       email: { type: String },
       name: { type: String },
@@ -22,6 +29,7 @@ const ordersSchema = new mongoose.Schema(
       country: { type: String },
       paymentMethod: { type: String },
     },
+
     status: {
       type: String,
       enum: ["pending", "paid", "failed"],
