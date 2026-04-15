@@ -1,91 +1,61 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import headphone from "@/app/_assets/SectionTwo/image-category-thumbnail-headphones.png";
 import speaker from "@/app/_assets/SectionTwo/image-category-thumbnail-speakers.png";
 import earphone from "@/app/_assets/SectionTwo/image-category-thumbnail-earphones.png";
-import iconRight from "@/app/_assets/Icons/icon-arrow-right.svg";
-import Image from "next/image";
-import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa";
 
-function HomeNavigation() {
+export default function HomeNavigation() {
   const itemLists = [
     {
       image: headphone,
       heading: "HEADPHONES",
       span: "SHOP",
-      icon: iconRight,
       to: "headphones",
     },
     {
       image: speaker,
       heading: "SPEAKERS",
       span: "SHOP",
-      icon: iconRight,
       to: "speakers",
     },
     {
       image: earphone,
       heading: "EARPHONES",
       span: "SHOP",
-      icon: iconRight,
       to: "earphones",
     },
   ];
 
-  return <></>;
+  return (
+    <div className="flex justify-between gap-5 pt-20 pb-10 px-30 max-lg:px-5 max-sm:pt-10 max-sm:justify-center max-sm:gap-32 max-sm:flex-wrap">
+      {itemLists.map((item, i) => (
+        <div
+          className="relative bg-[#F1F1F1] w-full h-60 rounded-xl group cursor-pointer"
+          key={i}
+        >
+          <Image
+            src={item.image}
+            quality={100}
+            alt={item.heading}
+            loading="eager"
+            className="absolute w-60 left-0 right-0 bottom-20 mx-auto max-lg:bottom-25"
+          />
+          <div className="absolute bottom-0 left-0 right-0">
+            <div className="flex flex-col items-center gap-5">
+              <h2 className="text-black font-bold tracking-widest">
+                {item.heading}
+              </h2>
+              <Link href={`/${item.to}`} className="flex items-center mb-5">
+                <span className="text-gray-500 font-bold tracking-widest mr-3 lg:group-hover:text-[#D87D4A]">
+                  SHOP
+                </span>
+                <FaChevronRight className="text-[#D87D4A]" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
-
-export default HomeNavigation;
-
-// <div className="flex justify-between gap-5 px-32 max-xl:px-16 max-lg:px-10 max-sm:justify-center max-sm:gap-32 max-sm:flex-wrap">
-//   {itemLists.map((item) => (
-//     <motion.div
-//       initial={{ opacity: 0, scale: 0.5 }}
-//       whileInView={{ opacity: 1, scale: 1 }}
-//       viewport={{ once: false, amount: 0.5 }}
-//       transition={{ duration: 1 }}
-//       className="relative bg-[#F1F1F1] w-87.5 h-50 rounded-xl max-md:w-50 max-md:h-37.5 max-sm:w-full max-sm:h-100"
-//       key={item.heading}
-//     >
-//       <Image
-//         src={item.image}
-//         quality={100}
-//         alt="Headphone"
-//         className="absolute bottom-10 max-md:bottom-15 max-sm:left-1/2 max-sm:transform max-sm:-translate-x-1/2 max-sm:bottom-30"
-//       />
-//       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-//         <div className="flex flex-col items-center">
-//           <motion.div
-//             initial={{ opacity: 1, x: 100 }}
-//             whileInView={{ opacity: 1, x: 0 }}
-//             viewport={{ once: false, amount: 0.5 }}
-//             transition={{ duration: 1 }}
-//           >
-//             <h2 className="text-black text-[18px] font-bold tracking-widest mb-5">
-//               {item.heading}
-//             </h2>
-//           </motion.div>
-//           <motion.div
-//             initial={{ opacity: 1, x: -100 }}
-//             whileInView={{ opacity: 1, x: 0 }}
-//             viewport={{ once: false, amount: 0.5 }}
-//             transition={{ duration: 1 }}
-//           >
-//             <Link href={`/${item.to}`} className="flex items-center mb-5">
-//               <span className="text-gray-500 font-bold tracking-widest mr-3 lg:hover:text-[#D87D4A]">
-//                 SHOP
-//               </span>
-//               <Image
-//                 src={iconRight}
-//                 width={10}
-//                 height={10}
-//                 alt="Right icon"
-//               />
-//             </Link>
-//           </motion.div>
-//         </div>
-//       </div>
-//     </motion.div>
-//   ))}
-// </div>;
