@@ -59,7 +59,7 @@ function Page() {
 
                 <Link
                   href="/headphones/xx99-mark-two-headphones"
-                  className="text-white font-bold bg-[#D87D4A] px-5 py-3 hover:brightness-125 transition"
+                  className="text-white font-bold bg-[#D87D4A] px-5 py-3 lg:hover:brightness-130"
                 >
                   SEE PRODUCT
                 </Link>
@@ -69,7 +69,9 @@ function Page() {
         </div>
       </main>
       {/* Home navigation */}
-      <HomeNavigation />
+      <div className="pt-20">
+        <HomeNavigation />
+      </div>
       <div className="flex flex-col gap-20 py-20 max-lg:py-10 max-lg:gap-10">
         {/* Home gallery */}
         <HomeGallery />
